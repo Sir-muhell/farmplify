@@ -29,7 +29,7 @@ const WhatWeDo = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="px-20 py-26 max-w-[1400px] mx-auto">
+    <div className="px-20 pt-26 max-w-[1400px] mx-auto">
       <div className="grid grid-cols-2 gap-12 items-start">
         <div>
           <div className="bg-[#30C67C1A] py-2 px-4 flex inline-flex rounded-full">
@@ -54,7 +54,7 @@ const WhatWeDo = () => {
         />
       </div>
 
-      <div className="mt-16 flex flex-col gap-10">
+      <div className="mt-16 flex flex-col gap-10 h-80">
         <div className="flex items-left gap-6 justify-between">
           {coreServices.map((item, i) => (
             <div

@@ -51,7 +51,7 @@ const Advantage = () => {
 
   return (
     <section
-      className="bg-[#1F3C15] text-white px-20 lg:px-40 py-24 gap-16 "
+      className="bg-[#1F3C15] text-white px-20 lg:px-40 py-32 gap-16 "
       style={{
         backgroundImage: `url(${Image})`,
         backgroundRepeat: "repeat",
@@ -59,60 +59,67 @@ const Advantage = () => {
         backgroundPosition: "center",
       }}
     >
-      <div className=" max-w-[1037px] mx-auto flex">
+      <div className=" max-w-[1037px] grid grid-cols-2 m-auto gap-10 items-center">
         {/* Left Static Section */}
-        <div className="w-1/2 flex flex-col justify-center">
+        <div className="">
           <div className="bg-[#FFFFFF1A] py-2 px-4 flex inline-flex rounded-full uppercase">
             <div className="section-text-2">Out competitive advantage</div>
           </div>
           <h2 className="text-7xl font-bold mt-6">Why Choose Farmplify?</h2>
-          <p className="mt-4 text-lg text-gray-300">
-            Here's why we think Farmplify is your smartest agricultural
-            investment.
+          <p className="mt-4 text-xl text-white max-w-[80%]">
+            Here's why we think Farmplify is your Smartest Agricultural
+            Investment.
           </p>
-          <button className="mt-8 bg-white text-[#1F3C15] font-semibold px-6 py-3 rounded-full shadow-md hover:scale-105 transition">
+          <button className="mt-10 bg-white text-[#1F3C15] font-semibold text-sm tracking-[0.2em] font-semibold px-6 py-3 rounded-full shadow-md hover:scale-105 transition uppercase">
             Book a Call
           </button>
         </div>
 
         {/* Right Scrollable Section */}
-        <div className="relative w-1/2 h-[400px] flex">
+        <div className="relative  h-[460px] flex">
           {/* Scrollable Cards */}
           <div
             ref={scrollRef}
-            className="overflow-y-scroll space-y-10 pr-8 pb-6"
-            style={{ scrollBehavior: "smooth", height: "100%" }}
+            className="overflow-y-scroll space-y-14 pr-8 pb-6 no-scrollbar"
+            style={{
+              scrollBehavior: "smooth",
+              height: "100%",
+              scrollbarWidth: "none",
+              msOverflowStyle: "none",
+            }}
           >
             {cards.map((card, i) => (
-              <div
-                key={i}
-                className="bg-[#265627] rounded-[30px] p-6 flex flex-col items-center text-center"
-              >
-                <img
-                  src={card.image}
-                  alt={card.title}
-                  className="w-full h-[177px] object-cover rounded-xl"
-                />
-                <h3 className="text-white text-2xl font-bold mt-6">
-                  {card.title}
-                </h3>
-                <p className="text-[#D0D0D0] mt-2 text-base">
-                  {card.description}
-                </p>
+              <div className="relative">
+                <div
+                  key={i}
+                  className="bg-[#265627] rounded-[30px] p-6 flex flex-col items-center text-center pb-10"
+                >
+                  <img
+                    src={card.image}
+                    alt={card.title}
+                    className="w-full h-[177px] object-cover rounded-xl"
+                  />
+                  <div className="max-w-[70%]">
+                    <h3 className="text-white text-[32px] leading-[93%] font-semibold mt-7">
+                      {card.title}
+                    </h3>
+                    <p className="text-[#FFFFFF99] mt-4 text-xl leading-[130%] font-medium">
+                      {card.description}
+                    </p>
+                  </div>
+                </div>
+                <div className="absolute top-0 -right-8 h-full flex flex-col items-center justify-center py-1">
+                  <span className="text-white text-sm">01</span>
+                  <div className="relative w-[3px] bg-[#2E4D2C] rounded-full h-[80%] mt-1 mb-1">
+                    <motion.div
+                      className="absolute left-0 top-0 w-full bg-[#30C67C] rounded-full"
+                      style={{ height: `${20 * (i + 1)}%` }}
+                    />
+                  </div>
+                  <span className="text-white text-sm">05</span>
+                </div>
               </div>
             ))}
-          </div>
-
-          {/* Vertical Progress Indicator */}
-          <div className="absolute top-0 right-0 h-full flex flex-col items-center justify-between py-1">
-            <span className="text-white text-sm">01</span>
-            <div className="relative w-[3px] bg-[#2E4D2C] rounded-full h-full mt-1 mb-1">
-              <motion.div
-                className="absolute left-0 top-0 w-full bg-[#30C67C] rounded-full"
-                style={{ height: progressHeight }}
-              />
-            </div>
-            <span className="text-white text-sm">05</span>
           </div>
         </div>
       </div>

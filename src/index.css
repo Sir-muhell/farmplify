@@ -22,3 +22,7 @@ body {
   letter-spacing: 0.4em; /* 40% = 0.4em */
   color: white;
 }
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
