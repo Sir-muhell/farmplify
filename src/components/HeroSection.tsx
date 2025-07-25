@@ -1,140 +1,214 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import Navbar from "./Navbar";
-import HeroImage1 from "../assets/hero.jpg";
-import HeroImage2 from "../assets/hero.jpg";
+import Image1 from "../assets/hero.jpg";
+import Image2 from "../assets/hero2.jpg";
+import Border from "../assets/border.svg";
 
-// declare module "*.jpg" {
-//   const value: string;
-//   export default value;
-// }
+interface Slide {
+  image: string;
+  title: string;
+  subtitle: string;
+  cta: string;
+  ctaLink: string;
+}
 
-const HeroSection = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [direction, setDirection] = useState(1);
+const slides: Slide[] = [
+  {
+    image: Image1,
+    title: "First Slide Title",
+    subtitle: "This is the first hero slide",
+    cta: "Learn More",
+    ctaLink: "#",
+  },
+  {
+    image: Image2,
+    title: "Second Amazing Offer",
+    subtitle: "Special promotion just for you",
+    cta: "Shop Now",
+    ctaLink: "#",
+  },
+];
 
-  const slides = [
-    {
-      title: "GrazeyMore",
-      subtitle: "Access the tools, tips, and tech you need to thrive.",
-      bgImage: HeroImage1, // Replace with your image paths
-    },
-    {
-      title: "HassleLess",
-      subtitle: "Streamlined solutions for your business needs.",
-      bgImage: HeroImage2, // Replace with your image paths
-    },
-    // Add more slides as needed
-  ];
+const HeroCarousel = () => {
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const [direction, setDirection] = useState<"left" | "right">("right");
 
-  const nextSlide = () => {
-    setDirection(1);
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
-  };
-
-  const prevSlide = () => {
-    setDirection(-1);
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-  };
-
-  // Auto-advance slides
+  // Auto-play functionality
   useEffect(() => {
     const interval = setInterval(() => {
-      nextSlide();
+      handleNext();
     }, 5000);
     return () => clearInterval(interval);
-  }, []);
+  }, [currentIndex]);
+
+  const handleNext = (): void => {
+    setDirection("right");
+    setCurrentIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+  };
+
+  const handlePrev = (): void => {
+    setDirection("left");
+    setCurrentIndex((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+  };
+
+  const goToSlide = (index: number): void => {
+    setDirection(index > currentIndex ? "right" : "left");
+    setCurrentIndex(index);
+  };
+
+  const slideVariants = {
+    enter: (direction: "left" | "right") => ({
+      x: direction === "right" ? "100%" : "-100%",
+      opacity: 0,
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        type: "tween",
+        ease: "easeInOut",
+        duration: 0.6,
+      },
+    },
+    exit: (direction: "left" | "right") => ({
+      x: direction === "right" ? "-100%" : "100%",
+      opacity: 0,
+      transition: {
+        type: "tween",
+        ease: "easeInOut",
+        duration: 0.6,
+      },
+    }),
+  };
+
+  // Variants for text animation
+  const textVariants = {
+    enter: {
+      y: 50,
+      opacity: 0,
+    },
+    center: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+      },
+    },
+    exit: {
+      y: -50,
+      opacity: 0,
+    },
+  };
 
   return (
-    <section className="relative w-full h-screen overflow-hidden">
-      {/* Background Image */}
-      <AnimatePresence custom={direction}>
+    <div className="relative h-screen  w-full overflow-hidden">
+      <AnimatePresence mode="popLayout" custom={direction}>
         <motion.div
-          key={currentSlide}
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: HeroImage1,
-          }}
+          key={currentIndex}
           custom={direction}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1 }}
-        />
-      </AnimatePresence>
+          //   variants={slideVariants}
+          initial="enter"
+          animate="center"
+          exit="exit"
+          transition={{
+            type: "spring",
+            stiffness: 100,
+            damping: 30,
+          }}
+          drag="x"
+          dragConstraints={{ left: 0, right: 0 }}
+          dragElastic={0.5}
+          onDragEnd={(e, { offset, velocity }) => {
+            const swipe = Math.abs(offset.x) * velocity.x;
 
-      {/* Dark overlay */}
-      {/* <div className="absolute inset-0 bg-black bg-opacity-30" /> */}
-
-      {/* Broken border effect */}
-      <div className="absolute bottom-0 right-0 w-64 h-64">
-        <svg
-          viewBox="0 0 200 200"
-          className="w-full h-full"
-          preserveAspectRatio="none"
+            if (swipe < -10000) {
+              handleNext();
+            } else if (swipe > 10000) {
+              handlePrev();
+            }
+          }}
+          className="absolute inset-0 w-full h-full"
         >
-          <path
-            d="M0,0 L200,0 L200,200 C200,100 100,100 0,200 Z"
-            fill="white"
+          <img
+            src={slides[currentIndex].image}
+            alt={`Slide ${currentIndex + 1}`}
+            className="w-full h-full object-cover"
           />
-        </svg>
-      </div>
 
-      {/* Hero content */}
-      <div className="relative h-full flex flex-col">
-        <Navbar />
+          {/* Text Content Container */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="container mx-auto px-4 text-white">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={`title-${currentIndex}`}
+                  variants={textVariants}
+                  initial="enter"
+                  animate="center"
+                  exit="exit"
+                  transition={{ delay: 0.2 }}
+                  className="mb-4"
+                >
+                  <h1 className="text-4xl md:text-6xl font-bold mb-2 drop-shadow-lg">
+                    {slides[currentIndex].title}
+                  </h1>
+                </motion.div>
+              </AnimatePresence>
 
-        <div className="flex-1 flex items-end justify-end p-8">
-          <div className="max-w-2xl text-right">
-            <AnimatePresence custom={direction}>
-              <motion.div
-                key={currentSlide}
-                custom={direction}
-                initial={{ x: direction > 0 ? 100 : -100, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                exit={{ x: direction > 0 ? -100 : 100, opacity: 0 }}
-                transition={{ duration: 0.7, ease: "easeOut" }}
-              >
-                <h1 className="text-5xl md:text-7xl font-bold text-white mb-4">
-                  {slides[currentSlide].title}
-                </h1>
-                <p className="text-xl text-white mb-8">
-                  {slides[currentSlide].subtitle}
-                </p>
-                <div className="flex justify-end gap-4">
-                  <button className="px-6 py-3 bg-white text-black rounded-full font-semibold hover:bg-opacity-90 transition-all">
-                    BOOK A CALL
-                  </button>
-                  <button className="px-6 py-3 border-2 border-white text-white rounded-full font-semibold hover:bg-white hover:text-black transition-all">
-                    SIGN UP
-                  </button>
-                </div>
-              </motion.div>
-            </AnimatePresence>
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={`subtitle-${currentIndex}`}
+                  variants={textVariants}
+                  initial="enter"
+                  animate="center"
+                  exit="exit"
+                  transition={{ delay: 0.3 }}
+                  className="mb-6"
+                >
+                  <p className="text-xl md:text-2xl max-w-2xl drop-shadow-lg">
+                    {slides[currentIndex].subtitle}
+                  </p>
+                </motion.div>
+              </AnimatePresence>
 
-            {/* Slider controls */}
-            <div className="flex justify-end gap-2 mt-8">
-              {slides.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => {
-                    setDirection(index > currentSlide ? 1 : -1);
-                    setCurrentSlide(index);
-                  }}
-                  className={`w-3 h-3 rounded-full transition-all ${
-                    currentSlide === index
-                      ? "bg-white w-6"
-                      : "bg-white bg-opacity-50"
-                  }`}
-                  aria-label={`Go to slide ${index + 1}`}
-                />
-              ))}
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={`cta-${currentIndex}`}
+                  variants={textVariants}
+                  initial="enter"
+                  animate="center"
+                  exit="exit"
+                  transition={{ delay: 0.4 }}
+                >
+                  <a
+                    href={slides[currentIndex].ctaLink}
+                    className="inline-block px-8 py-3 bg-white text-black font-semibold rounded-lg hover:bg-gray-100 transition-colors"
+                  >
+                    {slides[currentIndex].cta}
+                  </a>
+                </motion.div>
+              </AnimatePresence>
             </div>
           </div>
-        </div>
+        </motion.div>
+      </AnimatePresence>
+
+      <div className="absolute bottom-8 flex w-full justify-center gap-2">
+        {slides.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => goToSlide(index)}
+            className={`h-3 w-3 rounded-full transition-all ${
+              index === currentIndex ? "bg-white w-6" : "bg-gray-400"
+            }`}
+            aria-label={`Go to slide ${index + 1}`}
+          />
+        ))}
       </div>
-    </section>
+      <div className="absolute my-10 mx-10">
+        <img src={Border} alt="Border" className="w-screen " />
+      </div>
+    </div>
   );
 };
 
-export default HeroSection;
+export default HeroCarousel;
