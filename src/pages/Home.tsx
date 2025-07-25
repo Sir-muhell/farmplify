@@ -5,6 +5,7 @@ import Image from "../assets/image.jpg";
 import Mission from "../assets/mission.png";
 import WhatWeDoSection from "../components/WhatWeDo";
 import Advantage from "../components/Advantage";
+import Grow from "../components/Grow";
 
 const Home = () => {
   return (
@@ -57,6 +58,7 @@ const Home = () => {
       </div>
       <WhatWeDoSection />
       <Advantage />
+      <Grow />
     </main>
   );
 };

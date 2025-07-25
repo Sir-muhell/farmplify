@@ -26,3 +26,11 @@ body {
 .no-scrollbar::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera */
 }
+
+.grow {
+  background: linear-gradient(
+    180deg,
+    rgba(48, 198, 124, 0) -36.99%,
+    rgba(48, 198, 124, 0.9) 93.84%
+  );
+}
