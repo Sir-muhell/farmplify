@@ -1,8 +1,10 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Image1 from "../assets/hero.jpg";
 import Image2 from "../assets/hero2.jpg";
-import Border from "../assets/border.svg";
+import Image3 from "../assets/hero1.png";
+import Logo from "../assets/logo-white.png";
 
 interface Slide {
   image: string;
@@ -32,14 +34,14 @@ const BorderOverlay = () => (
 
 const slides: Slide[] = [
   {
-    image: Image1,
+    image: Image3,
     title: "Grow More,<br/> Stress Less.",
     subtitle: "Access the tools, tips, and tech you need to thrive.",
     cta: "Book a call",
     ctaLink: "#",
   },
   {
-    image: Image2,
+    image: Image1,
     title: "Graze More,<br/> Hassle Less",
     subtitle: "Access the tools, tips, and tech you need to thrive.",
     cta: "book a call",
@@ -127,6 +129,37 @@ const HeroCarousel = () => {
 
   return (
     <div className="relative h-screen w-screen overflow-hidden">
+      <nav className="absolute  w-full z-30  mx-auto px-[128px] pt-[128px]">
+        <div className=" mx-auto px-4 grid grid-cols-3 items-center">
+          <div className="justify-self-start">
+            <img src={Logo} alt="Logo" className="h-[50px]" />
+          </div>
+
+          <div className="flex justify-center space-x-8">
+            <Link
+              to="/"
+              className="text-white hover:text-green-300 text-sm font-medium uppercase tracking-widest"
+            >
+              HOME
+            </Link>
+            <Link
+              to="/about"
+              className="text-white hover:text-green-300 text-sm font-medium uppercase tracking-widest"
+            >
+              ABOUT US
+            </Link>
+            <Link
+              to="/services"
+              className="text-white hover:text-green-300 text-sm font-medium uppercase tracking-widest"
+            >
+              CORE SERVICES
+            </Link>
+          </div>
+
+          {/* Right side - Empty to balance grid */}
+          <div className="justify-self-end"></div>
+        </div>
+      </nav>
       <AnimatePresence mode="popLayout" custom={direction}>
         <motion.div
           key={currentIndex}
@@ -228,13 +261,13 @@ const HeroCarousel = () => {
       <BorderOverlay />
 
       {/* Navigation dots - above border */}
-      <div className="absolute bottom-28 flex w-full justify-center gap-2 z-30">
+      <div className="absolute bottom-[172px] flex w-full justify-center gap-2 z-30">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`h-3 rounded-full transition-all ${
-              index === currentIndex ? "bg-white w-6" : "bg-gray-400 w-3"
+            className={`h-2 rounded-full transition-all bg-white ${
+              index === currentIndex ? " w-20" : " opacity-50 w-6"
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />
