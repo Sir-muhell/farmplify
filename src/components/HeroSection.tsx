@@ -12,19 +12,44 @@ interface Slide {
   ctaLink: string;
 }
 
+const BorderOverlay = () => (
+  <div className="absolute inset-0 z-20 pointer-events-none p-[64px] pb-[141px]">
+    <svg
+      width="100%"
+      height="100%"
+      viewBox="0 0 1286 819"
+      preserveAspectRatio="none"
+      className="w-full h-full"
+    >
+      <path
+        d="M1254 0C1271.67 0 1286 14.3269 1286 32V531.577H1282V32C1282 16.536 1269.46 4 1254 4H32C16.536 4 4 16.536 4 32V787C4 802.464 16.536 815 32 815H703.839V819H32L31.1738 818.989C14.1571 818.558 0.441992 804.843 0.0107422 787.826L0 787V32C0 14.3269 14.3269 2.89917e-07 32 0H1254Z"
+        fill="white"
+        fillOpacity="0.6"
+      />
+    </svg>
+  </div>
+);
+
 const slides: Slide[] = [
   {
     image: Image1,
-    title: "First Slide Title",
-    subtitle: "This is the first hero slide",
-    cta: "Learn More",
+    title: "Grow More,<br/> Stress Less.",
+    subtitle: "Access the tools, tips, and tech you need to thrive.",
+    cta: "Book a call",
     ctaLink: "#",
   },
   {
     image: Image2,
-    title: "Second Amazing Offer",
-    subtitle: "Special promotion just for you",
-    cta: "Shop Now",
+    title: "Graze More,<br/> Hassle Less",
+    subtitle: "Access the tools, tips, and tech you need to thrive.",
+    cta: "book a call",
+    ctaLink: "#",
+  },
+  {
+    image: Image2,
+    title: "Plant More,<br/> Worry Less",
+    subtitle: "Access the tools, tips, and tech you need to thrive.",
+    cta: "book a call",
     ctaLink: "#",
   },
 ];
@@ -101,12 +126,11 @@ const HeroCarousel = () => {
   };
 
   return (
-    <div className="relative h-screen  w-full overflow-hidden">
+    <div className="relative h-screen w-screen overflow-hidden">
       <AnimatePresence mode="popLayout" custom={direction}>
         <motion.div
           key={currentIndex}
           custom={direction}
-          //   variants={slideVariants}
           initial="enter"
           animate="center"
           exit="exit"
@@ -120,14 +144,13 @@ const HeroCarousel = () => {
           dragElastic={0.5}
           onDragEnd={(e, { offset, velocity }) => {
             const swipe = Math.abs(offset.x) * velocity.x;
-
             if (swipe < -10000) {
               handleNext();
             } else if (swipe > 10000) {
               handlePrev();
             }
           }}
-          className="absolute inset-0 w-full h-full"
+          className="absolute inset-0 w-full h-full z-10"
         >
           <img
             src={slides[currentIndex].image}
@@ -135,8 +158,8 @@ const HeroCarousel = () => {
             className="w-full h-full object-cover"
           />
 
-          {/* Text Content Container */}
-          <div className="absolute inset-0 flex items-center justify-center">
+          {/* Text Content */}
+          <div className="absolute bottom-[145px] right-40 ">
             <div className="container mx-auto px-4 text-white">
               <AnimatePresence mode="wait">
                 <motion.div
@@ -148,9 +171,12 @@ const HeroCarousel = () => {
                   transition={{ delay: 0.2 }}
                   className="mb-4"
                 >
-                  <h1 className="text-4xl md:text-6xl font-bold mb-2 drop-shadow-lg">
-                    {slides[currentIndex].title}
-                  </h1>
+                  <h1
+                    className="text-[82px] font-semibold mb-2 drop-shadow-lg tracking[-0.01em] leading-[93%]"
+                    dangerouslySetInnerHTML={{
+                      __html: slides[currentIndex].title,
+                    }}
+                  />
                 </motion.div>
               </AnimatePresence>
 
@@ -164,7 +190,7 @@ const HeroCarousel = () => {
                   transition={{ delay: 0.3 }}
                   className="mb-6"
                 >
-                  <p className="text-xl md:text-2xl max-w-2xl drop-shadow-lg">
+                  <p className="text-xl font-medium md:text-2xl max-w-2xl ">
                     {slides[currentIndex].subtitle}
                   </p>
                 </motion.div>
@@ -177,11 +203,18 @@ const HeroCarousel = () => {
                   initial="enter"
                   animate="center"
                   exit="exit"
-                  transition={{ delay: 0.4 }}
+                  transition={{ delay: 0.3 }}
+                  className="inline flex items-center justify-center space-x-3"
                 >
                   <a
                     href={slides[currentIndex].ctaLink}
-                    className="inline-block px-8 py-3 bg-white text-black font-semibold rounded-lg hover:bg-gray-100 transition-colors"
+                    className="mt-10 bg-white text-[#1F3C15] font-semibold text-sm tracking-[0.2em] font-semibold px-6 py-3 rounded-full shadow-md hover:scale-105 transition uppercase"
+                  >
+                    {slides[currentIndex].cta}
+                  </a>
+                  <a
+                    href={slides[currentIndex].ctaLink}
+                    className="mt-10 bg-white text-[#1F3C15] font-semibold text-sm tracking-[0.2em] font-semibold px-6 py-3 rounded-full shadow-md hover:scale-105 transition uppercase"
                   >
                     {slides[currentIndex].cta}
                   </a>
@@ -192,20 +225,20 @@ const HeroCarousel = () => {
         </motion.div>
       </AnimatePresence>
 
-      <div className="absolute bottom-8 flex w-full justify-center gap-2">
+      <BorderOverlay />
+
+      {/* Navigation dots - above border */}
+      <div className="absolute bottom-28 flex w-full justify-center gap-2 z-30">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`h-3 w-3 rounded-full transition-all ${
-              index === currentIndex ? "bg-white w-6" : "bg-gray-400"
+            className={`h-3 rounded-full transition-all ${
+              index === currentIndex ? "bg-white w-6" : "bg-gray-400 w-3"
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}
-      </div>
-      <div className="absolute my-10 mx-10">
-        <img src={Border} alt="Border" className="w-screen " />
       </div>
     </div>
   );

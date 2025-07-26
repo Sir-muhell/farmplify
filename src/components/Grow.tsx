@@ -1,4 +1,3 @@
-import React from "react";
 import Bg from "../assets/bg2.jpg";
 
 const Grow = () => {

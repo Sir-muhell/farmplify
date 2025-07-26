@@ -2,6 +2,7 @@ import React from "react";
 import HeroSection from "../components/HeroSection";
 import Navbar from "../components/Navbar";
 import Image from "../assets/image.jpg";
+import Icon from "../assets/icon.svg";
 import Mission from "../assets/mission.png";
 import WhatWeDoSection from "../components/WhatWeDo";
 import Advantage from "../components/Advantage";
@@ -14,8 +15,9 @@ const Home = () => {
       <div className="items-center flex flex-col h-full py-10 px-20">
         <div className="w-px min-h-[72px] bg-[#546E24]"></div>
 
-        <div className="bg-[#30C67C1A] py-2 px-4 flex inline-flex mt-8 rounded-full">
-          <p className="section-text">WHAT WE DO?</p>
+        <div className="bg-[#30C67C1A] py-2 px-4 flex inline-flex gap-2.5 items-center mt-8 rounded-full">
+          <img src={Icon} alt="Icon" />
+          <p className="section-text uppercase">what we do?</p>
         </div>
         <div className="mt-8 ">
           <p className="text-7xl font-semibold text-center text-[#1F3C15]">

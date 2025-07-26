@@ -6,6 +6,7 @@ import Slide2 from "../assets/slide2.jpg";
 import Slide3 from "../assets/slide3.jpg";
 import Slide4 from "../assets/slide4.jpg";
 import Slide5 from "../assets/slide5.jpg";
+import Icon from "../assets/icon-white.svg";
 
 const cards = [
   {
@@ -62,8 +63,9 @@ const Advantage = () => {
       <div className=" max-w-[1037px] grid grid-cols-2 m-auto gap-10 items-center">
         {/* Left Static Section */}
         <div className="">
-          <div className="bg-[#FFFFFF1A] py-2 px-4 flex inline-flex rounded-full uppercase">
-            <div className="section-text-2">Out competitive advantage</div>
+          <div className="bg-[#FFFFFF1A] py-2 px-4 flex inline-flex gap-2.5 items-center rounded-full uppercase">
+            <img src={Icon} alt="Icon" className="w-6 h-6 mr-2" />
+            <div className="section-text-2">Our competitive advantage</div>
           </div>
           <h2 className="text-7xl font-bold mt-6">Why Choose Farmplify?</h2>
           <p className="mt-4 text-xl text-white max-w-[80%]">

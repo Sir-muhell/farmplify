@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import Image from "../assets/image.jpg";
+import Icon from "../assets/icon.svg";
 
 const coreServices = [
   {
@@ -32,8 +33,9 @@ const WhatWeDo = () => {
     <div className="px-20 pt-26 max-w-[1400px] mx-auto">
       <div className="grid grid-cols-2 gap-12 items-start">
         <div>
-          <div className="bg-[#30C67C1A] py-2 px-4 flex inline-flex rounded-full">
-            <div className="section-text">CORE SERVICES</div>
+          <div className="bg-[#30C67C1A] py-2 px-4 flex inline-flex gap-2.5 items-center rounded-full">
+            <img src={Icon} alt="Icon" />
+            <div className="section-text uppercase">core services</div>
           </div>
           <h2 className="text-[56px] text-[#1F3C15] font-semibold mb-4 mt-10">
             What We Do
