@@ -1,11 +1,11 @@
 import React from "react";
-import HeroSection from "../components/HeroSection";
+import HeroSection from "../components/home/HeroSection";
 import Navbar from "../components/Navbar";
 import Image from "../assets/image.jpg";
 import Icon from "../assets/icon.svg";
 import Mission from "../assets/mission.png";
-import WhatWeDoSection from "../components/WhatWeDo";
-import Advantage from "../components/Advantage";
+import WhatWeDoSection from "../components/home/WhatWeDo";
+import Advantage from "../components/home/Advantage";
 import Grow from "../components/Grow";
 
 const Home = () => {
@@ -23,7 +23,7 @@ const Home = () => {
           <p className="text-7xl font-semibold text-center text-[#1F3C15]">
             Invest in Africa’s Most <br /> Valuable Asset: Agriculture
           </p>
-          <p className="mt-4 text-[#616161] font-mediun text-xl max-w-[740px] text-center m-auto">
+          <p className="mt-4 text-[#616161] font-medium text-xl max-w-[740px] text-center m-auto">
             Farmplify manages high-yield agriculture investments for individuals
             and institutions. <br /> We unlock the full potential of agriculture
             by making it easy for you to invest in farmland, tree plantations,
