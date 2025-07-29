@@ -14,7 +14,7 @@ const socials = [
 const Footer = () => {
   return (
     <>
-      <footer className="py-10 px-20 max-w-[1400px] mx-auto">
+      <footer className="py-10 px-20 max-w-[1600px] mx-auto">
         <div className="h-px w-full bg-[#E4E7EC]"></div>
 
         <div className="flex justify-between gap-8 py-10">

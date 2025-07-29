@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import Image from "../../assets/image.jpg";
-import Icon from "../../assets/icon.svg";
+
+import Tape from "../Tape";
 
 const coreServices = [
   {
@@ -30,14 +31,11 @@ const WhatWeDo = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="px-20 pt-26 max-w-[1400px] mx-auto">
-      <div className="grid grid-cols-2 gap-12 items-start">
+    <div className="lg:px-20 p-5  lg:pt-26 pt-10 max-w-[1600px] mx-auto">
+      <div className="lg:grid grid-cols-2 gap-12 items-start">
         <div>
-          <div className="bg-[#30C67C1A] py-2 px-4 flex inline-flex gap-2.5 items-center rounded-full">
-            <img src={Icon} alt="Icon" />
-            <div className="section-text uppercase">core services</div>
-          </div>
-          <h2 className="text-[56px] text-[#1F3C15] font-semibold mb-4 mt-10">
+          <Tape text="core services" />
+          <h2 className="lg:text-[56px] text-[32px] text-[#1F3C15] font-semibold mb-4 mt-10">
             What We Do
           </h2>
           <p className="text-[#616161] max-w-[353px] text-base font-medium">
@@ -52,11 +50,11 @@ const WhatWeDo = () => {
         <img
           src={Image}
           alt="Farming"
-          className="rounded-xl w-full h-auto object-cover max-h-[350px]"
+          className="rounded-xl w-full h-auto object-cover max-h-[350px] lg:mt-0 mt-12"
         />
       </div>
 
-      <div className="mt-16 flex flex-col gap-10 h-80">
+      <div className="mt-16 flex flex-col gap-10 h-80 lg:flex hidden">
         <div className="flex items-left gap-6 justify-between">
           {coreServices.map((item, i) => (
             <div

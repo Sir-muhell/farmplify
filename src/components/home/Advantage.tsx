@@ -52,7 +52,7 @@ const Advantage = () => {
 
   return (
     <section
-      className="bg-[#1F3C15] text-white px-20 lg:px-40 py-32 gap-16 "
+      className="bg-[#1F3C15] text-white lg:px-20 px-10 lg:px-40 py-32 gap-16 "
       style={{
         backgroundImage: `url(${Image})`,
         backgroundRepeat: "repeat",
@@ -60,15 +60,17 @@ const Advantage = () => {
         backgroundPosition: "center",
       }}
     >
-      <div className=" max-w-[1037px] grid grid-cols-2 m-auto gap-10 items-center">
+      <div className=" max-w-[1037px] lg:grid grid-cols-2 m-auto gap-10 items-center">
         {/* Left Static Section */}
         <div className="">
           <div className="bg-[#FFFFFF1A] py-2 px-4 flex inline-flex gap-2.5 items-center rounded-full uppercase">
             <img src={Icon} alt="Icon" className="w-6 h-6 mr-2" />
             <div className="section-text-2">Our competitive advantage</div>
           </div>
-          <h2 className="text-7xl font-bold mt-6">Why Choose Farmplify?</h2>
-          <p className="mt-4 text-xl text-white max-w-[80%]">
+          <h2 className="lg:text-7xl text-5xl text-center lg:text-left font-bold mt-6">
+            Why Choose Farmplify?
+          </h2>
+          <p className="mt-4 lg:text-xl text-sm text-white lg:max-w-[80%] text-center lg:text-left font-medium">
             Here's why we think Farmplify is your Smartest Agricultural
             Investment.
           </p>

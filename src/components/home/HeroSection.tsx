@@ -15,7 +15,7 @@ interface Slide {
 }
 
 const BorderOverlay = () => (
-  <div className="absolute inset-0 z-20 pointer-events-none p-[64px] pb-[141px]">
+  <div className="absolute inset-0 z-20 pointer-events-none p-[64px] pb-[141px] lg:block hidden">
     <svg
       width="100%"
       height="100%"
@@ -192,7 +192,7 @@ const HeroCarousel = () => {
           />
 
           {/* Text Content */}
-          <div className="absolute bottom-[145px] right-40 ">
+          <div className="absolute lg:bottom-[145px] bottom-14 lg:right-40 flex justify-self-center ">
             <div className="container mx-auto px-4 text-white">
               <AnimatePresence mode="wait">
                 <motion.div
@@ -205,7 +205,7 @@ const HeroCarousel = () => {
                   className="mb-4"
                 >
                   <h1
-                    className="text-[82px] font-semibold mb-2 drop-shadow-lg tracking[-0.01em] leading-[93%]"
+                    className="lg:text-[82px] text-[61px] font-semibold mb-2 drop-shadow-lg tracking[-0.01em] leading-[93%]"
                     dangerouslySetInnerHTML={{
                       __html: slides[currentIndex].title,
                     }}
@@ -221,9 +221,9 @@ const HeroCarousel = () => {
                   animate="center"
                   exit="exit"
                   transition={{ delay: 0.3 }}
-                  className="mb-6"
+                  className=""
                 >
-                  <p className="text-xl font-medium md:text-2xl max-w-2xl ">
+                  <p className="md:text-xl text-sm font-medium md:text-2xl max-w-2xl ">
                     {slides[currentIndex].subtitle}
                   </p>
                 </motion.div>
@@ -237,17 +237,17 @@ const HeroCarousel = () => {
                   animate="center"
                   exit="exit"
                   transition={{ delay: 0.3 }}
-                  className="inline flex items-center justify-center space-x-3"
+                  className="lg:flex-row flex flex-col items-center  lg:space-x-3 lg:space-y-0 space-y-4 mt-4"
                 >
                   <a
                     href={slides[currentIndex].ctaLink}
-                    className="mt-10 bg-white text-[#1F3C15] font-semibold text-sm tracking-[0.2em] font-semibold px-6 py-3 rounded-full shadow-md hover:scale-105 transition uppercase"
+                    className=" bg-white text-[#1F3C15] font-semibold text-sm tracking-[0.2em] font-semibold px-6 py-3 rounded-full shadow-md hover:scale-105 transition uppercase w-full lg:w-fit text-center"
                   >
                     {slides[currentIndex].cta}
                   </a>
                   <a
                     href={slides[currentIndex].ctaLink}
-                    className="mt-10 bg-white text-[#1F3C15] font-semibold text-sm tracking-[0.2em] font-semibold px-6 py-3 rounded-full shadow-md hover:scale-105 transition uppercase"
+                    className=" bg-white text-[#1F3C15] font-semibold text-sm tracking-[0.2em] font-semibold px-6 py-3 rounded-full shadow-md hover:scale-105 transition uppercase w-full lg:w-fit text-center"
                   >
                     {slides[currentIndex].cta}
                   </a>
@@ -261,7 +261,7 @@ const HeroCarousel = () => {
       <BorderOverlay />
 
       {/* Navigation dots - above border */}
-      <div className="absolute bottom-[172px] flex w-full justify-center gap-2 z-30">
+      <div className="absolute bottom-[172px] lg:flex hidden w-full justify-center gap-2 z-30">
         {slides.map((_, index) => (
           <button
             key={index}

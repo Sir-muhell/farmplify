@@ -2,7 +2,7 @@ import Bg from "../assets/bg2.jpg";
 
 const Grow = () => {
   return (
-    <section className="py-24 px-20 max-w-[1400px] m-auto">
+    <section className="py-24 px-20 max-w-[1600px] m-auto">
       <div
         className="rounded-full grow h-[511px] text-center flex flex-col justify-center items-center"
         style={{
