@@ -4,9 +4,9 @@ interface HeadProps {
   tape: string;
   headOne: string;
   headTwo: string;
-  //   text: string;
+  text: string;
 }
-const Headings = ({ tape, headOne, headTwo }: HeadProps) => {
+const Headings = ({ tape, headOne, headTwo, text }: HeadProps) => {
   return (
     <div className="mt-8 text-center">
       <Tape text={tape} />
@@ -14,11 +14,7 @@ const Headings = ({ tape, headOne, headTwo }: HeadProps) => {
         {headOne} <br /> {headTwo}
       </p>
       <p className="mt-4 text-[#616161] font-medium text-xl max-w-[740px] text-center m-auto">
-        Farmplify manages high-yield agriculture investments for individuals and
-        institutions. <br /> We unlock the full potential of agriculture by
-        making it easy for you to invest in farmland, tree plantations, grain
-        systems, and livestock, all professionally managed, assetbacked, and
-        tech-enabled
+        {text}
       </p>
     </div>
   );

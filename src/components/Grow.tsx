@@ -2,9 +2,9 @@ import Bg from "../assets/bg2.jpg";
 
 const Grow = () => {
   return (
-    <section className="py-24 px-20 max-w-[1600px] m-auto">
+    <section className="lg:py-24 lg:px-20 max-w-[1600px] m-auto">
       <div
-        className="rounded-full grow h-[511px] text-center flex flex-col justify-center items-center"
+        className="lg:rounded-full grow h-[511px] text-center flex flex-col justify-center items-center lg:p-0 p-8"
         style={{
           backgroundImage: `linear-gradient(180deg, rgba(48, 198, 124, 0) -36.99%, rgba(48, 198, 124, 0.9) 93.84%), url(${Bg})`,
           backgroundRepeat: "no-repeat",
@@ -12,10 +12,10 @@ const Grow = () => {
           backgroundPosition: "center",
         }}
       >
-        <p className="font-semibold text-7xl text-white leading-[93%]">
+        <p className="font-semibold lg:text-7xl text-[40px] text-white leading-[93%]">
           Ready to Grow Your <br /> Income with Farmplify?
         </p>
-        <p className="text-xl font-medium text-white mt-6 max-w-[626px]">
+        <p className="lg:text-xl text-sm font-medium text-white mt-6 max-w-[626px]">
           Unlock secure, high-yield investment opportunities in African
           agriculture. Your growth starts here.
         </p>

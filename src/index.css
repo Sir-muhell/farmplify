@@ -22,6 +22,11 @@ body {
   letter-spacing: 0.4em; /* 40% = 0.4em */
   color: white;
 }
+@media (max-width: 640px) {
+  .section-text-2 {
+    font-size: 11px;
+  }
+}
 
 .no-scrollbar::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera */

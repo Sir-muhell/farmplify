@@ -40,10 +40,7 @@ const WhatWeDo = () => {
           </h2>
           <p className="text-[#616161] max-w-[353px] text-base font-medium">
             With over 10,000 farmers integrated into active supply chains,
-            Farmplify ensures reliable, sustainable sourcing. We've trained more
-            than 2,000 farmers in climate-smart and sustainable agriculture
-            practices, and developed over 2,000 hectares of farmland to support
-            resilient food systems and long-term agricultural growth.
+            Farmplify ensures reliable, sustainable sourcing.
           </p>
         </div>
 

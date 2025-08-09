@@ -5,6 +5,7 @@ import Image1 from "../../assets/hero.jpg";
 import Image2 from "../../assets/hero2.jpg";
 import Image3 from "../../assets/hero1.png";
 import Logo from "../../assets/logo-white.png";
+import Navbar from "../Navbar";
 
 interface Slide {
   image: string;
@@ -129,7 +130,7 @@ const HeroCarousel = () => {
 
   return (
     <div className="relative h-screen w-screen overflow-hidden">
-      <nav className="absolute  w-full z-30  mx-auto px-[128px] pt-[128px]">
+      {/* <nav className="absolute  w-full z-30  mx-auto px-[128px] pt-[128px]">
         <div className=" mx-auto px-4 grid grid-cols-3 items-center">
           <div className="justify-self-start">
             <img src={Logo} alt="Logo" className="h-[50px]" />
@@ -155,11 +156,11 @@ const HeroCarousel = () => {
               CORE SERVICES
             </Link>
           </div>
-
-          {/* Right side - Empty to balance grid */}
           <div className="justify-self-end"></div>
         </div>
-      </nav>
+      </nav> */}
+      <Navbar />
+
       <AnimatePresence mode="popLayout" custom={direction}>
         <motion.div
           key={currentIndex}

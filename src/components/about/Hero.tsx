@@ -4,7 +4,7 @@ import Image2 from "../../assets/about.png";
 const Hero = () => {
   return (
     <section
-      className="items-center flex flex-col px-20 min-h-screen mb-80  mx-auto relative"
+      className="items-center flex flex-col lg:px-20 px-5 min-h-screen  mx-auto relative"
       style={{
         backgroundImage: `url(${Image})`,
         backgroundRepeat: "no-repeat",
@@ -13,10 +13,10 @@ const Hero = () => {
       }}
     >
       <div className="mt-[200px]  text-center max-w-[694px]">
-        <p className="text-7xl font-semibold text-[#1F3C15]">
+        <p className="lg:text-7xl text-[50px] leading-[93%] font-semibold text-[#1F3C15]">
           Unlock Africa's Agricultural Gold
         </p>
-        <p className="mt-4 text-[#616161] font-medium text-xl max-w-[548px] m-auto">
+        <p className="mt-4 text-[#616161] font-medium lg:text-xl text-base max-w-[548px] m-auto">
           Partner with Farmplify to access trillion-dollar agricultural
           investment opportunities across Africa
         </p>
@@ -24,7 +24,13 @@ const Hero = () => {
           Book a Call
         </button>
       </div>
-      <div className="absolute top-80 -left-[40%] pointer-events-none">
+
+      <img
+        src={Image2}
+        alt="Hero_img"
+        className="lg:pt-20 pt-10 lg:max-w-[1000px] lg:px-20 mx-auto pb-20 w-full "
+      />
+      <div className="absolute top-80 -left-[40%] pointer-events-none hidden lg:block">
         <div
           className="
         w-[852px] h-[690px] 
@@ -35,7 +41,7 @@ const Hero = () => {
       "
         />
       </div>
-      <div className="absolute top-40 -right-[40%] pointer-events-none">
+      <div className="absolute top-40 -right-[40%] pointer-events-none hidden lg:block">
         <div
           className="
         w-[852px] h-[490px] 
@@ -46,11 +52,6 @@ const Hero = () => {
       "
         />
       </div>
-      <img
-        src={Image2}
-        alt="Hero_img"
-        className="absolute -bottom-48 max-w-[1000px] px-20 mx-auto"
-      />
     </section>
   );
 };

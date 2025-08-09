@@ -52,7 +52,7 @@ const Advantage = () => {
 
   return (
     <section
-      className="bg-[#1F3C15] text-white lg:px-20 px-10 lg:px-40 py-32 gap-16 "
+      className="bg-[#1F3C15] text-white lg:px-20 px-10 lg:px-40 lg:py-32 py-18 gap-16 "
       style={{
         backgroundImage: `url(${Image})`,
         backgroundRepeat: "repeat",
@@ -63,9 +63,14 @@ const Advantage = () => {
       <div className=" max-w-[1037px] lg:grid grid-cols-2 m-auto gap-10 items-center">
         {/* Left Static Section */}
         <div className="">
-          <div className="bg-[#FFFFFF1A] py-2 px-4 flex inline-flex gap-2.5 items-center rounded-full uppercase">
-            <img src={Icon} alt="Icon" className="w-6 h-6 mr-2" />
-            <div className="section-text-2">Our competitive advantage</div>
+          <div className="bg-[#FFFFFF1A] py-2 px-4 flex inline-flex gap-2.5 items-center rounded-full uppercase w-full">
+            <img src={Icon} alt="Icon" className="w-[18px] h-[18px] mr-2" />
+            <div className="section-text-2 lg:flex hidden">
+              Our competitive advantage
+            </div>
+            <div className="section-text-2 flex lg:hidden">
+              competitive advantage
+            </div>
           </div>
           <h2 className="lg:text-7xl text-5xl text-center lg:text-left font-bold mt-6">
             Why Choose Farmplify?
@@ -74,13 +79,13 @@ const Advantage = () => {
             Here's why we think Farmplify is your Smartest Agricultural
             Investment.
           </p>
-          <button className="mt-10 bg-white text-[#1F3C15] font-semibold text-sm tracking-[0.2em] font-semibold px-6 py-3 rounded-full shadow-md hover:scale-105 transition uppercase">
+          <button className="mt-10 bg-white text-[#1F3C15] font-semibold text-sm tracking-[0.2em] font-semibold px-6 py-3 rounded-full shadow-md hover:scale-105 transition uppercase lg:flex hidden">
             Book a Call
           </button>
         </div>
 
         {/* Right Scrollable Section */}
-        <div className="relative  h-[460px] flex">
+        <div className="relative  lg:h-[460px] h-[300px] flex lg:mt-0 mt-16">
           {/* Scrollable Cards */}
           <div
             ref={scrollRef}
@@ -101,13 +106,13 @@ const Advantage = () => {
                   <img
                     src={card.image}
                     alt={card.title}
-                    className="w-full h-[177px] object-cover rounded-xl"
+                    className="w-full lg:h-[177px] h-[108px] object-cover rounded-xl"
                   />
                   <div className="max-w-[70%]">
-                    <h3 className="text-white text-[32px] leading-[93%] font-semibold mt-7">
+                    <h3 className="text-white lg:text-[32px] text-base leading-[93%] font-semibold mt-7">
                       {card.title}
                     </h3>
-                    <p className="text-[#FFFFFF99] mt-4 text-xl leading-[130%] font-medium">
+                    <p className="text-[#FFFFFF99] mt-4 lg:text-xl text-xs leading-[130%] font-medium">
                       {card.description}
                     </p>
                   </div>

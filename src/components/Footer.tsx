@@ -14,7 +14,7 @@ const socials = [
 const Footer = () => {
   return (
     <>
-      <footer className="py-10 px-20 max-w-[1600px] mx-auto">
+      <footer className="py-10 lg:px-20 p-5 max-w-[1600px] mx-auto">
         <div className="h-px w-full bg-[#E4E7EC]"></div>
 
         <div className="flex justify-between gap-8 py-10">
@@ -42,15 +42,15 @@ const Footer = () => {
               <li>Features</li>
             </ul>
           </div>
-          <div className="text-base">
+          {/* <div className="text-base">
             <p className="text-[#98A2B3] font-normal">Use Cases</p>
             <ul className="font-medium text-[#667185] mt-6 space-y-4">
               <li>Product Design</li>
             </ul>
-          </div>
+          </div> */}
         </div>
         <div className="h-px w-full bg-[#E4E7EC]"></div>
-        <div className="py-10 flex justify-between">
+        <div className="py-10 lg:flex justify-between">
           <div className="">
             <img src={Logo} alt="Farmplify Logo" className="w-auto h-[64px]" />
             <p className="mt-4 text-[#1D2739] font-normal text-base">
