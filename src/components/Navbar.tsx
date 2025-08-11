@@ -42,51 +42,36 @@ const Navbar = () => {
   }, [scrolled]);
 
   const services = [
-    {
-      title: "INVESTMENT ADVISORY",
-      description: "Expert agricultural investment solutions",
-    },
-    { title: "RESEARCH", description: "Market and sector analysis" },
-    {
-      title: "ASSET MANAGEMENT",
-      description: "Professional farm and land management",
-    },
-    {
-      title: "TECH-ENABLED AGRICULTURE",
-      description: "Innovative farming technologies",
-    },
+    { title: "INVESTMENT ADVISORY", link: "/investment-advisory" },
+    { title: "Real Asset Investment", link: "/real-asset-investment" },
+    { title: "ASSET MANAGEMENT", link: "/asset-management" },
+    { title: "TECH-ENABLED AGRICULTURE", link: "/tech-enabled-agriculture" },
     {
       title: "COMMODITY & VALUE CHAIN INVESTMENT",
-      description: "Full value chain opportunities",
+      link: "/commodity-and-value-chain-investment",
     },
-    {
-      title: "ESG & IMPACT INVESTING",
-      description: "Sustainable investment strategies",
-    },
-    {
-      title: "FINANCIAL SERVICES",
-      description: "Tailored agricultural financing",
-    },
+    { title: "ESG & IMPACT INVESTING", link: "/esg-and-impact-investing" },
+    { title: "FINANCIAL SERVICES", link: "/financial-services" },
   ];
 
   return (
     <nav
-      className={`
-    fixed top-0 left-0 right-0 z-50 lg:mt-20 lg:mx-40 mx-5
-    transition-all duration-900
+      className={`realtive
+    fixed top-0 left-0 right-0 z-50  lg:mx-40 mx-0
+    transition-all duration-900 md:py-0 py-[13px]
     ${
       isHomePage
         ? scrolled
-          ? "bg-white text-[#1F3C15B2] shadow-md mt-5 md:mt-0 rounded-[100px] md:rounded-full"
-          : "bg-transparent text-[#1F3C15B2] md:text-white rounded-full"
+          ? "bg-white text-[#1F3C15B2] shadow-md mt-5 md:mt-0 rounded-[100px] md:rounded-full lg:mt-[48px] mx-4"
+          : "bg-transparent text-[#1F3C15B2] md:text-white rounded-full lg:mt-[101px]"
         : scrolled
-        ? "bg-[#EBFAF2] mt-5 md:mt-0 rounded-2xl md:rounded-full"
-        : "bg-white md:bg-[#EBFAF2] text-[#1F3C15B2] rounded-full"
+        ? "bg-[#EBFAF2] mt-5 md:mt-0 rounded-2xl md:rounded-full lg:mt-[48px] mx-4 md:mx-0"
+        : "bg-white md:bg-[#EBFAF2] text-[#1F3C15B2] rounded-full lg:mt-[48px]"
     }
   `}
     >
       <div className=" mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between md:flex-row flex-row-reverse py-5 lg:px-10 px-5 items-center">
+        <div className="flex justify-between md:flex-row flex-row-reverse  lg:px-10 lg:px-5 px-0 items-center">
           <div className="md:hidden flex w-[18px]"></div>
 
           {/* Logo - Left side */}
@@ -99,16 +84,16 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Navigation - Right side */}
-          <div className="hidden md:flex items-center justify-center space-x-10 font-semibold">
+          <div className="hidden md:flex items-center justify-center space-x-10 py-5 font-semibold text-[14px] text-[#1F3C15B2] ">
             <Link
               to="/"
-              className=" hover:text-[#1F3C15] text-sm uppercase tracking-wider"
+              className=" hover:text-[#1F3C15] uppercase tracking-wider"
             >
               HOME
             </Link>
             <Link
               to="/about"
-              className=" hover:text-[#1F3C15] text-sm uppercase tracking-wider"
+              className=" hover:text-[#1F3C15] uppercase tracking-wider"
             >
               ABOUT US
             </Link>
@@ -136,30 +121,6 @@ const Navbar = () => {
                   />
                 </svg>
               </button>
-
-              {servicesOpen && (
-                <div className="absolute left-0 mt-2 w-[600px] bg-white rounded-md shadow-lg z-50 overflow-hidden">
-                  <div className="p-4">
-                    <h3 className="text-lg font-bold  mb-4">CORE SERVICES</h3>
-                    <div className="grid grid-cols-2 gap-4">
-                      {services.map((service, index) => (
-                        <Link
-                          key={index}
-                          to="#"
-                          className="p-4 hover:bg-green-50 rounded-md transition-colors"
-                        >
-                          <h4 className="font-semibold  mb-1">
-                            {service.title}
-                          </h4>
-                          <p className="text-sm text-gray-600">
-                            {service.description}
-                          </p>
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              )}
             </div>
           </div>
 
@@ -174,10 +135,13 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-
       {/* Mobile menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-[#EBFAF2] rounded-2xl">
+        <div
+          className={`md:hidden bg-[#EBFAF2] rounded-2xl ${
+            scrolled ? "mx-0" : "mx-4"
+          } `}
+        >
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <Link
               to="/"
@@ -223,11 +187,11 @@ const Navbar = () => {
                   {services.map((service, index) => (
                     <Link
                       key={index}
-                      to="#"
-                      className="block px-3 py-2 text-sm text-gray-600 hover:text-green-600"
+                      to={service.link}
+                      className="block px-3 py-2 text-sm text-gray-600 hover:text-green-600 uppercase tracking-wider"
                       onClick={() => {
-                        setServicesOpen(false);
-                        setMobileMenuOpen(false);
+                        // setServicesOpen(false);
+                        // setMobileMenuOpen(false);
                       }}
                     >
                       {service.title}
@@ -235,6 +199,34 @@ const Navbar = () => {
                   ))}
                 </div>
               )}
+            </div>
+          </div>
+        </div>
+      )}
+      {servicesOpen && (
+        <div className="absolute right-0 mt-5 justify-self-end justify-end bg-[#EBFAF2] rounded-[24px] shadow-lg z-50 overflow-hidden flex p-4 md:flex hidden">
+          <div className="col-span-4 bg-white w-[300px] rounded-[20px] p-6 flex flex-col justify-between">
+            <p className="font-semibold text-[14px] text-[#1F3C15B2]">CORE</p>
+            <p className="font-medium text-xl text-[#272727] leading-[130%]">
+              Expert agricultural investment solutions across the value chain.
+            </p>
+          </div>
+          <div className="p-6">
+            <h3 className="font-semibold text-[14px] text-[#1F3C15B2]">
+              SERVICES
+            </h3>
+            <div className="grid grid-cols-2 space-x-[50px] mt-14">
+              {services.map((service, index) => (
+                <Link
+                  key={index}
+                  to={service.link}
+                  className="pb-6 hover:bg-green-50 rounded-md transition-colors  max-w-[204px]"
+                >
+                  <p className="text-[14px] font-black text-[#1F3C15] uppercase tracking-[0.15em]">
+                    {service.title}
+                  </p>
+                </Link>
+              ))}
             </div>
           </div>
         </div>
