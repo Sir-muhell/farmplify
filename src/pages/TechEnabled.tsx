@@ -25,8 +25,12 @@ const TechEnabled = () => {
         offerings={[
           {
             title: "Precision Agriculture Deployment",
-            description:
-              "IoT Systems: Smart sensors for soil moisture, temperature, and nutrient monitoring Drone Technology: Aerial imaging, crop monitoring, and precision application systems Analytics Platforms: Advanced data analysis for optimal decision-making GPS Integration: Precision planting, fertilizing, and harvesting systems",
+            bulletPoints: [
+              "IoT Systems: Smart sensors for soil moisture, temperature, and nutrient monitoring ",
+              "Drone Technology: Aerial imaging, crop monitoring, and precision application systems",
+              "Analytics Platforms: Advanced data analysis for optimal decision-making",
+              "GPS Integration: Precision planting, fertilizing, and harvesting systems",
+            ],
             image: Img,
             imagePosition: "right",
           },

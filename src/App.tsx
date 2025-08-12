@@ -38,7 +38,7 @@ function App() {
               element={<ImpactInvesting />}
             />
           </Routes>
-          <Footer />
+          {/* <Footer /> */}
         </BrowserRouter>
       </div>
     </>

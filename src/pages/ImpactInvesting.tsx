@@ -33,7 +33,12 @@ const ImpactInvesting = () => {
           {
             title: "Inclusive Agricultural Models",
             description:
-              "Support investments that create opportunities for underserved communities: Women in Agriculture: Programs that empower female farmers and entrepreneurs Youth Engagement: Initiatives that attract young people to agricultural careers Smallholder Integration: Models that connect small-scale farmers to value chains",
+              "Support investments that create opportunities for underserved communities: ",
+            bulletPoints: [
+              "Women in Agriculture: Programs that empower female farmers and entrepreneurs",
+              "Youth Engagement: Initiatives that attract young people to agricultural careers",
+              "Smallholder Integration: Models that connect small-scale farmers to value chains",
+            ],
             image: Img,
             imagePosition: "left",
           },

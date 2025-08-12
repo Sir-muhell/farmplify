@@ -32,8 +32,11 @@ const AssetInvestment = () => {
           },
           {
             title: "Flexible Leasing Models & Appreciation Strategies",
-            description:
-              "Cash Rent Leasing: Stable income through fixed rental agreements Crop Share Arrangements: Participate in production upside while sharing risks Development Partnerships: Joint ventures that unlock land value through development",
+            bulletPoints: [
+              "Cash Rent Leasing: Stable income through fixed rental agreements",
+              "Crop Share Arrangements: Participate in production upside while sharing risks",
+              "Development Partnerships: Joint ventures that unlock land value through development",
+            ],
             image: Img,
             imagePosition: "left",
           },

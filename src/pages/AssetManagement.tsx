@@ -32,8 +32,12 @@ const AssetManagement = () => {
           },
           {
             title: "Specialized Oversight Across Multiple Sectors",
-            description:
-              "Livestock Operations: Professional management of cattle, poultry, and other livestock enterprises Aquaculture Projects: Expert oversight of fish farming and marine agriculture ventures Horticulture Ventures: Specialized management of fruit, vegetable, and ornamental crop operations Plantation Management: Long-term management of tree crops, palm oil, rubber, and other plantation asset",
+            bulletPoints: [
+              "Livestock Operations: Professional management of cattle, poultry, and other livestock enterprises",
+              "Aquaculture Projects: Expert oversight of fish farming and marine agriculture ventures ",
+              "Horticulture Ventures: Specialized management of fruit, vegetable, and ornamental crop operations",
+              "Plantation Management: Long-term management of tree crops, palm oil, rubber, and other plantation asset",
+            ],
             image: Img,
             imagePosition: "left",
           },

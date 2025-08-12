@@ -33,7 +33,12 @@ const Commodity = () => {
           {
             title: "Post-Harvest Infrastructure Development",
             description:
-              "Invest in critical infrastructure that reduces post-harvest losses and adds value to agricultural production: Storage Facilities: Modern grain storage and warehouse systems Drying Infrastructure: Advanced drying and processing equipment Logistics Networks: Transportation and distribution system",
+              "Invest in critical infrastructure that reduces post-harvest losses and adds value to agricultural production:",
+            bulletPoints: [
+              "Storage Facilities: Modern grain storage and warehouse systems ",
+              "Drying Infrastructure: Advanced drying and processing equipment",
+              "Logistics Networks: Transportation and distribution system",
+            ],
             image: Img,
             imagePosition: "left",
           },

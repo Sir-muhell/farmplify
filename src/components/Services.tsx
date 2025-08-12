@@ -12,9 +12,10 @@ interface ServicesProps {
   }>;
   offerings: Array<{
     title: string;
-    description: string;
+    description?: string;
     image: string;
     imagePosition: "left" | "right";
+    bulletPoints?: string[];
   }>;
 
   className?: string;
@@ -31,25 +32,24 @@ const Services = ({
 }: ServicesProps) => {
   return (
     <>
-      <div
-        className={`max-w-[1600px] mx-auto lg:px-20 p-5 md:pb-[66px] ${className}`}
-      >
-        <div className="bg-[#EBFAF2] rounded-[32px] pt-12 md:px-[170px] pb-[134px]">
+      <div className="max-w-[1600px] mx-auto lg:px-20 p-2 lg:pb-[66px] pb-[56px]">
+        <div className="bg-[#EBFAF2] rounded-[32px] pt-12 lg:px-[170px] lg:pb-[134px] pb-[70px] px-6">
           <div className="flex flex-col items-center justify-center">
             {tapeText && <Tape text={tapeText} />}
-            <p className="mt-6 font-semibold text-[56px] text-[#1F3C15]">
+            <p className="mt-6 font-semibold lg:text-[56px] text-[35px] leading-[92%] text-[#1F3C15] text-center">
               {title}
             </p>
           </div>
 
-          <div className="mt-[64px]">
+          <div className="lg:mt-[64px]">
             {offerings.map((offering, index) => (
               <div
                 key={index}
-                className="grid grid-cols-2 gap-[70px]  last:mt-10"
+                className="grid grid-cols-1 lg:grid-cols-2 lg:gap-[70px] lg:last:mt-10 gap-6"
               >
-                {offering.imagePosition === "left" && (
-                  <div className="">
+                {/* Mobile: Always show image first */}
+                {offering.image && (
+                  <div className="lg:hidden mt-14">
                     <img
                       src={offering.image}
                       alt={offering.title}
@@ -58,21 +58,67 @@ const Services = ({
                   </div>
                 )}
 
+                {/* Desktop: Conditional image position */}
+                {offering.image && offering.imagePosition === "left" && (
+                  <div className="hidden lg:block">
+                    <img
+                      src={offering.image}
+                      alt={offering.title}
+                      className="rounded-[20px] max-h-[200px] w-full h-auto object-cover"
+                    />
+                  </div>
+                )}
+
+                {/* Text content */}
                 <div
-                  className={`flex flex-col ${
-                    offering.imagePosition === "right" ? "" : "pt-[51px]"
+                  className={`flex flex-col lg:pt-[51px] lg:text-left text-center ${
+                    offering.imagePosition === "right" ? "lg:pt-[51px]" : ""
                   }`}
                 >
                   <p className="text-[28px] font-semibold text-[#1F3C15] leading-[100%] tracking-[-0.01em]">
                     {offering.title}
                   </p>
-                  <p className="text-[#616161] text-base font-medium mt-4">
-                    {offering.description}
-                  </p>
+
+                  {/* Description if exists */}
+                  {offering.description && (
+                    <p className="text-[#616161] text-base font-medium mt-4">
+                      {offering.description}
+                    </p>
+                  )}
+
+                  {/* Bullet points if exists */}
+                  {offering.bulletPoints && (
+                    <ul className="mt-4">
+                      {offering.bulletPoints.map((point, i) => {
+                        const parts = point.split(": ");
+                        return (
+                          <li
+                            key={i}
+                            className={`flex items-start text-[#616161] text-base font-medium ${
+                              offering.description && "ml-4"
+                            }`}
+                          >
+                            <span className="mx-3">•</span>
+                            {parts.length > 1 ? (
+                              <p className="">
+                                <span className="font-semibold">
+                                  {parts[0]}:
+                                </span>{" "}
+                                {parts.slice(1).join(": ")}
+                              </p>
+                            ) : (
+                              point
+                            )}
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  )}
                 </div>
 
-                {offering.imagePosition === "right" && (
-                  <div className="pt-[51px]">
+                {/* Desktop: Conditional right image */}
+                {offering.image && offering.imagePosition === "right" && (
+                  <div className="hidden lg:block lg:pt-[51px]">
                     <img
                       src={offering.image}
                       alt={offering.title}
@@ -87,13 +133,13 @@ const Services = ({
       </div>
 
       <div
-        className={`max-w-[1600px] mx-auto lg:px-20 p-5 md:py-[76px] relative overflow-hidden ${className}`}
+        className={`max-w-[1600px] mx-auto lg:px-20 p-8 lg:py-[76px] relative overflow-hidden ${className}`}
       >
-        <p className="font-semibold text-[56px] text-[#1F3C15] w-[627px] leading-[93%] ml-5">
+        <p className="font-semibold lg:text-[56px] text-[40px] text-[#1F3C15] lg:w-[627px] leading-[93%] lg:ml-5">
           {why}
         </p>
 
-        <div className="mt-[108px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-16 z-40">
+        <div className="lg:mt-[108px] mt-14 grid grid-cols-1 lg:grid-cols-2 lg:grid-cols-5 lg:gap-16 gap-6 z-40">
           {features.map((feature, index) => (
             <div
               key={index}
