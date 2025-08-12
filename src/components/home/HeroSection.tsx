@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Image1 from "../../assets/hero.jpg";
 import Image2 from "../../assets/hero2.jpg";
-import Image3 from "../../assets/hero1.png";
+import Image3 from "../../assets/hero1.jpg";
 import Logo from "../../assets/logo-white.png";
 import Navbar from "../Navbar";
 
@@ -11,8 +11,10 @@ interface Slide {
   image: string;
   title: string;
   subtitle: string;
-  cta: string;
-  ctaLink: string;
+  cta1: string;
+  cta2: string;
+  cta1Link: string;
+  cta2Link: string;
 }
 
 const BorderOverlay = () => (
@@ -38,22 +40,28 @@ const slides: Slide[] = [
     image: Image3,
     title: "Grow More,<br/> Stress Less.",
     subtitle: "Access the tools, tips, and tech you need to thrive.",
-    cta: "Book a call",
-    ctaLink: "#",
+    cta1: "Request a Demo",
+    cta2: "Sign Up",
+    cta1Link: "#",
+    cta2Link: "#",
   },
   {
     image: Image1,
     title: "Graze More,<br/> Hassle Less",
     subtitle: "Access the tools, tips, and tech you need to thrive.",
-    cta: "book a call",
-    ctaLink: "#",
+    cta1: "Request a Demo",
+    cta2: "Sign Up",
+    cta1Link: "#",
+    cta2Link: "#",
   },
   {
     image: Image2,
     title: "Plant More,<br/> Worry Less",
     subtitle: "Access the tools, tips, and tech you need to thrive.",
-    cta: "book a call",
-    ctaLink: "#",
+    cta1: "Request a Demo",
+    cta2: "Sign Up",
+    cta1Link: "#",
+    cta2Link: "#",
   },
 ];
 
@@ -241,16 +249,16 @@ const HeroCarousel = () => {
                   className="lg:flex-row flex flex-col items-center  lg:space-x-3 lg:space-y-0 space-y-4 mt-4"
                 >
                   <a
-                    href={slides[currentIndex].ctaLink}
+                    href={slides[currentIndex].cta1Link}
                     className=" bg-white text-[#1F3C15] font-semibold text-sm tracking-[0.2em] font-semibold px-6 py-3 rounded-full shadow-md hover:scale-105 transition uppercase w-full lg:w-fit text-center"
                   >
-                    {slides[currentIndex].cta}
+                    {slides[currentIndex].cta1}
                   </a>
                   <a
-                    href={slides[currentIndex].ctaLink}
-                    className=" bg-white text-[#1F3C15] font-semibold text-sm tracking-[0.2em] font-semibold px-6 py-3 rounded-full shadow-md hover:scale-105 transition uppercase w-full lg:w-fit text-center"
+                    href={slides[currentIndex].cta2Link}
+                    className=" bg-transparent text-white border border-white font-semibold text-sm tracking-[0.2em] font-semibold px-6 py-3 rounded-full shadow-md hover:scale-105 transition uppercase w-full lg:w-fit text-center"
                   >
-                    {slides[currentIndex].cta}
+                    {slides[currentIndex].cta2}
                   </a>
                 </motion.div>
               </AnimatePresence>

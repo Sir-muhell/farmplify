@@ -82,7 +82,11 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Navigation - Right side */}
-          <div className="hidden md:flex items-center justify-center space-x-10 py-5 font-semibold text-[14px] text-[#1F3C15B2]">
+          <div
+            className={`hidden md:flex items-center justify-center space-x-10 py-5 font-semibold text-[14px] text-[#1F3C15B2] ${
+              isHomePage && !scrolled ? "text-white" : "text-[#1F3C15B2]"
+            }`}
+          >
             <Link
               to="/"
               className="hover:text-[#1F3C15] uppercase tracking-wider"
@@ -128,7 +132,11 @@ const Navbar = () => {
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="inline-flex items-center justify-center h-[18px] w-[18px] rounded-md hover:text-green-600 focus:outline-none"
             >
-              <img src={Bars} alt="Nav" className="w-full" />
+              {isHomePage && !scrolled ? (
+                <img src={BarsWhite} alt="Nav" className="w-full" />
+              ) : (
+                <img src={Bars} alt="Nav" className="w-full" />
+              )}
             </button>
           </div>
         </div>
@@ -137,21 +145,21 @@ const Navbar = () => {
       {/* Mobile menu */}
       {mobileMenuOpen && (
         <div
-          className={`md:hidden bg-[#EBFAF2] rounded-2xl shadow-2xl ${
+          className={`md:hidden bg-[#EBFAF2] rounded-2xl shadow-2xl text-[#1f3c15] text-sm font-semibold ${
             scrolled ? "mx-5 mt-1" : "mx-4"
           }`}
         >
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <div className="p-5 space-y-4">
             <Link
               to="/"
-              className="block px-3 py-2 text-base font-semibold hover:text-green-600"
+              className="block  "
               onClick={() => setMobileMenuOpen(false)}
             >
               HOME
             </Link>
             <Link
               to="/about"
-              className="block px-3 py-2 text-base font-semibold hover:text-green-600"
+              className="block "
               onClick={() => setMobileMenuOpen(false)}
             >
               ABOUT US
@@ -161,7 +169,7 @@ const Navbar = () => {
             <div className="relative ">
               <button
                 onClick={() => setServicesOpen(!servicesOpen)}
-                className="flex w-full justify-between items-center px-3 py-2 text-base font-semibold hover:text-green-600"
+                className="flex w-full justify-between items-center "
               >
                 CORE SERVICES
                 <svg
@@ -187,7 +195,7 @@ const Navbar = () => {
                     <Link
                       key={index}
                       to={service.link}
-                      className="block px-3 py-2 text-sm text-gray-600 hover:text-green-600 uppercase tracking-wider"
+                      className="block px-2 text[#1F3C15B2] py-1 text-sm font-medium uppercase tracking-wider"
                       onClick={() => {
                         setServicesOpen(false);
                         setMobileMenuOpen(false);
