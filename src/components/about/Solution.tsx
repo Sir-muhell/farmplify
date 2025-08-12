@@ -5,8 +5,8 @@ const Solution = () => {
   return (
     <div className="lg:p-20 p-5 max-w-[1600px] mx-auto">
       <Headings
-        //   tape="Investment Opportunities"
-        tape="Investment Opp"
+        tape="Investment Opportunities"
+        // tape="Investment Opp"
         headOne="The Farmplify Solution"
         headTwo=""
         text="Farmplify unlocks agriculture's potential through easy, professionally managed tech-enabled investments."

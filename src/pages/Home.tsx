@@ -1,8 +1,7 @@
-import React from "react";
 import HeroSection from "../components/home/HeroSection";
-import Navbar from "../components/Navbar";
+
 import Image from "../assets/image.jpg";
-import Icon from "../assets/icon.svg";
+
 import Mission from "../assets/mission.png";
 import WhatWeDoSection from "../components/home/WhatWeDo";
 import Advantage from "../components/home/Advantage";

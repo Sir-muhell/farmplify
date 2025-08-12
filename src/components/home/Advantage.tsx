@@ -62,14 +62,14 @@ const Advantage = () => {
     >
       <div className=" max-w-[1037px] lg:grid grid-cols-2 m-auto gap-10 items-center">
         {/* Left Static Section */}
-        <div className="">
-          <div className="bg-[#FFFFFF1A] py-2 px-4 flex inline-flex gap-2.5 items-center rounded-full uppercase w-full">
+        <div className="m-auto md:block flex flex-col items-center  justify-center">
+          <div className="bg-[#FFFFFF1A] py-2 px-4 flex inline-flex gap-2.5 items-center rounded-full uppercase w-fit ">
             <img src={Icon} alt="Icon" className="w-[18px] h-[18px] mr-2" />
             <div className="section-text-2 lg:flex hidden">
               Our competitive advantage
             </div>
             <div className="section-text-2 flex lg:hidden">
-              competitive advantage
+              Our competitive advantage
             </div>
           </div>
           <h2 className="lg:text-7xl text-5xl text-center lg:text-left font-bold mt-6">

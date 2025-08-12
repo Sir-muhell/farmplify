@@ -61,10 +61,10 @@ const Navbar = () => {
     ${
       isHomePage
         ? scrolled
-          ? "bg-white text-[#1F3C15B2] shadow-md mt-5 md:mt-0 lg:mt-[48px] mx-4 lg:mx-0"
+          ? "bg-white text-[#1F3C15B2] shadow-md mt-5 md:mt-0 lg:mt-[48px] mx-4 lg:mx-0 shadow-lg"
           : "bg-transparent text-[#1F3C15B2] md:text-white lg:mt-[101px]"
         : scrolled
-        ? "bg-[#EBFAF2] mt-5 md:mt-0 lg:mt-[48px] mx-4 md:mx-0"
+        ? "bg-[#EBFAF2] mt-5 md:mt-0 lg:mt-[48px] mx-4 md:mx-0 shadow-lg"
         : "bg-white md:bg-[#EBFAF2] text-[#1F3C15B2] lg:mt-[48px]"
     }
   `}
