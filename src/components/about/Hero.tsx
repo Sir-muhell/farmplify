@@ -12,7 +12,7 @@ const Hero = () => {
         backgroundPosition: "top",
       }}
     >
-      <div className="mt-[200px]  text-center max-w-[694px]">
+      <div className="lg:mt-[200px] mt-[175px]  text-center max-w-[694px]">
         <p className="lg:text-7xl text-[50px] leading-[93%] font-semibold text-[#1F3C15]">
           Unlock Africa's Agricultural Gold
         </p>

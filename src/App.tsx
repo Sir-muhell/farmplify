@@ -1,10 +1,5 @@
 import "./App.css";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  useLocation,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -21,7 +16,7 @@ import { PageTransitionWrapper, ScrollTop } from "./components/ScrollToTop";
 function App() {
   return (
     <>
-      <div className="App">
+      <div className="App overflow-x-hidden">
         <Router>
           <ScrollTop />
           <PageTransitionWrapper>

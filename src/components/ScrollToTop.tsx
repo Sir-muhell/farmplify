@@ -19,9 +19,9 @@ const PageTransitionWrapper = ({ children }: PageTransitionWrapperProps) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
-      animate={{ opacity: 20 }}
-      exit={{ opacity: 20 }}
-      transition={{ duration: 5 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
     >
       {children}
     </motion.div>

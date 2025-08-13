@@ -1,4 +1,3 @@
-import Icon from "../assets/icon.svg";
 import Tape from "./Tape";
 interface HeadProps {
   tape: string;

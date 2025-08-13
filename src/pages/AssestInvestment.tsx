@@ -7,7 +7,7 @@ import Icon2 from "../assets/icons/chart-up.svg";
 import Icon3 from "../assets/icons/coin-stack.svg";
 import Icon4 from "../assets/icons/heart.svg";
 import Icon5 from "../assets/icons/plant.svg";
-import Services from "../components/services";
+import Services from "../components/Service";
 
 const AssetInvestment = () => {
   return (

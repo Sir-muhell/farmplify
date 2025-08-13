@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "../../assets/bg.svg";
 import Slide1 from "../../assets/slide1.jpg";
 import Slide2 from "../../assets/slide2.jpg";
@@ -43,12 +43,12 @@ const cards = [
 
 const Advantage = () => {
   const scrollRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    container: scrollRef,
-  });
+  // const { scrollYProgress } = useScroll({
+  //   container: scrollRef,
+  // });
 
   // Animate fill bar height from 0% to 100%
-  const progressHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  // const progressHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"] as const);
 
   return (
     <section

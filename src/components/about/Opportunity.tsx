@@ -4,7 +4,7 @@ import Image3 from "../../assets/about-card-3.svg";
 
 const Opportunity = () => {
   return (
-    <div className="lg:py-20 py-10  gap-16 max-w-[1600px] mx-auto lg:px-20 p-5">
+    <div className="lg:py-20 py-0  gap-16 max-w-[1600px] mx-auto lg:px-20 p-5 pt-0">
       {/* <div className="mt-10 col-span-4">
         <p className="text-[#1F3C15] lg:text-[56px] text-[44px] font-semibold leading-[96%]">
           The Trillion-Dollar Opportunity

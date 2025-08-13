@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Logo from "../assets/logo.svg";
 import LogoWhite from "../assets/logo-white.png";
@@ -57,7 +57,7 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-900">
       <div
-        className={`mx-0 lg:mx-40 px-4 sm:px-6 lg:px-8 py-[13px] md:py-0 rounded-full transition-all duration-900
+        className={`mx-0 lg:mx-40 px-5 sm:px-6 lg:px-8 py-[13px] md:py-0 rounded-full transition-all duration-900
     ${
       isHomePage
         ? scrolled
@@ -127,7 +127,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
+          <div className="lg:hidden flex items-center">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="inline-flex items-center justify-center h-[18px] w-[18px] rounded-md hover:text-green-600 focus:outline-none"

@@ -1,10 +1,8 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import Image1 from "../../assets/hero.jpg";
 import Image2 from "../../assets/hero2.jpg";
 import Image3 from "../../assets/hero1.jpg";
-import Logo from "../../assets/logo-white.png";
 import Navbar from "../Navbar";
 
 interface Slide {
@@ -94,24 +92,24 @@ const HeroCarousel = () => {
 
   const slideVariants = {
     enter: (direction: "left" | "right") => ({
-      x: direction === "right" ? "100%" : "-100%",
+      x: direction === "right" ? "100%" : ("-100%" as const),
       opacity: 0,
     }),
     center: {
       x: 0,
       opacity: 1,
       transition: {
-        type: "tween",
-        ease: "easeInOut",
+        type: "tween" as const,
+        ease: "easeInOut" as const,
         duration: 0.6,
       },
     },
     exit: (direction: "left" | "right") => ({
-      x: direction === "right" ? "-100%" : "100%",
+      x: direction === "right" ? "-100%" : ("100%" as const),
       opacity: 0,
       transition: {
-        type: "tween",
-        ease: "easeInOut",
+        type: "tween" as const,
+        ease: "easeInOut" as const,
         duration: 0.6,
       },
     }),
@@ -173,31 +171,34 @@ const HeroCarousel = () => {
         <motion.div
           key={currentIndex}
           custom={direction}
-          initial="enter"
+          variants={slideVariants}
+          initial="false"
           animate="center"
           exit="exit"
           transition={{
-            type: "spring",
-            stiffness: 100,
-            damping: 30,
+            type: "keyframes",
+            stiffness: 20,
+            damping: 5,
+            mass: 0.1,
           }}
           drag="x"
           dragConstraints={{ left: 0, right: 0 }}
-          dragElastic={0.5}
-          onDragEnd={(e, { offset, velocity }) => {
-            const swipe = Math.abs(offset.x) * velocity.x;
-            if (swipe < -10000) {
+          dragElastic={0.2}
+          dragMomentum={false}
+          onDragEnd={(_e, { offset, velocity }) => {
+            const swipePower = Math.abs(offset.x) * velocity.x;
+            if (swipePower < -5000) {
               handleNext();
-            } else if (swipe > 10000) {
+            } else if (swipePower > 5000) {
               handlePrev();
             }
           }}
-          className="absolute inset-0 w-full h-full z-10"
+          className="absolute inset-0 w-full h-full z-10 cursor-grab active:cursor-grabbing "
         >
           <img
             src={slides[currentIndex].image}
             alt={`Slide ${currentIndex + 1}`}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover pointer-events-none"
           />
 
           {/* Text Content */}
