@@ -41,7 +41,7 @@ const Hero = () => {
       "
         />
       </div>
-      <div className="absolute top-40 -right-[40%] pointer-events-none hidden lg:block">
+      <div className="absolute lg:top-40 -top-40 lg:-right-[40%] -right-[170%] pointer-events-none ">
         <div
           className="
         w-[852px] h-[490px] 

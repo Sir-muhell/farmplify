@@ -38,7 +38,7 @@ const Hero = ({ text, head, subHead }: HeroProps) => {
       }}
     >
       <motion.div
-        className="lg:mt-[200px] mt-105 text-center max-w-[900px]"
+        className="lg:mt-[200px] mt-[105px] text-center max-w-[900px]"
         variants={container}
       >
         <motion.div variants={item}>

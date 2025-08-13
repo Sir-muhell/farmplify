@@ -68,9 +68,7 @@ const Advantage = () => {
             <div className="section-text-2 lg:flex hidden">
               Our competitive advantage
             </div>
-            <div className="section-text-2 flex lg:hidden">
-              Our competitive advantage
-            </div>
+            <div className="section-text-2 flex lg:hidden">Our advantage</div>
           </div>
           <h2 className="lg:text-7xl text-5xl text-center lg:text-left font-bold mt-6">
             Why Choose Farmplify?
