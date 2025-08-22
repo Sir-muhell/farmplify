@@ -1,7 +1,6 @@
 import HeroSection from "../components/home/HeroSection";
 
-import Image from "../assets/image.jpg";
-
+import Image from "../assets/solution/solution-1.webp";
 import Mission from "../assets/mission.png";
 import WhatWeDoSection from "../components/home/WhatWeDo";
 import Advantage from "../components/home/Advantage";
@@ -36,11 +35,11 @@ const Home = () => {
                 className="absolute pl-6 -bottom-20 lg:block hidden"
               />
             </div>
-            <div className="p-6">
+            <div className="p-6 ">
               <img
                 src={Image}
                 alt="Mission"
-                className=" lg:h-[454px] h-[255px] object-cover rounded-[20px] "
+                className="object-cover lg:h-[371px] h-[255px] w-full rounded-[20px] object-[25%_10%]"
               />
             </div>
           </div>

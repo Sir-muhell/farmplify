@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import Bg from "../assets/bg2.jpg";
+import Bg from "../assets/grow.webp";
 
 const Grow = () => {
   // Animation variants

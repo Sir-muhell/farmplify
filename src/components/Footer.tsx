@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
-import Logo from "../assets/logo.svg";
+import Logo from "../assets/logo.webp";
 import { Link } from "react-router-dom";
-import Instagram from "../assets/instagram.svg";
-import Twitter from "../assets/twitter.svg";
-import Facebook from "../assets/facebook.svg";
-import LinkedIn from "../assets/linkedin.svg";
+import Instagram from "../assets/icons/instagram.svg";
+import Twitter from "../assets/icons/twitter.svg";
+import Facebook from "../assets/icons/facebook.svg";
+import LinkedIn from "../assets/icons/linkedin.svg";
 
 const socials = [
   {

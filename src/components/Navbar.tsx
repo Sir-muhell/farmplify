@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import Logo from "../assets/logo.svg";
-import LogoWhite from "../assets/logo-white.png";
-import Bars from "../assets/union.svg";
-import BarsWhite from "../assets/union-white.svg";
+import Logo from "../assets/logo.webp";
+import LogoWhite from "../assets/logo-white.webp";
+import Bars from "../assets/icons/union.svg";
+import BarsWhite from "../assets/icons/union-white.svg";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

@@ -1,8 +1,8 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import Image1 from "../../assets/hero.jpg";
-import Image2 from "../../assets/hero2.jpg";
-import Image3 from "../../assets/hero1.jpg";
+import Image1 from "../../assets/hero.webp";
+import Image2 from "../../assets/hero2.webp";
+import Image3 from "../../assets/hero1.webp";
 import Navbar from "../Navbar";
 
 interface Slide {

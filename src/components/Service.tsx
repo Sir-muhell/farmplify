@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import Tape from "./Tape";
-import Bg from "../assets/bg.png";
+import Bg from "../assets/bg.webp";
 
 interface ServicesProps {
   title: string;
