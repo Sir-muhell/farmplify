@@ -1,7 +1,9 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Grow from "../components/Grow";
-import Img from "../assets/slide2.jpg";
+import Img1 from "../assets/services/services-3.webp";
+import Img2 from "../assets/services/services-10.webp";
+import Img3 from "../assets/services/services-20.webp";
 import Icon1 from "../assets/icons/building-1.svg";
 import Icon2 from "../assets/icons/chart-up.svg";
 import Icon3 from "../assets/icons/coin-stack.svg";
@@ -27,21 +29,21 @@ const Investment = () => {
             title: "Agri-Market Insights & Investment Opportunity Analysis",
             description:
               "Stay ahead of market trends with our comprehensive analysis of agricultural sectors, emerging markets, and investment opportunities. We provide detailed market research, price forecasting, and sector-specific insights that inform your investment decisions.",
-            image: Img,
+            image: Img1,
             imagePosition: "right",
           },
           {
             title: "Risk Profiling & Tailored Portfolio Structuring",
             description:
               "Every investor has unique goals and risk tolerance. We develop customized investment portfolios that align with your financial objectives while managing exposure across different agricultural assets, geographies, and market cycles.",
-            image: Img,
+            image: Img2,
             imagePosition: "left",
           },
           {
             title: "Feasibility Studies & Due Diligence",
             description:
               "Make informed investment decisions with our thorough feasibility studies and due diligence processes. We evaluate technical, financial, and operational aspects of potential investments, providing you with comprehensive risk assessments and return projections.",
-            image: Img,
+            image: Img3,
             imagePosition: "right",
           },
         ]}

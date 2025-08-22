@@ -1,7 +1,9 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Grow from "../components/Grow";
-import Img from "../assets/slide2.jpg";
+import Img1 from "../assets/services/services-14.webp";
+import Img2 from "../assets/services/services-7.webp";
+import Img3 from "../assets/services/services-18.webp";
 import Icon1 from "../assets/icons/building-1.svg";
 import Icon2 from "../assets/icons/chart-up.svg";
 import Icon3 from "../assets/icons/coin-stack.svg";
@@ -31,14 +33,14 @@ const FinancialServices = () => {
               "Blended Finance: Innovative structures combining different capital sources for optimal terms",
             ],
 
-            image: Img,
+            image: Img1,
             imagePosition: "right",
           },
           {
             title: "Project Finance & Syndication",
             description:
               "Structure and syndicate large-scale agricultural projects with multiple investors and lenders. Our project finance expertise ensures optimal capital structure and risk allocation for complex agricultural ventures.",
-            image: Img,
+            image: Img2,
             imagePosition: "left",
           },
           {
@@ -48,7 +50,7 @@ const FinancialServices = () => {
               "Insurance Solutions: Comprehensive risk management through agricultural insurance products",
               "Legal Advisory: Navigate regulatory requirements and structure transactions for maximum protection",
             ],
-            image: Img,
+            image: Img3,
             imagePosition: "right",
           },
         ]}

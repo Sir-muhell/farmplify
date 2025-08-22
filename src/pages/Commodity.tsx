@@ -1,7 +1,9 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Grow from "../components/Grow";
-import Img from "../assets/slide2.jpg";
+import Img1 from "../assets/services/services-8.webp";
+import Img2 from "../assets/services/services-16.webp";
+import Img3 from "../assets/services/services-19.webp";
 import Icon1 from "../assets/icons/building-1.svg";
 import Icon2 from "../assets/icons/chart-up.svg";
 import Icon3 from "../assets/icons/coin-stack.svg";
@@ -27,7 +29,7 @@ const Commodity = () => {
             title: "Structured Grain & Cash Crop Trading",
             description:
               "Access global commodity markets through our structured trading programs. We provide market access, risk management tools, and trading expertise that help you capitalize on price movements and seasonal opportunities.",
-            image: Img,
+            image: Img1,
             imagePosition: "right",
           },
           {
@@ -39,14 +41,14 @@ const Commodity = () => {
               "Drying Infrastructure: Advanced drying and processing equipment",
               "Logistics Networks: Transportation and distribution system",
             ],
-            image: Img,
+            image: Img2,
             imagePosition: "left",
           },
           {
             title: "Agro-Processing & Branding Ventures",
             description:
               "Transform raw agricultural products into higher-value processed goods. We identify and develop processing opportunities that create premium products and build brand value in target markets.",
-            image: Img,
+            image: Img3,
             imagePosition: "right",
           },
         ]}

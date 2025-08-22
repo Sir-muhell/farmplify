@@ -1,7 +1,9 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Grow from "../components/Grow";
-import Img from "../assets/slide2.jpg";
+import Img1 from "../assets/services/services-9.webp";
+import Img2 from "../assets/services/services-4.webp";
+import Img3 from "../assets/services/services-6.webp";
 import Icon1 from "../assets/icons/building-1.svg";
 import Icon2 from "../assets/icons/chart-up.svg";
 import Icon3 from "../assets/icons/coin-stack.svg";
@@ -31,21 +33,21 @@ const TechEnabled = () => {
               "Analytics Platforms: Advanced data analysis for optimal decision-making",
               "GPS Integration: Precision planting, fertilizing, and harvesting systems",
             ],
-            image: Img,
+            image: Img1,
             imagePosition: "right",
           },
           {
             title: "Agri-Tech Investment & Acceleration",
             description:
               "Partner with innovative startups and technology companies that are reshaping agriculture. We identify promising agri-tech ventures and provide investment capital and acceleration support to bring breakthrough technologies to market.",
-            image: Img,
+            image: Img2,
             imagePosition: "left",
           },
           {
             title: "Smart Farm Monitoring & Digital Dashboards",
             description:
               "Real-time monitoring and control systems that provide complete visibility into your agricultural operations. Our digital platforms integrate multiple data sources to provide actionable insights and automated management capabilities.",
-            image: Img,
+            image: Img3,
             imagePosition: "right",
           },
         ]}

@@ -1,7 +1,9 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Grow from "../components/Grow";
-import Img from "../assets/slide2.jpg";
+import Img1 from "../assets/services/services-2.webp";
+import Img2 from "../assets/services/services-1.webp";
+import Img3 from "../assets/services/services-15.webp";
 import Icon1 from "../assets/icons/building-1.svg";
 import Icon2 from "../assets/icons/chart-up.svg";
 import Icon3 from "../assets/icons/coin-stack.svg";
@@ -27,7 +29,7 @@ const AssetInvestment = () => {
             title: "Farmland Acquisition & Development",
             description:
               "Identify and acquire prime agricultural land with strong production potential and appreciation prospects. Our acquisition process includes comprehensive soil analysis, water rights evaluation, and development planning to maximize asset value.",
-            image: Img,
+            image: Img1,
             imagePosition: "right",
           },
           {
@@ -37,14 +39,14 @@ const AssetInvestment = () => {
               "Crop Share Arrangements: Participate in production upside while sharing risks",
               "Development Partnerships: Joint ventures that unlock land value through development",
             ],
-            image: Img,
+            image: Img2,
             imagePosition: "left",
           },
           {
             title: "Carbon Farming & Sustainable Land Use",
             description:
               "Capitalize on the growing carbon credit market through sustainable farming practices. We help you implement carbon farming strategies that generate additional revenue streams while improving soil health and environmental impact.",
-            image: Img,
+            image: Img3,
             imagePosition: "right",
           },
         ]}

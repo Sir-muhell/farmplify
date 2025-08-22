@@ -1,4 +1,7 @@
-import RealEstate from "../../assets/real-estate.jpg";
+import Img1 from "../../assets/solution/solution-1.webp";
+import Img2 from "../../assets/solution/solution-2.webp";
+import Img3 from "../../assets/solution/solution-3.webp";
+import Img4 from "../../assets/solution/solution-4.webp";
 import Headings from "../../components/Headings";
 
 const Solution = () => {
@@ -25,9 +28,9 @@ const Solution = () => {
           </div>
           <div className="col-span-7 lg:p-6 p-2 h-full">
             <img
-              src={RealEstate}
+              src={Img4}
               alt=""
-              className="lg:h-full h-[183px] w-full object-cover rounded-[18px]"
+              className="lg:h-[372px] h-[183px] w-full object-cover rounded-[18px]"
             />
           </div>
         </div>
@@ -45,7 +48,7 @@ const Solution = () => {
             </div>
             <div className="col-span-3 lg:p-6 p-2 h-full">
               <img
-                src={RealEstate}
+                src={Img3}
                 alt=""
                 className="lg:h-full h-[183px] w-full object-cover rounded-[18px]"
               />
@@ -64,7 +67,7 @@ const Solution = () => {
             </div>
             <div className="col-span-3 lg:p-6 p-2 h-full">
               <img
-                src={RealEstate}
+                src={Img2}
                 alt=""
                 className="lg:h-full h-[183px] w-full object-cover rounded-[18px]"
               />
@@ -84,9 +87,9 @@ const Solution = () => {
           </div>
           <div className="col-span-7 lg:p-6 p-2 h-full">
             <img
-              src={RealEstate}
+              src={Img1}
               alt=""
-              className="lg:h-full h-[183px] w-full object-cover rounded-[18px]"
+              className="lg:h-[372px] h-[183px] w-full object-cover object-[25%_30%] rounded-[18px]"
             />
           </div>
         </div>

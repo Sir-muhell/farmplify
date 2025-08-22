@@ -1,5 +1,5 @@
 import Image from "../../assets/bg-green.svg";
-import Image2 from "../../assets/about.png";
+import Image2 from "../../assets/about.webp";
 
 const Hero = () => {
   return (
@@ -25,11 +25,10 @@ const Hero = () => {
         </button>
       </div>
 
-      <img
-        src={Image2}
-        alt="Hero_img"
-        className="lg:pt-20 pt-10 lg:max-w-[1000px] lg:px-20 mx-auto pb-20 w-full "
-      />
+      <div className="lg:pt-20 pt-10 lg:max-w-[1000px] lg:px-20 mx-auto pb-20 w-full">
+        <img src={Image2} alt="Hero_img" className="rounded-[24px]" />
+      </div>
+
       <div className="absolute top-80 -left-[40%] pointer-events-none hidden lg:block">
         <div
           className="

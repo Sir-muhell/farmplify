@@ -1,7 +1,9 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Grow from "../components/Grow";
-import Img from "../assets/slide2.jpg";
+import Img1 from "../assets/services/services-5.webp";
+import Img2 from "../assets/services/services-21.webp";
+import Img3 from "../assets/services/services-12.webp";
 import Icon1 from "../assets/icons/building-1.svg";
 import Icon2 from "../assets/icons/chart-up.svg";
 import Icon3 from "../assets/icons/coin-stack.svg";
@@ -27,7 +29,7 @@ const ImpactInvesting = () => {
             title: "Carbon Credit-Linked Investments",
             description:
               "Participate in the rapidly growing carbon credit market through investments that sequester carbon while generating agricultural returns. Our projects focus on soil carbon, reforestation, and regenerative agriculture practices.",
-            image: Img,
+            image: Img1,
             imagePosition: "right",
           },
           {
@@ -39,14 +41,14 @@ const ImpactInvesting = () => {
               "Youth Engagement: Initiatives that attract young people to agricultural careers",
               "Smallholder Integration: Models that connect small-scale farmers to value chains",
             ],
-            image: Img,
+            image: Img2,
             imagePosition: "left",
           },
           {
             title: "Environmental & Social Impact Reporting",
             description:
               "Comprehensive measurement and reporting of your investment's environmental and social impact. We provide detailed metrics and transparent reporting that demonstrates your commitment to sustainable development.",
-            image: Img,
+            image: Img3,
             imagePosition: "right",
           },
         ]}
