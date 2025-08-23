@@ -8,23 +8,6 @@ import BarsWhite from "../assets/icons/union-white.svg";
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
-  // const dropdownRef = useRef<HTMLDivElement>(null);
-
-  // Close dropdown when clicking outside
-  // useEffect(() => {
-  //   const handleClickOutside = (event: MouseEvent) => {
-  //     if (
-  //       dropdownRef.current &&
-  //       !dropdownRef.current.contains(event.target as Node)
-  //     ) {
-  //       setServicesOpen(false);
-  //     }
-  //   };
-
-  //   document.addEventListener("mousedown", handleClickOutside);
-  //   return () => document.removeEventListener("mousedown", handleClickOutside);
-  // }, []);
-
   const location = useLocation();
   const isHomePage = location.pathname === "/";
   const [scrolled, setScrolled] = useState(false);
@@ -53,6 +36,16 @@ const Navbar = () => {
     { title: "ESG & IMPACT INVESTING", link: "/esg-and-impact-investing" },
     { title: "FINANCIAL SERVICES", link: "/financial-services" },
   ];
+
+  // Check if a link is active
+  const isActiveLink = (path: string) => {
+    return location.pathname === path;
+  };
+
+  // Check if services dropdown should be considered active
+  const isServicesActive = services.some(
+    (service) => location.pathname === service.link
+  );
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-900">
@@ -89,13 +82,17 @@ const Navbar = () => {
           >
             <Link
               to="/"
-              className="hover:text-[#1F3C15] uppercase tracking-wider"
+              className={`hover:text-[#1F3C15] uppercase tracking-wider transition-colors ${
+                isActiveLink("/") ? "text-[#1F3C15] scale-105" : ""
+              }`}
             >
               HOME
             </Link>
             <Link
               to="/about"
-              className="hover:text-[#1F3C15] uppercase tracking-wider"
+              className={`hover:text-[#1F3C15] uppercase tracking-wider transition-colors ${
+                isActiveLink("/about") ? "text-[#1F3C15] scale-105" : ""
+              }`}
             >
               ABOUT US
             </Link>
@@ -104,7 +101,9 @@ const Navbar = () => {
             <div className="relative">
               <button
                 onClick={() => setServicesOpen(!servicesOpen)}
-                className="flex items-center hover:text-[#1F3C15] text-sm uppercase tracking-wider"
+                className={`flex items-center hover:text-[#1F3C15] text-sm uppercase tracking-wider transition-colors ${
+                  isServicesActive ? "text-[#1F3C15] scale-105" : ""
+                }`}
               >
                 CORE SERVICES
                 <svg
@@ -124,6 +123,14 @@ const Navbar = () => {
                 </svg>
               </button>
             </div>
+            <Link
+              to="/contact"
+              className={`hover:text-[#1F3C15] uppercase tracking-wider transition-colors ${
+                isActiveLink("/contact") ? "text-[#1F3C15] scale-105" : ""
+              }`}
+            >
+              CONTACT US
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -149,17 +156,21 @@ const Navbar = () => {
             scrolled ? "mx-5 mt-1" : "mx-4"
           }`}
         >
-          <div className="p-5 space-y-4">
+          <div className="p-5 space-y-5">
             <Link
               to="/"
-              className="block  "
+              className={`block transition-colors ${
+                isActiveLink("/") ? "font-bold text-[#1F3C15]" : ""
+              }`}
               onClick={() => setMobileMenuOpen(false)}
             >
               HOME
             </Link>
             <Link
               to="/about"
-              className="block "
+              className={`block transition-colors ${
+                isActiveLink("/about") ? "font-bold text-[#1F3C15]" : ""
+              }`}
               onClick={() => setMobileMenuOpen(false)}
             >
               ABOUT US
@@ -169,7 +180,9 @@ const Navbar = () => {
             <div className="relative ">
               <button
                 onClick={() => setServicesOpen(!servicesOpen)}
-                className="flex w-full justify-between items-center "
+                className={`flex w-full justify-between items-center transition-colors ${
+                  isServicesActive ? "font-bold text-[#1F3C15]" : ""
+                }`}
               >
                 CORE SERVICES
                 <svg
@@ -190,12 +203,16 @@ const Navbar = () => {
               </button>
 
               {servicesOpen && (
-                <div className="pl-4 mt-2 space-y-2">
+                <div className="pl-4 mt-2 space-y-4">
                   {services.map((service, index) => (
                     <Link
                       key={index}
                       to={service.link}
-                      className="block px-2 text[#1F3C15B2] py-1 text-sm font-medium uppercase tracking-wider"
+                      className={`block px-2 py-1 text-sm font-medium uppercase tracking-wider transition-colors ${
+                        isActiveLink(service.link)
+                          ? "font-bold text-[#1F3C15] "
+                          : "text-[#1F3C15B2]"
+                      }`}
                       onClick={() => {
                         setServicesOpen(false);
                         setMobileMenuOpen(false);
@@ -207,6 +224,15 @@ const Navbar = () => {
                 </div>
               )}
             </div>
+            <Link
+              to="/contact"
+              className={`block transition-colors ${
+                isActiveLink("/contact") ? "font-bold text-[#1F3C15]" : ""
+              }`}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              CONTACT US
+            </Link>
           </div>
         </div>
       )}
@@ -237,7 +263,13 @@ const Navbar = () => {
                 className="pb-6 hover:bg-green-50 rounded-md transition-colors max-w-[204px]"
                 onClick={() => setServicesOpen(false)}
               >
-                <p className="text-[14px] font-black text-[#1F3C15] uppercase tracking-[0.15em]">
+                <p
+                  className={`text-[14px] uppercase tracking-[0.15em] ${
+                    isActiveLink(service.link)
+                      ? "font-extrabold text-[#1F3C15]"
+                      : "font-bold text-[#1F3C15]"
+                  }`}
+                >
                   {service.title}
                 </p>
               </Link>
