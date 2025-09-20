@@ -35,7 +35,7 @@ const Solution = () => {
           </div>
         </div>
         <div className="lg:grid grid-cols-2 gap-10 lg:mt-10 mt-8 lg:space-y-0 space-y-8">
-          <div className="bg-[#FFF48C] rounded-3xl lg:grid grid-cols-7 lg:h-[420px]">
+          <div className="bg-[#E5CFC2] rounded-3xl lg:grid grid-cols-7 lg:h-[420px]">
             <div className="col-span-4 w-[186px] lg:w-full text-center lg:text-left mx-auto lg:mx-0 lg:pl-10 flex flex-col justify-center">
               <p className="section-text pt-12 lg:pt-0">Silviculture</p>
               <p className="lg:text-[50px] text-[32px] font-semibold text-[#1F3C15] leading-[93%] mt-6">
@@ -54,7 +54,7 @@ const Solution = () => {
               />
             </div>
           </div>
-          <div className="bg-[#FFE500] rounded-3xl lg:grid grid-cols-7 lg:h-[420px]">
+          <div className="bg-[#E5CFC2] rounded-3xl lg:grid grid-cols-7 lg:h-[420px]">
             <div className="col-span-4 w-[186px] lg:w-full text-center lg:text-left mx-auto lg:mx-0 lg:pl-10 flex flex-col justify-center">
               <p className="section-text pt-12 lg:pt-0">Granary</p>
               <p className="lg:text-[50px] text-[32px] font-semibold text-[#1F3C15] leading-[93%] mt-6">

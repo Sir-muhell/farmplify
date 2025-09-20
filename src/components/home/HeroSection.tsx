@@ -1,6 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import Image1 from "../../assets/hero.webp";
 import Image2 from "../../assets/hero2.webp";
 import Image3 from "../../assets/hero1.webp";
 import Navbar from "../Navbar";
@@ -16,7 +15,7 @@ interface Slide {
 }
 
 const BorderOverlay = () => (
-  <div className="absolute inset-0 z-20 pointer-events-none p-[64px] pb-[141px] lg:block hidden">
+  <div className="absolute inset-0 z-20 pointer-events-none p-[64px]  lg:block hidden">
     <svg
       width="100%"
       height="100%"
@@ -36,22 +35,22 @@ const BorderOverlay = () => (
 const slides: Slide[] = [
   {
     image: Image3,
-    title: "Grow More,<br/> Stress Less.",
+    title: "Prepare for the future Today",
     subtitle: "Access the tools, tips, and tech you need to thrive.",
     cta1: "Request a Demo",
     cta2: "Sign Up",
     cta1Link: "#",
     cta2Link: "#",
   },
-  {
-    image: Image1,
-    title: "Graze More,<br/> Hassle Less",
-    subtitle: "Access the tools, tips, and tech you need to thrive.",
-    cta1: "Request a Demo",
-    cta2: "Sign Up",
-    cta1Link: "#",
-    cta2Link: "#",
-  },
+  // {
+  //   image: Image1,
+  //   title: "Graze More,<br/> Hassle Less",
+  //   subtitle: "Access the tools, tips, and tech you need to thrive.",
+  //   cta1: "Request a Demo",
+  //   cta2: "Sign Up",
+  //   cta1Link: "#",
+  //   cta2Link: "#",
+  // },
   {
     image: Image2,
     title: "Plant More,<br/> Worry Less",
@@ -85,10 +84,10 @@ const HeroCarousel = () => {
     setCurrentIndex((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
   };
 
-  const goToSlide = (index: number): void => {
-    setDirection(index > currentIndex ? "right" : "left");
-    setCurrentIndex(index);
-  };
+  // const goToSlide = (index: number): void => {
+  //   setDirection(index > currentIndex ? "right" : "left");
+  //   setCurrentIndex(index);
+  // };
 
   const slideVariants = {
     enter: (direction: "left" | "right") => ({
@@ -239,7 +238,7 @@ const HeroCarousel = () => {
                 </motion.div>
               </AnimatePresence>
 
-              <AnimatePresence mode="wait">
+              {/* <AnimatePresence mode="wait">
                 <motion.div
                   key={`cta-${currentIndex}`}
                   variants={textVariants}
@@ -262,16 +261,18 @@ const HeroCarousel = () => {
                     {slides[currentIndex].cta2}
                   </a>
                 </motion.div>
-              </AnimatePresence>
+              </AnimatePresence> */}
             </div>
           </div>
+
+          <div className="absolute inset-0 bg-[linear-gradient(371.47deg,#30C67C_12.5%,rgba(48,198,124,0)_50.29%)]"></div>
         </motion.div>
       </AnimatePresence>
 
       <BorderOverlay />
 
       {/* Navigation dots - above border */}
-      <div className="absolute bottom-[172px] lg:flex hidden w-full justify-center gap-2 z-30">
+      {/* <div className="absolute bottom-[172px] lg:flex hidden w-full justify-center gap-2 z-30">
         {slides.map((_, index) => (
           <button
             key={index}
@@ -282,7 +283,7 @@ const HeroCarousel = () => {
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };

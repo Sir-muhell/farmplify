@@ -1,16 +1,16 @@
+import Body from "../components/about/Body";
 import Hero from "../components/about/Hero";
 import Grow from "../components/Grow";
-import Opportunity from "../components/about/Opportunity";
-import Solution from "../components/about/Solution";
+import Image from "../assets/bg-green.svg";
 import Navbar from "../components/Navbar";
 
 const About = () => {
   return (
     <main className="relative mx-auto overflow-hidden">
       <Navbar />
-      <Hero />
-      <Opportunity />
-      <Solution />
+      <Hero text="Who We Are" image={Image} color="#1F3C15" />
+      <Body />
+
       <Grow />
     </main>
   );

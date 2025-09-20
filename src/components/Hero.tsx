@@ -59,7 +59,7 @@ const Hero = ({ text, head, subHead }: HeroProps) => {
           {subHead}
         </motion.p>
 
-        <motion.div variants={item}>
+        {/* <motion.div variants={item}>
           <motion.button
             className="mt-10 bg-[#30C67C] text-white font-semibold text-sm tracking-[0.2em] px-6 py-3 rounded-full shadow-md hover:scale-105 transition uppercase"
             whileHover={{ scale: 1.05 }}
@@ -67,7 +67,7 @@ const Hero = ({ text, head, subHead }: HeroProps) => {
           >
             Book a Call
           </motion.button>
-        </motion.div>
+        </motion.div> */}
       </motion.div>
     </motion.section>
   );

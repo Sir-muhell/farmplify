@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Logo from "../assets/logo.webp";
-import LogoWhite from "../assets/logo-white.webp";
+// import LogoWhite from "../assets/logo-white.webp";
 import Bars from "../assets/icons/union.svg";
 import BarsWhite from "../assets/icons/union-white.svg";
 
@@ -11,6 +11,9 @@ const Navbar = () => {
   const location = useLocation();
   const isHomePage = location.pathname === "/";
   const [scrolled, setScrolled] = useState(false);
+  const [isAboutUsOpen, setIsAboutUsOpen] = useState(false);
+  // const isAboutUsOpen =
+  //   location.pathname === "/about" || location.pathname === "/team";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,6 +49,8 @@ const Navbar = () => {
   const isServicesActive = services.some(
     (service) => location.pathname === service.link
   );
+  const isAboutActive =
+    location.pathname === "/about" || location.pathname === "/team";
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-900">
@@ -54,8 +59,8 @@ const Navbar = () => {
     ${
       isHomePage
         ? scrolled
-          ? "bg-white text-[#1F3C15B2] shadow-md mt-5 md:mt-0 lg:mt-[48px] mx-4 lg:mx-0 shadow-lg"
-          : "bg-transparent text-[#1F3C15B2] md:text-white lg:mt-[101px]"
+          ? "bg-[#EBFAF2] text-[#1F3C15B2] shadow-md mt-5 md:mt-0 lg:mt-[48px] mx-4 lg:mx-0 shadow-lg"
+          : "lg:bg-[#EBFAF2] g-transparent text-[#1F3C15B2] md:text-white lg:mt-[35px]"
         : scrolled
         ? "bg-[#EBFAF2] mt-5 md:mt-0 lg:mt-[48px] mx-4 md:mx-0 shadow-lg"
         : "bg-transparent md:bg-[#EBFAF2] text-[#1F3C15B2] lg:mt-[48px]"
@@ -67,19 +72,11 @@ const Navbar = () => {
 
           {/* Logo - Left side */}
           <div className="flex-shrink-0 flex items-center">
-            <img
-              src={isHomePage ? (scrolled ? Logo : LogoWhite) : Logo}
-              alt=""
-              className="h-10"
-            />
+            <img src={Logo} alt="" className="h-10" />
           </div>
 
           {/* Desktop Navigation - Right side */}
-          <div
-            className={`hidden md:flex items-center justify-center space-x-10 py-5 font-semibold text-[14px] text-[#1F3C15B2] ${
-              isHomePage && !scrolled ? "text-white" : "text-[#1F3C15B2]"
-            }`}
-          >
+          <div className="hidden md:flex items-center justify-center space-x-10 py-5 font-semibold text-[14px] text-[#1F3C15B2] text-[#1F3C15B2]">
             <Link
               to="/"
               className={`hover:text-[#1F3C15] uppercase tracking-wider transition-colors ${
@@ -88,20 +85,67 @@ const Navbar = () => {
             >
               HOME
             </Link>
-            <Link
-              to="/about"
-              className={`hover:text-[#1F3C15] uppercase tracking-wider transition-colors ${
-                isActiveLink("/about") ? "text-[#1F3C15] scale-105" : ""
-              }`}
-            >
-              ABOUT US
-            </Link>
+            <div className="relative">
+              <button
+                onClick={() => {
+                  setIsAboutUsOpen(!isAboutUsOpen);
+                  setServicesOpen(false);
+                }}
+                className={`flex items-center hover:text-[#1F3C15] uppercase tracking-wider transition-colors cursor-pointer ${
+                  isAboutActive ? "text-[#1F3C15] scale-105" : ""
+                }`}
+              >
+                ABOUT US
+                <svg
+                  className={`ml-2 h-4 w-4 transition-transform ${
+                    isAboutUsOpen ? "rotate-180" : ""
+                  }`}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+
+              <div
+                className={` mt-10 absolute rounded-[10px] shadow-lg z-50 overflow-hidden p-4 bg-[#EBFAF2] w-32 transition-all duration-300 ease-in-out hidden lg:flex lg:flex-col gap-3 ${
+                  isAboutUsOpen
+                    ? "opacity-100 translate-y-0 pointer-events-auto"
+                    : "opacity-0 translate-y-[-10px] pointer-events-none"
+                }`}
+              >
+                <Link
+                  to="/about"
+                  className={`hover:text-[#1F3C15] uppercase tracking-wider transition-colors ${
+                    isActiveLink("/about") ? "text-[#1F3C15] scale-105" : ""
+                  }`}
+                >
+                  ABOUT US
+                </Link>
+                <Link
+                  to="/team"
+                  className={`hover:text-[#1F3C15] uppercase tracking-wider transition-colors ${
+                    isActiveLink("/team") ? "text-[#1F3C15] scale-105" : ""
+                  }`}
+                >
+                  TEAM
+                </Link>
+              </div>
+            </div>
 
             {/* Services Dropdown */}
             <div className="relative">
               <button
-                onClick={() => setServicesOpen(!servicesOpen)}
-                className={`flex items-center hover:text-[#1F3C15] text-sm uppercase tracking-wider transition-colors ${
+                onClick={() => {
+                  setServicesOpen(!servicesOpen), setIsAboutUsOpen(false);
+                }}
+                className={`flex items-center hover:text-[#1F3C15] text-sm uppercase tracking-wider transition-colors cursor-pointer ${
                   isServicesActive ? "text-[#1F3C15] scale-105" : ""
                 }`}
               >
@@ -166,17 +210,65 @@ const Navbar = () => {
             >
               HOME
             </Link>
-            <Link
-              to="/about"
-              className={`block transition-colors ${
-                isActiveLink("/about") ? "font-bold text-[#1F3C15]" : ""
-              }`}
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              ABOUT US
-            </Link>
 
-            {/* Mobile Services Dropdown */}
+            <div className="relative ">
+              <button
+                onClick={() => setIsAboutUsOpen(!isAboutUsOpen)}
+                className={`flex w-full justify-between items-center transition-colors ${
+                  isAboutActive ? "font-bold text-[#1F3C15]" : ""
+                }`}
+              >
+                ABOUT US
+                <svg
+                  className={`ml-2 h-4 w-4 transition-transform ${
+                    isAboutUsOpen ? "rotate-180" : ""
+                  }`}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+
+              {isAboutUsOpen && (
+                <div className="pl-4 mt-2 space-y-4">
+                  <Link
+                    to="/about"
+                    className={`block px-2 py-1 text-sm font-medium uppercase tracking-wider transition-colors ${
+                      isActiveLink("/about")
+                        ? "font-bold text-[#1F3C15] "
+                        : "text-[#1F3C15B2]"
+                    }`}
+                    onClick={() => {
+                      setIsAboutUsOpen(false);
+                      setMobileMenuOpen(false);
+                    }}
+                  >
+                    ABOUT US
+                  </Link>
+                  <Link
+                    to="/team"
+                    className={`block px-2 py-1 text-sm font-medium uppercase tracking-wider transition-colors ${
+                      isActiveLink("/team")
+                        ? "font-bold text-[#1F3C15] "
+                        : "text-[#1F3C15B2]"
+                    }`}
+                    onClick={() => {
+                      setIsAboutUsOpen(false);
+                      setMobileMenuOpen(false);
+                    }}
+                  >
+                    TEAM
+                  </Link>
+                </div>
+              )}
+            </div>
             <div className="relative ">
               <button
                 onClick={() => setServicesOpen(!servicesOpen)}

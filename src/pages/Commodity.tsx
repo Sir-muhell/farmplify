@@ -1,15 +1,8 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Grow from "../components/Grow";
-import Img1 from "../assets/services/services-8.webp";
-import Img2 from "../assets/services/services-16.webp";
-import Img3 from "../assets/services/services-19.webp";
-import Icon1 from "../assets/icons/building-1.svg";
-import Icon2 from "../assets/icons/chart-up.svg";
-import Icon3 from "../assets/icons/coin-stack.svg";
-import Icon4 from "../assets/icons/heart.svg";
-import Icon5 from "../assets/icons/plant.svg";
-import Services from "../components/Service";
+import Bg from "../assets/object.svg";
+import Image from "../assets/services/value.webp";
 
 const Commodity = () => {
   return (
@@ -17,74 +10,109 @@ const Commodity = () => {
       <Navbar />
       <Hero
         text="Commodity & Value Chain Investment"
-        head="Maximize Returns Through Strategic Value Chain Integration"
+        head="Commodity & Value Chain"
         subHead="Capture value at every stage of the agricultural supply chain. Our commodity and value chain investment services help you build integrated operations that generate multiple revenue streams while reducing market risks."
       />
-      <Services
-        title="Strategic Investment Areas"
-        tapeText="Commodity & Value Chain Investment"
-        why="Value Chain Benefits"
-        offerings={[
-          {
-            title: "Structured Grain & Cash Crop Trading",
-            description:
-              "Access global commodity markets through our structured trading programs. We provide market access, risk management tools, and trading expertise that help you capitalize on price movements and seasonal opportunities.",
-            image: Img1,
-            imagePosition: "right",
-          },
-          {
-            title: "Post-Harvest Infrastructure Development",
-            description:
-              "Invest in critical infrastructure that reduces post-harvest losses and adds value to agricultural production:",
-            bulletPoints: [
-              "Storage Facilities: Modern grain storage and warehouse systems ",
-              "Drying Infrastructure: Advanced drying and processing equipment",
-              "Logistics Networks: Transportation and distribution system",
-            ],
-            image: Img2,
-            imagePosition: "left",
-          },
-          {
-            title: "Agro-Processing & Branding Ventures",
-            description:
-              "Transform raw agricultural products into higher-value processed goods. We identify and develop processing opportunities that create premium products and build brand value in target markets.",
-            image: Img3,
-            imagePosition: "right",
-          },
-        ]}
-        features={[
-          {
-            icon: Icon5,
-            title: "Diversified Revenue Streams",
-            description:
-              "Multiple income sources reduce dependency on single markets",
-          },
-          {
-            icon: Icon2,
-            title: "Risk Mitigation",
-            description:
-              "Integrated operations provide natural hedging against price volatility",
-          },
-          {
-            icon: Icon4,
-            title: "Market Premium",
-            description:
-              "Value-added products command higher prices and margins",
-          },
-          {
-            icon: Icon3,
-            title: "Supply Chain Control",
-            description:
-              "Vertical integration ensures quality and reduces costs",
-          },
-          {
-            icon: Icon1,
-            title: "Scalability",
-            description:
-              "Expandable operations that grow with your investment capacity",
-          },
-        ]}
-      />
+      <section>
+        <div
+          className=" flex flex-col lg:px-20 px-5 relative bg-[#1A1613]"
+          style={{
+            backgroundImage: `url(${Bg})`,
+            backgroundRepeat: "no-repeat",
+            // backgroundSize: "cover",
+            backgroundPosition: "top",
+          }}
+        >
+          <div className="lg:mt-[143px] mt-14 lg:mb-[111px] mb-20 text-white text-left lg:grid grid-cols-2 gap-40">
+            <div>
+              <p className="text-[#D3D3D3] font-medium text-[20px] text-[16px] leading-[130%]">
+                The Commodity & Value Chain Investment management unit designs
+                and manages structured trading programs for grains and
+                high-demand cash crops while building resilient, end-to-end
+                post-harvest infrastructure to protect value and reduce losses.
+                We integrate agro-processing and branding initiatives to capture
+                margin uplift from value addition, enforce rigorous quality
+                assurance and traceability across every link in the supply
+                chain, and secure long-term market access through strategic
+                off-take and B2B partnerships. The result: predictable, scalable
+                returns for investors, sustainably optimized supply chains for
+                partners, and measurable reductions in post-harvest risk.
+              </p>
+              <img
+                src={Image}
+                alt=""
+                className="mt-10 lg:mt-20 h-[290px] w-full object-cover object-center rounded-tl-[16px] rounded-bl-[16px] hidden lg:block"
+              />
+            </div>
+
+            <div className="lg:w-[70%] lg:mt-0 mt-14">
+              <ul className="space-y-0 lg:text-[24px] text-[16px] text-white font-medium leading-[130%] lg:mt-6 mt-4">
+                <li className="flex items-start">
+                  <span className="mr-3 font-semibold">•</span>
+                  <p>
+                    <span className="font-semibold">
+                      Structured Commodity Trading –
+                    </span>{" "}
+                    Management of grain and high-demand cash crop trading
+                    portfolios.
+                  </p>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-3 font-semibold">•</span>
+                  <p>
+                    <span className="font-semibold">
+                      Post-Harvest Infrastructure Development –
+                    </span>{" "}
+                    Establishment and management of storage, drying, and
+                    logistics systems to minimize losses.
+                  </p>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-3 font-semibold">•</span>
+                  <p>
+                    <span className="font-semibold">
+                      Aggregation & Bulk Supply –
+                    </span>{" "}
+                    Coordinated procurement and structured aggregation for
+                    consistent market-ready volumes.
+                  </p>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-3 font-semibold">•</span>
+                  <p>
+                    <span className="font-semibold">
+                      Agro-Processing & Value Addition –
+                    </span>{" "}
+                    Processing of grains and cash crops into higher-value
+                    products.
+                  </p>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-3 font-semibold">•</span>
+                  <p>
+                    <span className="font-semibold">
+                      Branding & Market Positioning –
+                    </span>{" "}
+                    Development of premium agricultural brands for domestic and
+                    export markets.
+                  </p>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-3 font-semibold">•</span>
+                  <p>
+                    <span className="font-semibold">
+                      Export & Off-Take Management –
+                    </span>{" "}
+                    Securing long-term supply contracts with exporters, food
+                    processors, and retailers.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <img src={Image} alt="" />
       <Grow />
     </main>
   );

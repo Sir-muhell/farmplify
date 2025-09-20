@@ -1,15 +1,7 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Grow from "../components/Grow";
-import Img1 from "../assets/services/services-2.webp";
-import Img2 from "../assets/services/services-1.webp";
-import Img3 from "../assets/services/services-15.webp";
-import Icon1 from "../assets/icons/building-1.svg";
-import Icon2 from "../assets/icons/chart-up.svg";
-import Icon3 from "../assets/icons/coin-stack.svg";
-import Icon4 from "../assets/icons/heart.svg";
-import Icon5 from "../assets/icons/plant.svg";
-import Services from "../components/Service";
+import Image from "../assets/services/invest.webp";
 
 const AssetInvestment = () => {
   return (
@@ -17,69 +9,108 @@ const AssetInvestment = () => {
       <Navbar />
       <Hero
         text="Real Asset Investment"
-        head="Build Wealth Through Strategic Real Asset Acquisition"
-        subHead="Secure your financial future with tangible agricultural real assets. Our real asset investment services focus on acquiring, developing, and optimizing farmland and related assets that provide both income generation and long-term appreciation."
+        head="Real Asset Investment"
+        subHead=""
       />
-      <Services
-        title="Core Investment Strategies"
-        tapeText="Real Asset Investment"
-        why="Real Asset Advantages"
-        offerings={[
-          {
-            title: "Farmland Acquisition & Development",
-            description:
-              "Identify and acquire prime agricultural land with strong production potential and appreciation prospects. Our acquisition process includes comprehensive soil analysis, water rights evaluation, and development planning to maximize asset value.",
-            image: Img1,
-            imagePosition: "right",
-          },
-          {
-            title: "Flexible Leasing Models & Appreciation Strategies",
-            bulletPoints: [
-              "Cash Rent Leasing: Stable income through fixed rental agreements",
-              "Crop Share Arrangements: Participate in production upside while sharing risks",
-              "Development Partnerships: Joint ventures that unlock land value through development",
-            ],
-            image: Img2,
-            imagePosition: "left",
-          },
-          {
-            title: "Carbon Farming & Sustainable Land Use",
-            description:
-              "Capitalize on the growing carbon credit market through sustainable farming practices. We help you implement carbon farming strategies that generate additional revenue streams while improving soil health and environmental impact.",
-            image: Img3,
-            imagePosition: "right",
-          },
-        ]}
-        features={[
-          {
-            icon: Icon5,
-            title: "Inflation Hedge",
-            description: "Agricultural land historically outpaces inflation",
-          },
-          {
-            icon: Icon2,
-            title: "Portfolio Diversification",
-            description: "Low correlation with traditional financial assets",
-          },
-          {
-            icon: Icon4,
-            title: "Income Generation",
-            description: "Immediate returns through leasing and production",
-          },
-          {
-            icon: Icon3,
-            title: "Appreciation Potential",
-            description:
-              " Long-term capital gains through strategic development",
-          },
-          {
-            icon: Icon1,
-            title: "ESG Alignment",
-            description:
-              "Sustainable practices that meet modern investment criteria",
-          },
-        ]}
-      />
+      <section>
+        <div className=" flex flex-col lg:px-20 px-5 relative bg-[#E5CFC2]">
+          <div className="lg:mt-[143px] mt-14 lg:mb-[111px] mb-20 text-[#434343] text-left lg:grid grid-cols-2 gap-40">
+            <div>
+              <p className="text-[#434343] font-medium text-[20px] text-[16px] leading-[130%]">
+                The real asset investment unit specializes in the acquisition,
+                development, and strategic management of high-value farmland.
+                Leveraging structured purchasing, leasing models and land
+                appreciation strategies, we optimize asset performance while
+                ensuring long-term value creation. Our approach integrates
+                carbon farming initiatives and sustainable land use practices,
+                delivering both financial returns and measurable environmental
+                impact.
+              </p>
+              <img
+                src={Image}
+                alt=""
+                className="mt-10 lg:mt-20 h-[290px] w-full object-cover object-center rounded-tl-[16px] rounded-bl-[16px] hidden lg:block"
+              />
+            </div>
+
+            <div className="lg:w-[70%] lg:mt-0 mt-14">
+              <ul className="space-y-0 lg:text-[24px] text-[16px] text-[#434343] font-medium leading-[130%] lg:mt-6 mt-4">
+                <li className="flex items-start">
+                  <span className="mr-3 font-semibold">•</span>
+                  <p>
+                    <span className="font-semibold text-black">
+                      Farmland Acquisition & Development –
+                    </span>{" "}
+                    Identification, purchase, and development of high-value
+                    agricultural land.
+                  </p>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-3 font-semibold">•</span>
+                  <p>
+                    <span className="font-semibold text-black">
+                      Farmland Leasing Models – S
+                    </span>{" "}
+                    tructuring short-term and long-term leasing arrangements for
+                    investors and operators.
+                  </p>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-3 font-semibold">•</span>
+                  <p>
+                    <span className="font-semibold text-black">
+                      Land Value Appreciation Strategies –
+                    </span>{" "}
+                    Strategic asset management to maximize land appreciation and
+                    long-term investor returns.
+                  </p>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-3 font-semibold">•</span>
+                  <p>
+                    <span className="font-semibold text-black">
+                      Sustainable Land Use Planning –
+                    </span>{" "}
+                    Integration of environmentally responsible land utilization
+                    practices.
+                  </p>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-3 font-semibold ">•</span>
+                  <p>
+                    <span className="font-semibold text-black">
+                      Carbon Farming & Climate-Smart Projects –
+                    </span>{" "}
+                    Development of carbon credit-linked initiatives that
+                    generate financial and environmental value.
+                  </p>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-3 font-semibold">•</span>
+                  <p>
+                    <span className="font-semibold text-black">
+                      Asset Optimization & Performance Management –
+                    </span>{" "}
+                    Ongoing monitoring, reporting, and enhancement of farmland
+                    productivity and profitability.
+                  </p>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-3 font-semibold">•</span>
+                  <p>
+                    <span className="font-semibold text-black">
+                      Legal & Regulatory Structuring –
+                    </span>{" "}
+                    Title verification, due diligence, and compliance advisory
+                    for farmland investments.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <img src={Image} alt="" />
       <Grow />
     </main>
   );

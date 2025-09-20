@@ -12,6 +12,8 @@ import AssetInvestment from "./pages/AssestInvestment";
 import Commodity from "./pages/Commodity";
 import AssetManagement from "./pages/AssetManagement";
 import { PageTransitionWrapper, ScrollTop } from "./components/ScrollToTop";
+import Team from "./pages/Team";
+import Services from "./pages/Services";
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/team" element={<Team />} />
+              <Route path="/services" element={<Services />} />
               <Route path="/investment-advisory" element={<Investment />} />
               <Route path="/asset-management" element={<AssetManagement />} />
               <Route
