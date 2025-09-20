@@ -16,7 +16,7 @@ const AssetManagement = () => {
         head="Asset Management"
         subHead="The asset management business has been established to provide end-to-end oversight and management of farmland and agricultural enterprises for institutional investors, high-net-worth individuals, and forward-looking corporations. Our services encompass livestock, aquaculture, horticulture, and plantation operations, supported by dedicated technical and operational teams on the ground to ensure efficiency, scalability, and consistent returns"
       />
-      <section className="bg-[#D6F4E5] lg:px-20 px-5 lg:pt-[89px] lg:pb-20 py-10">
+      <section className="bg-[#D6F4E5] lg:px-20 px-5 lg:pt-[89px] lg:pb-20 py-10 lg:text-left text-center">
         <Tape text="Asset Management" />
         <div className="lg:grid grid-cols-2 lg:mt-10 mt-5">
           <p className="lg:text-xl text-lg text-[#616161] font-medium leading-[130%]">
@@ -37,7 +37,7 @@ const AssetManagement = () => {
       </section>
       <section className="bg-[#E5CFC2] lg:px-20 px-5 lg:pt-[89px] lg:pb-20 py-10">
         <div className="lg:grid grid-cols-2 gap-20 justify-center items-center">
-          <div className="lg:pl-20">
+          <div className="lg:pl-20 lg:block hidden">
             <img
               src={Image2}
               alt="Asset-Image"
@@ -45,7 +45,7 @@ const AssetManagement = () => {
             />
           </div>
 
-          <div className="mt-5 lg:mt-0">
+          <div className="mt-5 lg:mt-0 lg:text-left text-center">
             <p className="font-semibold lg:text-[56px] text-[28px] text-[#1A1613] leading-[93%]">
               Manage Agricultural Investments with Expert Asset Management
             </p>
@@ -60,9 +60,14 @@ const AssetManagement = () => {
           </div>
         </div>
       </section>
-      <section className="lg:px-20 px-5 lg:pt-[89px] lg:pb-20 py-10">
+      <img
+        src={Image2}
+        alt="Asset-Image"
+        className=" lg:rounded-tl-[16px] lg:rounded-bl-[16px] lg:hidden"
+      />
+      <section className="lg:px-20 px-5 lg:pt-[89px] lg:pb-20 py-10 lg:text-left text-center">
         <div className="flex flex-col lg:grid grid-cols-2 lg:gap-20 gap-10 justify-center items-center">
-          <div className="order-2 lg:order-1">
+          <div>
             <p className="font-semibold lg:text-[56px] text-[28px] text-[#1A1613] leading-[93%]">
               Access structured agribusiness asset management
             </p>
@@ -74,7 +79,7 @@ const AssetManagement = () => {
               management performs at its optimum, balancing productivity,
               sustainability, and long-term value creation
             </p>
-            <p className="font-semibold lg:text-[40px] text-[28px] text-[#1A1613] leading-[110%] lg:mt-6 mt-4">
+            <p className="font-semibold lg:text-[40px] text-[28px] text-[#1A1613] leading-[110%] lg:mt-6 mt-8">
               Investment Management
             </p>
             <p className="lg:text-xl text-lg text-[#616161] font-medium leading-[130%] lg:mt-6 mt-4">
@@ -88,22 +93,23 @@ const AssetManagement = () => {
             </p>
           </div>
 
-          <div className="order-1 lg:order-2">
+          <div>
             <img
               src={Image1}
               alt="Asset-Image"
-              className=" rounded-tl-[16px] rounded-bl-[16px]"
+              className=" rounded-tl-[16px] rounded-bl-[16px] hidden lg:block"
             />
           </div>
         </div>
       </section>
-      <section className="lg:px-20 px-5 lg:pt-[89px] lg:pb-20 py-10">
+      <img src={Image1} alt="Asset-Image" className=" lg:hidden" />
+      <section className="lg:px-20 px-5 lg:pt-[89px] lg:pb-20 py-10 lg:text-left text-center">
         <div className="lg:grid grid-cols-2 gap-20 justify-center items-center">
           <div>
             <img
               src={Image3}
               alt="Asset-Image"
-              className=" rounded-tr-[16px] rounded-br-[16px]"
+              className=" rounded-tr-[16px] rounded-br-[16px] hidden lg:block"
             />
           </div>
           <div className="lg:mt-0 mt-5">
@@ -129,6 +135,7 @@ const AssetManagement = () => {
           </div>
         </div>
       </section>
+      <img src={Image3} alt="Asset-Image" className=" lg:hidden mb-10" />
       <Grow />
     </main>
   );

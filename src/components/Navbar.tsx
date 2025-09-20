@@ -31,13 +31,13 @@ const Navbar = () => {
     { title: "INVESTMENT ADVISORY", link: "/investment-advisory" },
     { title: "Real Asset Investment", link: "/real-asset-investment" },
     { title: "ASSET MANAGEMENT", link: "/asset-management" },
-    { title: "TECH-ENABLED AGRICULTURE", link: "/tech-enabled-agriculture" },
+    // { title: "TECH-ENABLED AGRICULTURE", link: "/tech-enabled-agriculture" },
     {
       title: "COMMODITY & VALUE CHAIN INVESTMENT",
       link: "/commodity-and-value-chain-investment",
     },
     { title: "ESG & IMPACT INVESTING", link: "/esg-and-impact-investing" },
-    { title: "FINANCIAL SERVICES", link: "/financial-services" },
+    { title: "AGRIFINANCE SERVICE", link: "/agrifinance-services" },
   ];
 
   // Check if a link is active

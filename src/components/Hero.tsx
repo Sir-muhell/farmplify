@@ -29,7 +29,7 @@ const Hero = ({ text, head, subHead }: HeroProps) => {
       initial="hidden"
       animate="show"
       variants={container}
-      className="items-center flex flex-col lg:px-20 px-5 pb-[100px] mx-auto relative"
+      className="items-center flex flex-col lg:px-20 px-5 pb-[50px] mx-auto relative"
       style={{
         backgroundImage: `url(${Image})`,
         backgroundRepeat: "no-repeat",

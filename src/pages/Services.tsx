@@ -8,6 +8,7 @@ import Image4 from "../assets/services/Image4.webp";
 import Image5 from "../assets/services/Image5.webp";
 import Image6 from "../assets/services/Image6.webp";
 import Grow from "../components/Grow";
+import { Link } from "react-router-dom";
 
 const services = [
   {
@@ -50,7 +51,7 @@ const services = [
     description:
       "The Financial Services division provides comprehensive capital solutions and advisory for agricultural investments, encompassing debt, equity, and blended finance. This unit also delivers expert tax, insurance, and legal advisory to institutional and private investors.",
     image: Image6,
-    link: "/financial-services",
+    link: "/agrifinance-services",
   },
 ];
 
@@ -76,21 +77,21 @@ const Services = () => {
         <img src={Image} alt="" className="absolute lg:-top-[500px]" />
       </section>
       <section className="lg:px-20 px-5 py-10 relative z-10">
-        <div className="mt-20 grid lg:grid-cols-4 grid-cols-2 gap-12">
+        <div className="mt-20 grid lg:grid-cols-4 mg:grid-cols-2 grid-cols-1 gap-12">
           {services.map((service, index) => (
-            <div key={index} className="text-center">
+            <Link to={service.link} key={index} className="text-center">
               <img
                 src={service.image}
                 alt={service.title}
-                className="m-auto lg:w-[355px] lg:h-[355px] w-[200px] h-[200px] object-cover "
+                className="m-auto lg:w-[355px] lg:h-[355px] lg:w-[200px] w-full h-[355px] lg:h-[200px] object-cover "
               />
               <p className="mt-[50px] mt-5 font-semibold lg:text-[32px] text-[24px] text-[#1F3C15] leading-[93%]">
                 {service.title}
               </p>
-              <p className="text-[#616161] font-medium lg:text-[18px] text-[12px] leading-[130%] tracking-[0.03em] lg:mt-4 mt-2">
+              <p className="text-[#616161] font-medium lg:text-[18px] text-[18px] leading-[130%] tracking-[0.03em] lg:mt-4 mt-2">
                 {service.description}
               </p>
-            </div>
+            </Link>
           ))}
         </div>
       </section>

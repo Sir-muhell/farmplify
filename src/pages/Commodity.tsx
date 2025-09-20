@@ -25,7 +25,7 @@ const Commodity = () => {
         >
           <div className="lg:mt-[143px] mt-14 lg:mb-[111px] mb-20 text-white text-left lg:grid grid-cols-2 gap-40">
             <div>
-              <p className="text-[#D3D3D3] font-medium text-[20px] text-[16px] leading-[130%]">
+              <p className="text-[#D3D3D3] font-medium lg:text-[20px] text-[16px] leading-[130%]">
                 The Commodity & Value Chain Investment management unit designs
                 and manages structured trading programs for grains and
                 high-demand cash crops while building resilient, end-to-end
@@ -46,11 +46,11 @@ const Commodity = () => {
             </div>
 
             <div className="lg:w-[70%] lg:mt-0 mt-14">
-              <ul className="space-y-0 lg:text-[24px] text-[16px] text-white font-medium leading-[130%] lg:mt-6 mt-4">
+              <ul className="space-y-0 lg:text-[24px] text-[16px] text-[#D3D3D3] font-medium leading-[130%] lg:mt-6 mt-4">
                 <li className="flex items-start">
                   <span className="mr-3 font-semibold">•</span>
                   <p>
-                    <span className="font-semibold">
+                    <span className="font-semibold text-white">
                       Structured Commodity Trading –
                     </span>{" "}
                     Management of grain and high-demand cash crop trading
@@ -58,9 +58,9 @@ const Commodity = () => {
                   </p>
                 </li>
                 <li className="flex items-start">
-                  <span className="mr-3 font-semibold">•</span>
+                  <span className="mr-3 font-semibold text-white">•</span>
                   <p>
-                    <span className="font-semibold">
+                    <span className="font-semibold text-white">
                       Post-Harvest Infrastructure Development –
                     </span>{" "}
                     Establishment and management of storage, drying, and
@@ -68,9 +68,9 @@ const Commodity = () => {
                   </p>
                 </li>
                 <li className="flex items-start">
-                  <span className="mr-3 font-semibold">•</span>
+                  <span className="mr-3 font-semibold text-white">•</span>
                   <p>
-                    <span className="font-semibold">
+                    <span className="font-semibold text-white">
                       Aggregation & Bulk Supply –
                     </span>{" "}
                     Coordinated procurement and structured aggregation for
@@ -78,9 +78,9 @@ const Commodity = () => {
                   </p>
                 </li>
                 <li className="flex items-start">
-                  <span className="mr-3 font-semibold">•</span>
+                  <span className="mr-3 font-semibold text-white">•</span>
                   <p>
-                    <span className="font-semibold">
+                    <span className="font-semibold text-white">
                       Agro-Processing & Value Addition –
                     </span>{" "}
                     Processing of grains and cash crops into higher-value
@@ -88,9 +88,9 @@ const Commodity = () => {
                   </p>
                 </li>
                 <li className="flex items-start">
-                  <span className="mr-3 font-semibold">•</span>
+                  <span className="mr-3 font-semibold text-white">•</span>
                   <p>
-                    <span className="font-semibold">
+                    <span className="font-semibold text-white">
                       Branding & Market Positioning –
                     </span>{" "}
                     Development of premium agricultural brands for domestic and
@@ -98,9 +98,9 @@ const Commodity = () => {
                   </p>
                 </li>
                 <li className="flex items-start">
-                  <span className="mr-3 font-semibold">•</span>
+                  <span className="mr-3 font-semibold text-white">•</span>
                   <p>
-                    <span className="font-semibold">
+                    <span className="font-semibold text-white">
                       Export & Off-Take Management –
                     </span>{" "}
                     Securing long-term supply contracts with exporters, food
@@ -112,7 +112,7 @@ const Commodity = () => {
           </div>
         </div>
       </section>
-      <img src={Image} alt="" />
+      <img src={Image} alt="asset" className="lg:hidden flex" />
       <Grow />
     </main>
   );

@@ -136,10 +136,6 @@ const Footer = () => {
         >
           <ul className="font-medium text-[#667185] mt-6 space-y-4">
             {[
-              {
-                to: "/tech-enabled-agriculture",
-                text: "Tech-Enabled Agriculture",
-              },
               { to: "/financial-services", text: "Financial Services" },
               {
                 to: "/esg-and-impact-investing",

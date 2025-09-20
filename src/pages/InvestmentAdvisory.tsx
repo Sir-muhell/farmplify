@@ -8,9 +8,9 @@ const Investment = () => {
     <main className="relative mx-auto overflow-hidden">
       <Navbar />
       <Hero text="Investment Advisory" head="Advisory" subHead="" />
-      <section className=" lg:px-20 px-5 lg:pt-[89px] lg:pb-20 py-10 ">
-        <div className="lg:grid grid-cols-2 lg:mt-10 mt-5 gap-20 lg:px-20">
-          <p className="text-[#616161] font-medium lg:text-2xl text-xl leading-[130%]">
+      <section className=" lg:px-20 px-5 lg:pt-[89px] lg:pb-20 pb-10 ">
+        <div className="lg:grid grid-cols-2 lg:mt-10 mt-0 gap-20 lg:px-20 lg:text-left text-center text-[#616161] font-medium lg:text-2xl text-[16px] leading-[130%]">
+          <p>
             Our Agriculture Investment Advisory service delivers end-to-end
             guidance for investors seeking structured exposure to Africa’s
             agribusiness opportunities. We provide in-depth agri-market insights
@@ -20,7 +20,7 @@ const Investment = () => {
             due diligence, we ensure every investment is data-driven, secure,
             and positioned for sustainable long-term returns
           </p>
-          <p className="text-[#616161] font-medium lg:text-2xl text-xl leading-[130%] mt-10 lg:mt-0">
+          <p className="mt-10 lg:mt-0">
             We are deeply passionate about transforming emerging agribusinesses
             into institutional-grade enterprises through best-in-class
             Investment Advisory. Our advisory practice combines sector
@@ -31,7 +31,7 @@ const Investment = () => {
       </section>
       <section className="bg-[#E5CFC2] lg:px-20 px-5 lg:pt-[89px] lg:pb-20 py-10">
         <div className="lg:grid grid-cols-2 gap-20 ">
-          <div className="lg:pl-20">
+          <div className="lg:pl-20 hidden lg:block">
             <img
               src={Image}
               alt="Asset-Image"
@@ -167,6 +167,8 @@ const Investment = () => {
           </section>
         </div>
       </section>
+      <img src={Image} alt="asset" className="lg:hidden flex mb-10" />
+
       <Grow />
     </main>
   );

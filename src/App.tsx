@@ -43,7 +43,7 @@ function App() {
                 element={<TechEnabled />}
               />
               <Route
-                path="/financial-services"
+                path="/agrifinance-services"
                 element={<FinancialServices />}
               />
               <Route

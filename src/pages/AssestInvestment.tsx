@@ -16,7 +16,7 @@ const AssetInvestment = () => {
         <div className=" flex flex-col lg:px-20 px-5 relative bg-[#E5CFC2]">
           <div className="lg:mt-[143px] mt-14 lg:mb-[111px] mb-20 text-[#434343] text-left lg:grid grid-cols-2 gap-40">
             <div>
-              <p className="text-[#434343] font-medium text-[20px] text-[16px] leading-[130%]">
+              <p className="text-[#434343] font-medium lg:text-[24px] text-[16px] leading-[130%]">
                 The real asset investment unit specializes in the acquisition,
                 development, and strategic management of high-value farmland.
                 Leveraging structured purchasing, leasing models and land
@@ -29,7 +29,7 @@ const AssetInvestment = () => {
               <img
                 src={Image}
                 alt=""
-                className="mt-10 lg:mt-20 h-[290px] w-full object-cover object-center rounded-tl-[16px] rounded-bl-[16px] hidden lg:block"
+                className="mt-10 lg:mt-20 h-[290px] w-full object-cover object-center rounded-[16px] hidden lg:block"
               />
             </div>
 
@@ -110,7 +110,11 @@ const AssetInvestment = () => {
           </div>
         </div>
       </section>
-      <img src={Image} alt="" />
+      <img
+        src={Image}
+        alt=""
+        className="lg:hidden h-[262px] object-cover w-full mb-10"
+      />
       <Grow />
     </main>
   );

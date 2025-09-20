@@ -1,91 +1,146 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Grow from "../components/Grow";
-import Img1 from "../assets/services/services-14.webp";
-import Img2 from "../assets/services/services-7.webp";
-import Img3 from "../assets/services/services-18.webp";
-import Icon1 from "../assets/icons/building-1.svg";
-import Icon2 from "../assets/icons/chart-up.svg";
-import Icon3 from "../assets/icons/coin-stack.svg";
-import Icon4 from "../assets/icons/heart.svg";
-import Icon5 from "../assets/icons/plant.svg";
-import Services from "../components/Service";
+import Image from "../assets/services/finance.webp";
+import ServiceCard from "../components/ServiceCard";
+
+const data = [
+  {
+    number: "1",
+    title: "Capital Raising & Structuring",
+    items: [
+      "Debt financing (commercial loans, credit facilities, green bonds).",
+      "Equity financing (private equity, venture capital, institutional investors).",
+      "Blended finance models (grant + debt + equity).",
+      "Structured notes and asset-backed securities.",
+    ],
+  },
+  {
+    number: "2",
+    title: "Project Finance & Syndication",
+    items: [
+      "End-to-end project finance structuring for large-scale agribusiness ventures.",
+      "Syndication of funds from multiple financial institutions.",
+      "Off-balance-sheet financing models.",
+      "Public-private partnership (PPP) structuring.",
+    ],
+  },
+  {
+    number: "3",
+    title: "Risk Management & Insurance Solutions",
+    items: [
+      "Crop insurance (climate, pest, disease coverage).",
+      "Livestock and aquaculture insurance.",
+      "Farm asset and infrastructure insurance.",
+      "Credit default protection for investors.",
+    ],
+  },
+  {
+    number: "4",
+    title: "Tax & Legal Advisory",
+    items: [
+      "Agribusiness tax planning and optimization.",
+      "Regulatory compliance across local and international standards.",
+      "Legal structuring of investment vehicles (SPVs, trusts, cooperatives).",
+      "Cross-border investment advisory.",
+    ],
+  },
+  {
+    number: "5",
+    title: "Investment Advisory & Portfolio Management",
+    items: [
+      "Customized investment strategies for farmland, plantations, and agribusinesses.",
+      "ESG and impact-focused investment structuring.",
+      "Portfolio diversification and risk-adjusted return analysis.",
+      "Monitoring and performance evaluation of agri-investments.",
+    ],
+  },
+  {
+    number: "6",
+    title: "Blended & Development Finance Solutions",
+    items: [
+      "Accessing concessional finance from DFIs, multilaterals, and donor agencies.",
+      "Structuring climate-smart and sustainable agriculture finance.",
+      "Designing credit guarantees and risk-sharing facilities.",
+      "Inclusive financing for smallholder farmer integration.",
+    ],
+  },
+  {
+    number: "7",
+    title: "Trade & Export Finance",
+    items: [
+      "Pre- and post-shipment financing.",
+      "Letters of credit, guarantees, and trade credit insurance.",
+      "Export credit agency-backed financing.",
+      "Structured commodity trade finance.",
+    ],
+  },
+  {
+    number: "8",
+    title: "Leasing & Asset Financing",
+    items: [
+      "Farm equipment leasing and financing solutions.",
+      "Warehouse receipt financing.",
+      "Livestock and input financing structures.",
+      "Farmland leasing with embedded finance options.",
+    ],
+  },
+  {
+    number: "9",
+    title: "Carbon & Green Finance Solutions",
+    items: [
+      "Carbon credit-linked financing models.",
+      "Green bonds and sustainability-linked loans.",
+      "Financing for renewable energy in agribusiness.",
+      "Climate resilience and adaptation project funding.",
+    ],
+  },
+  {
+    number: "10",
+    title: "Advisory & Transaction Services",
+    items: [
+      "Mergers & acquisitions (M&A) in agribusiness.",
+      "Business valuation and due diligence.",
+      "Financial modeling and feasibility studies.",
+      "Exit strategy planning for investors.",
+    ],
+  },
+];
 
 const FinancialServices = () => {
   return (
     <main className="relative mx-auto overflow-hidden">
       <Navbar />
       <Hero
-        text="Financial Services"
-        head="Comprehensive Financial Solutions for Agricultural Investments"
-        subHead="Access the capital and financial expertise needed to execute your agricultural investment strategy. Our financial services provide end-to-end support from initial capital raising through ongoing financial management and optimization."
+        text="AGRIFINANCE SERVICE"
+        head="AgriFinance Services"
+        subHead="The Financial Services division provides comprehensive capital solutions and advisory for agricultural investments, encompassing debt, equity, and blended finance. This unit is responsible for structuring and syndicating project finance, while delivering expert tax, insurance, and legal advisory to institutional and private investors, ensuring optimal returns and compliance across the agribusiness sector."
       />
-      <Services
-        title="Capital Solutions"
-        tapeText="Financial Services"
-        why="Financial Service Benefits"
-        offerings={[
-          {
-            title: "Capital Raising Services",
-            bulletPoints: [
-              "Debt Financing: Traditional loans, development finance, and alternative debt products",
-              "Equity Investment: Private equity, venture capital, and strategic partnerships",
-              "Blended Finance: Innovative structures combining different capital sources for optimal terms",
-            ],
+      <section className="h-fit">
+        <div className="lg:px-20 px-5 lg:pt-[117px] lg:pb-[128px] pt-5 pb-[84px] bg-[#1A1613] flex flex-col">
+          <img
+            src={Image}
+            alt=""
+            className="h-[139px] object-cover object-[5%_25%]  rounded-[16px] lg:hidden flex "
+          />{" "}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-12 lg:mt-0 mt-[34px]">
+            {data.map((service) => (
+              <ServiceCard
+                key={service.number}
+                number={service.number}
+                title={service.title}
+                items={service.items}
+              />
+            ))}
 
-            image: Img1,
-            imagePosition: "right",
-          },
-          {
-            title: "Project Finance & Syndication",
-            description:
-              "Structure and syndicate large-scale agricultural projects with multiple investors and lenders. Our project finance expertise ensures optimal capital structure and risk allocation for complex agricultural ventures.",
-            image: Img2,
-            imagePosition: "left",
-          },
-          {
-            title: "Specialized Advisory Services",
-            bulletPoints: [
-              "Tax Advisory: Optimize tax efficiency across agricultural investments and operations",
-              "Insurance Solutions: Comprehensive risk management through agricultural insurance products",
-              "Legal Advisory: Navigate regulatory requirements and structure transactions for maximum protection",
-            ],
-            image: Img3,
-            imagePosition: "right",
-          },
-        ]}
-        features={[
-          {
-            icon: Icon5,
-            title: "Capital Access",
-            description:
-              "Connect with diverse funding sources and investor networks",
-          },
-          {
-            icon: Icon2,
-            title: "Optimal Structure",
-            description:
-              "Design financial structures that maximize returns and minimize risk",
-          },
-          {
-            icon: Icon4,
-            title: "Regulatory Compliance",
-            description:
-              "Ensure all investments meet applicable legal and regulatory requirements",
-          },
-          {
-            icon: Icon3,
-            title: "Risk Management:",
-            description: "Comprehensive insurance and hedging strategies",
-          },
-          {
-            icon: Icon1,
-            title: "Tax Efficiency",
-            description:
-              " Minimize tax burden through strategic structuring and planning",
-          },
-        ]}
-      />
+            <img
+              src={Image}
+              alt="Agribusiness imagery"
+              className="h-80 w-full object-cover object-[5%_5%] rounded-[16px] lg:col-span-2 md:col-span-1 lg:flex hidden"
+            />
+          </div>
+        </div>
+      </section>
       <Grow />
     </main>
   );
