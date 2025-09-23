@@ -15,7 +15,7 @@ const Body = () => {
               Transforming agriculture into structured, secure, and profitable
               investments across Nigeria and Africa at large
             </p>
-            <Button text="read full story" />
+            {/* <Button text="read full story" /> */}
           </div>
           <p className="text-[#616161] font-medium text-xl leading-[130%] lg:pl-10 mt-[65px] lg:text-left text-center ">
             In the dynamic landscape of African agriculture, Farmplify emerges

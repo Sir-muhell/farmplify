@@ -15,18 +15,18 @@ interface Slide {
 }
 
 const BorderOverlay = () => (
-  <div className="absolute inset-0 z-20 pointer-events-none p-[64px]  lg:block hidden">
+  <div className="absolute inset-0 z-40 pointer-events-none p-[64px]  lg:block hidden">
     <svg
-      width="100%"
-      height="100%"
-      viewBox="0 0 1286 819"
-      preserveAspectRatio="none"
-      className="w-full h-full"
+      width="1790"
+      height="819"
+      viewBox="0 0 1790 819"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        d="M1254 0C1271.67 0 1286 14.3269 1286 32V531.577H1282V32C1282 16.536 1269.46 4 1254 4H32C16.536 4 4 16.536 4 32V787C4 802.464 16.536 815 32 815H703.839V819H32L31.1738 818.989C14.1571 818.558 0.441992 804.843 0.0107422 787.826L0 787V32C0 14.3269 14.3269 2.89917e-07 32 0H1254Z"
+        d="M1758 0C1775.67 0 1790 14.3269 1790 32V518H1786V32C1786 16.536 1773.46 4 1758 4H32C16.536 4 4 16.536 4 32V787C4 802.464 16.536 815 32 815H859.542V819H32C14.3269 819 0 804.673 0 787V32C0 14.3269 14.3269 0 32 0H1758Z"
         fill="white"
-        fillOpacity="0.6"
+        fill-opacity="0.16"
       />
     </svg>
   </div>
@@ -36,7 +36,8 @@ const slides: Slide[] = [
   {
     image: Image3,
     title: "Prepare for the future Today",
-    subtitle: "Access the tools, tips, and tech you need to thrive.",
+    subtitle:
+      "Explore the Magnificent of Farmplify. Our suite of services,  from investment management to global impact, is tailored to deliver security, growth, and sustainability for your agribusiness and investment success",
     cta1: "Request a Demo",
     cta2: "Sign Up",
     cta1Link: "#",
@@ -53,8 +54,9 @@ const slides: Slide[] = [
   // },
   {
     image: Image2,
-    title: "Plant More,<br/> Worry Less",
-    subtitle: "Access the tools, tips, and tech you need to thrive.",
+    title: "Investing with Purpose and Impact",
+    subtitle:
+      "At Farmplify, we go beyond managing agricultural investments and assets, we embed Environmental, Social, and Governance (ESG) principles into every portfolio we design and every agribusiness we manage. Our ESG framework ensures that investor capital not only delivers strong financial returns but also creates measurable impact for people, communities, and the planet.  Our commitment is built on three pillars of purpose-driven investment:",
     cta1: "Request a Demo",
     cta2: "Sign Up",
     cta1Link: "#",
@@ -197,12 +199,12 @@ const HeroCarousel = () => {
           <img
             src={slides[currentIndex].image}
             alt={`Slide ${currentIndex + 1}`}
-            className="w-full h-full object-cover pointer-events-none"
+            className="w-full h-full object-cover object-[75%_30%] pointer-events-none"
           />
 
           {/* Text Content */}
-          <div className="absolute lg:bottom-[145px] bottom-14 lg:right-40 flex justify-self-center ">
-            <div className="container mx-auto px-4 text-white">
+          <div className="absolute lg:bottom-[41px] bottom-14 lg:right-[70px] lg:max-w-[40%] flex justify-self-center z-40">
+            <div className="container mx-auto px-5 text-white">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={`title-${currentIndex}`}
@@ -214,7 +216,7 @@ const HeroCarousel = () => {
                   className="mb-4"
                 >
                   <h1
-                    className="lg:text-[82px] text-[61px] font-semibold mb-2 drop-shadow-lg tracking[-0.01em] leading-[93%]"
+                    className="lg:text-[120px] text-[52px] font-semibold mb-2 drop-shadow-lg tracking[-0.01em] leading-[93%] lg:text-left text-center"
                     dangerouslySetInnerHTML={{
                       __html: slides[currentIndex].title,
                     }}
@@ -232,7 +234,7 @@ const HeroCarousel = () => {
                   transition={{ delay: 0.3 }}
                   className=""
                 >
-                  <p className="md:text-xl text-sm font-medium md:text-2xl max-w-2xl ">
+                  <p className="md:text-xl text-sm font-medium md:text-2xl max-w-2xl lg:text-left text-center">
                     {slides[currentIndex].subtitle}
                   </p>
                 </motion.div>

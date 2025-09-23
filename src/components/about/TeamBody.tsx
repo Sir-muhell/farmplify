@@ -23,12 +23,12 @@ const TeamBody = () => {
               <img
                 src={member.image}
                 alt={member.name}
-                className="m-auto lg:w-[355px] lg:h-[355px] w-[200px] h-[200px] object-cover "
+                className="m-auto   w-full h-auto  object-cover "
               />
               <p className="mt-5 font-semibold lg:text-[40px] text-[28px] text-[#1F3C15] leading-[93%]">
                 {member.name}
               </p>
-              <p className="text-[#616161] font-medium lg:text-[24px] text-[16px] leading-[130%] lg:mt-4 mt-2">
+              <p className="text-[#616161] font-medium text-[24px] leading-[130%] lg:mt-4 mt-2">
                 {member.position}
               </p>
             </div>
@@ -55,12 +55,12 @@ const TeamBody = () => {
               <img
                 src={member.image}
                 alt={member.name}
-                className="m-auto lg:w-[355px] lg:h-[355px] w-[200px] h-[200px] object-cover "
+                className="m-auto   w-full h-auto  "
               />
               <p className="mt-5 font-semibold lg:text-[40px] text-[28px] text-[#1F3C15] leading-[93%]">
                 {member.name}
               </p>
-              <p className="text-[#616161] font-medium lg:text-[24px] text-[16px] leading-[130%] lg:mt-4 mt-2">
+              <p className="text-[#616161] font-medium text-[24px] leading-[130%] lg:mt-4 mt-2">
                 {member.position}
               </p>
             </div>

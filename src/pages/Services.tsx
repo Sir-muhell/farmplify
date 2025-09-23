@@ -77,13 +77,13 @@ const Services = () => {
         <img src={Image} alt="" className="absolute lg:-top-[500px]" />
       </section>
       <section className="lg:px-20 px-5 py-10 relative z-10">
-        <div className="mt-20 grid lg:grid-cols-4 mg:grid-cols-2 grid-cols-1 gap-12">
+        <div className="mt-20 grid lg:grid-cols-4 mg:grid-cols-2 grid-cols-1 gap-x-12 gap-y-18">
           {services.map((service, index) => (
             <Link to={service.link} key={index} className="text-center">
               <img
                 src={service.image}
                 alt={service.title}
-                className="m-auto lg:w-[355px] lg:h-[355px] lg:w-[200px] w-full h-[355px] lg:h-[200px] object-cover "
+                className="m-auto   w-full h-auto  object-cover "
               />
               <p className="mt-[50px] mt-5 font-semibold lg:text-[32px] text-[24px] text-[#1F3C15] leading-[93%]">
                 {service.title}

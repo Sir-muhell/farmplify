@@ -17,7 +17,7 @@ const Home = () => {
             structured, secure, and highly profitable investment class for
             Africa and the world.
           </p>
-          <Button text="Learn More" />
+          <Button text="Learn More" link="/about" />
         </div>
         <p className="text-[#616161] font-medium text-xl leading-[130%] lg:pl-10 mt-[65px] lg:text-left text-center ">
           In the dynamic landscape of African agriculture, Farmplify emerges as
@@ -36,7 +36,7 @@ const Home = () => {
             Delivering Structured, Impact-Driven, and Climate-Smart Agriculture
             Investments
           </p>
-          <Button text="Learn More" />
+          <Button text="Learn More" link="/services" />
         </div>
 
         <img
@@ -52,7 +52,7 @@ const Home = () => {
           We create wealth and impact by transforming agriculture into
           sustainable, high-return investment opportunities
         </p>
-        <Button text="Learn More" />
+        <Button text="Learn More" link="/services" />
       </div>
       <Solution />
       <Grow />

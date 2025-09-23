@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Logo from "../assets/logo.webp";
-// import LogoWhite from "../assets/logo-white.webp";
+import LogoWhite from "../assets/logo-white.webp";
 import Bars from "../assets/icons/union.svg";
 import BarsWhite from "../assets/icons/union-white.svg";
 
@@ -10,6 +10,8 @@ const Navbar = () => {
   const [servicesOpen, setServicesOpen] = useState(false);
   const location = useLocation();
   const isHomePage = location.pathname === "/";
+  const isAbout =
+    location.pathname === "/about" || location.pathname === "/team";
   const [scrolled, setScrolled] = useState(false);
   const [isAboutUsOpen, setIsAboutUsOpen] = useState(false);
   // const isAboutUsOpen =
@@ -183,7 +185,7 @@ const Navbar = () => {
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="inline-flex items-center justify-center h-[18px] w-[18px] rounded-md hover:text-green-600 focus:outline-none"
             >
-              {isHomePage && !scrolled ? (
+              {isAbout && !scrolled ? (
                 <img src={BarsWhite} alt="Nav" className="w-full" />
               ) : (
                 <img src={Bars} alt="Nav" className="w-full" />
@@ -276,7 +278,7 @@ const Navbar = () => {
                   isServicesActive ? "font-bold text-[#1F3C15]" : ""
                 }`}
               >
-                CORE SERVICES
+                SERVICES
                 <svg
                   className={`ml-2 h-4 w-4 transition-transform ${
                     servicesOpen ? "rotate-180" : ""
