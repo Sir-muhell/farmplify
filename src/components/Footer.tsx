@@ -62,11 +62,6 @@ const Footer = () => {
       variants={container}
       className="py-10 lg:px-20 p-5 max-w-[1600px] mx-auto"
     >
-      <motion.div
-        variants={fadeIn}
-        className="h-px w-full bg-[#E4E7EC] hidden lg:block"
-      ></motion.div>
-
       <motion.a href="./" className="lg:hidden" variants={itemFromBottom}>
         <img src={Logo} alt="Farmplify Logo" className="w-auto h-[64px]" />
       </motion.a>
@@ -81,10 +76,10 @@ const Footer = () => {
             {[
               { to: "/", text: "Home" },
               { to: "/about", text: "About" },
-              { to: "/careers", text: "Career" },
               { to: "/contact", text: "Contact us" },
               { to: "/services", text: "Services" },
               { to: "/faq", text: "FAQs" },
+              { to: "/careers", text: "Career" },
             ].map((link, index) => (
               <motion.li
                 key={index}

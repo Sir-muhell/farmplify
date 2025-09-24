@@ -244,11 +244,8 @@ const Contact = () => {
             </div>
 
             {/* Submit */}
-            <button
-              type="submit"
-              className="w-full bg-[#30C67C] text-[14px] text-white font-semibold py-[17px] rounded-full tracking-widest uppercase hover:bg-green-600 transition"
-            >
-              Get Started
+            <button className="bg-[#E5CFC2] text-[#5C7D34] font-semibold uppercase lg:text-[20px] text-[16px]  w-full py-6 rounded-full tracking-[0.23em] hover:scale-105 transition mt-12 cursor-pointer ">
+              send
             </button>
           </form>
         </div>

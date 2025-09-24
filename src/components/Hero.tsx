@@ -24,6 +24,8 @@ const Hero = ({ text, head, subHead }: HeroProps) => {
     show: { opacity: 1, y: 0, transition: { duration: 1 } },
   };
 
+  const isMobile = window.innerWidth < 1024;
+
   return (
     <motion.section
       initial="hidden"
@@ -33,8 +35,8 @@ const Hero = ({ text, head, subHead }: HeroProps) => {
       style={{
         backgroundImage: `url(${Image})`,
         backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        backgroundPosition: "top",
+        backgroundSize: isMobile ? "100%" : "150%",
+        backgroundPosition: "center",
       }}
     >
       <motion.div

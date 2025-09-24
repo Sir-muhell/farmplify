@@ -26,7 +26,7 @@ const Solution = () => {
               appreciation and lease/rental returns.
             </p>
           </div>
-          <div className="col-span-7 lg:p-6 p-2 h-full">
+          <div className="col-span-7 lg:p-6 p-2 h-full lg:mt-0 mt-6">
             <img
               src={Img4}
               alt=""
@@ -46,7 +46,7 @@ const Solution = () => {
                 high-demand tree species like cashew, teak, and oil palm.
               </p>
             </div>
-            <div className="col-span-3 lg:p-6 p-2 h-full">
+            <div className="col-span-3 lg:p-6 p-2 h-full lg:mt-0 mt-6">
               <img
                 src={Img3}
                 alt=""
@@ -65,7 +65,7 @@ const Solution = () => {
                 aggregation and supply of essential grains.
               </p>
             </div>
-            <div className="col-span-3 lg:p-6 p-2 h-full">
+            <div className="col-span-3 lg:p-6 p-2 h-full lg:mt-0 mt-6">
               <img
                 src={Img2}
                 alt=""
@@ -85,7 +85,7 @@ const Solution = () => {
               and profits from robust cattle production cycles.
             </p>
           </div>
-          <div className="col-span-7 lg:p-6 p-2 h-full">
+          <div className="col-span-7 lg:p-6 p-2 h-full lg:mt-0 mt-6">
             <img
               src={Img1}
               alt=""

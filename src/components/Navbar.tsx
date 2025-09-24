@@ -13,7 +13,8 @@ const Navbar = () => {
   const isAbout =
     location.pathname === "/about" ||
     location.pathname === "/team" ||
-    location.pathname === "/careers";
+    location.pathname === "/careers" ||
+    location.pathname === "/submit";
   const [scrolled, setScrolled] = useState(false);
   const [isAboutUsOpen, setIsAboutUsOpen] = useState(false);
   // const isAboutUsOpen =
@@ -55,6 +56,19 @@ const Navbar = () => {
   );
   const isAboutActive =
     location.pathname === "/about" || location.pathname === "/team";
+
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      // Set a small delay to allow the component to render before applying the transition
+      setTimeout(() => {
+        setIsAnimating(true);
+      }, 10);
+    } else {
+      setIsAnimating(false);
+    }
+  }, [mobileMenuOpen]);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-900">
@@ -204,15 +218,17 @@ const Navbar = () => {
           role="dialog"
           aria-modal="true"
         >
+          {/* Background overlay */}
           <div
             className="fixed inset-0 bg-black/60"
             aria-hidden="true"
             onClick={() => setMobileMenuOpen(false)}
           ></div>
 
+          {/* The slide-out menu container */}
           <div
-            className={`fixed top-0 left-0 h-full w-4/5 max-w-sm bg-[#30C67C] text-white text-[14px] font-black transform transition-transform duration-300 ease-in-out ${
-              mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
+            className={`fixed top-0 left-0 h-full w-4/5 max-w-sm bg-[#30C67C] text-white text-[14px] font-black transform transition-transform duration-500 ease-in-out ${
+              isAnimating ? "translate-x-0" : "-translate-x-full"
             }`}
           >
             <div className="p-8 font-bold">
@@ -231,13 +247,48 @@ const Navbar = () => {
                   HOME
                 </Link>
 
-                <Link
-                  to="/about"
-                  className="block uppercase tracking-wider"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  ABOUT US
-                </Link>
+                <div>
+                  <button
+                    onClick={() => setIsAboutUsOpen(!isAboutUsOpen)}
+                    className="flex w-full items-center justify-between uppercase tracking-wider"
+                  >
+                    ABOUT US
+                    <svg
+                      className={`ml-2 h-5 w-5 transition-transform ${
+                        isAboutUsOpen ? "rotate-180" : ""
+                      }`}
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </button>
+
+                  {isAboutUsOpen && (
+                    <div className="p-6 pb-0 space-y-6 font-black text-[#1F3C15]">
+                      <Link
+                        to="/about"
+                        className="block uppercase tracking-wider opacity-90 transition-opacity hover:opacity-100"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        Who we are
+                      </Link>
+                      <Link
+                        to="/team"
+                        className="block uppercase tracking-wider opacity-90 transition-opacity hover:opacity-100"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        Team
+                      </Link>
+                    </div>
+                  )}
+                </div>
 
                 <div>
                   <button

@@ -32,7 +32,7 @@ const Careers = () => {
             partners, and investors connect, share insights, and build lasting
             relationships beyond the business.
           </p>
-          <Link to="">
+          <Link to="/submit">
             <button className="bg-[#E5CFC2] text-[#5C7D34] font-semibold uppercase lg:text-[20px] text-[16px] lg:w-[417px] w-full py-6 rounded-full tracking-[0.23em] hover:scale-105 transition mt-12 cursor-pointer ">
               Submit Your Resume
             </button>

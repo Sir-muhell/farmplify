@@ -16,6 +16,7 @@ import Team from "./pages/Team";
 import Services from "./pages/Services";
 import Faq from "./pages/Faq";
 import Careers from "./pages/Careers";
+import Submit from "./pages/Submit";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
               <Route path="/asset-management" element={<AssetManagement />} />
               <Route path="/faq" element={<Faq />} />
               <Route path="/careers" element={<Careers />} />
+              <Route path="/submit" element={<Submit />} />
 
               <Route
                 path="/real-asset-investment"
