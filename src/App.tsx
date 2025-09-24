@@ -14,7 +14,7 @@ import AssetManagement from "./pages/AssetManagement";
 import { PageTransitionWrapper, ScrollTop } from "./components/ScrollToTop";
 import Team from "./pages/Team";
 import Services from "./pages/Services";
-import Faq from "./pages/faq";
+import Faq from "./pages/Faq";
 
 function App() {
   return (

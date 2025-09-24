@@ -2,7 +2,7 @@ import Bg from "../../assets/object.svg";
 import Image from "../../assets/about.webp";
 import ImageTwo from "../../assets/about-2.webp";
 import Tape from "../Tape";
-import Button from "../Button";
+// import Button from "../Button";
 
 const Body = () => {
   return (

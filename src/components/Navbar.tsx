@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Logo from "../assets/logo.webp";
-import LogoWhite from "../assets/logo-white.webp";
+// import LogoWhite from "../assets/logo-white.webp";
 import Bars from "../assets/icons/union.svg";
 import BarsWhite from "../assets/icons/union-white.svg";
 

@@ -131,7 +131,7 @@ const AssetManagement = () => {
               designed to preserve capital, optimize yield and realise reliable
               returns.
             </p>
-            <Button text="get started" />
+            <Button text="get started" link="" />
           </div>
         </div>
       </section>

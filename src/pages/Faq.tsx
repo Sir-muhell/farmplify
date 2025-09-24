@@ -1,16 +1,14 @@
-import React, { useState, useMemo } from "react";
+import { useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import Tape from "../components/Tape";
 
-// --- TYPE DEFINITION ---
 interface FaqItem {
   id: string;
   question: string;
   answer: string;
 }
 
-// --- FAQ DATA ---
 const faqData: FaqItem[] = [
   {
     id: "1",
