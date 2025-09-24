@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import Logo from "../assets/logo.webp";
-// import LogoWhite from "../assets/logo-white.webp";
+import Logo from "../assets/logo.png";
+import LogoWhite from "../assets/logo-white.png";
 import Bars from "../assets/icons/union.svg";
 import BarsWhite from "../assets/icons/union-white.svg";
 
@@ -11,7 +11,9 @@ const Navbar = () => {
   const location = useLocation();
   const isHomePage = location.pathname === "/";
   const isAbout =
-    location.pathname === "/about" || location.pathname === "/team";
+    location.pathname === "/about" ||
+    location.pathname === "/team" ||
+    location.pathname === "/careers";
   const [scrolled, setScrolled] = useState(false);
   const [isAboutUsOpen, setIsAboutUsOpen] = useState(false);
   // const isAboutUsOpen =
@@ -198,135 +200,94 @@ const Navbar = () => {
       {/* Mobile menu */}
       {mobileMenuOpen && (
         <div
-          className={`md:hidden bg-[#EBFAF2] rounded-2xl shadow-2xl text-[#1f3c15] text-sm font-semibold ${
-            scrolled ? "mx-5 mt-1" : "mx-4"
-          }`}
+          className="fixed inset-0 z-50 md:hidden"
+          role="dialog"
+          aria-modal="true"
         >
-          <div className="p-5 space-y-5">
-            <Link
-              to="/"
-              className={`block transition-colors ${
-                isActiveLink("/") ? "font-bold text-[#1F3C15]" : ""
-              }`}
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              HOME
-            </Link>
+          <div
+            className="fixed inset-0 bg-black/60"
+            aria-hidden="true"
+            onClick={() => setMobileMenuOpen(false)}
+          ></div>
 
-            <div className="relative ">
-              <button
-                onClick={() => setIsAboutUsOpen(!isAboutUsOpen)}
-                className={`flex w-full justify-between items-center transition-colors ${
-                  isAboutActive ? "font-bold text-[#1F3C15]" : ""
-                }`}
-              >
-                ABOUT US
-                <svg
-                  className={`ml-2 h-4 w-4 transition-transform ${
-                    isAboutUsOpen ? "rotate-180" : ""
-                  }`}
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
+          <div
+            className={`fixed top-0 left-0 h-full w-4/5 max-w-sm bg-[#30C67C] text-white text-[14px] font-black transform transition-transform duration-300 ease-in-out ${
+              mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
+            }`}
+          >
+            <div className="p-8 font-bold">
+              {/* Logo */}
+              <div className="mb-[45px]">
+                <Link to="/" onClick={() => setMobileMenuOpen(false)}>
+                  <img src={LogoWhite} alt="Farmplify" className="w-[114px]" />
+                </Link>
+              </div>
+              <div className="space-y-6">
+                <Link
+                  to="/"
+                  className="block uppercase tracking-wider"
+                  onClick={() => setMobileMenuOpen(false)}
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </button>
+                  HOME
+                </Link>
 
-              {isAboutUsOpen && (
-                <div className="pl-4 mt-2 space-y-4">
-                  <Link
-                    to="/about"
-                    className={`block px-2 py-1 text-sm font-medium uppercase tracking-wider transition-colors ${
-                      isActiveLink("/about")
-                        ? "font-bold text-[#1F3C15] "
-                        : "text-[#1F3C15B2]"
-                    }`}
-                    onClick={() => {
-                      setIsAboutUsOpen(false);
-                      setMobileMenuOpen(false);
-                    }}
-                  >
-                    ABOUT US
-                  </Link>
-                  <Link
-                    to="/team"
-                    className={`block px-2 py-1 text-sm font-medium uppercase tracking-wider transition-colors ${
-                      isActiveLink("/team")
-                        ? "font-bold text-[#1F3C15] "
-                        : "text-[#1F3C15B2]"
-                    }`}
-                    onClick={() => {
-                      setIsAboutUsOpen(false);
-                      setMobileMenuOpen(false);
-                    }}
-                  >
-                    TEAM
-                  </Link>
-                </div>
-              )}
-            </div>
-            <div className="relative ">
-              <button
-                onClick={() => setServicesOpen(!servicesOpen)}
-                className={`flex w-full justify-between items-center transition-colors ${
-                  isServicesActive ? "font-bold text-[#1F3C15]" : ""
-                }`}
-              >
-                SERVICES
-                <svg
-                  className={`ml-2 h-4 w-4 transition-transform ${
-                    servicesOpen ? "rotate-180" : ""
-                  }`}
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
+                <Link
+                  to="/about"
+                  className="block uppercase tracking-wider"
+                  onClick={() => setMobileMenuOpen(false)}
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </button>
+                  ABOUT US
+                </Link>
 
-              {servicesOpen && (
-                <div className="pl-4 mt-2 space-y-4">
-                  {services.map((service, index) => (
-                    <Link
-                      key={index}
-                      to={service.link}
-                      className={`block px-2 py-1 text-sm font-medium uppercase tracking-wider transition-colors ${
-                        isActiveLink(service.link)
-                          ? "font-bold text-[#1F3C15] "
-                          : "text-[#1F3C15B2]"
+                <div>
+                  <button
+                    onClick={() => setServicesOpen(!servicesOpen)}
+                    className="flex w-full items-center justify-between uppercase tracking-wider"
+                  >
+                    CORE SERVICES
+                    <svg
+                      className={`ml-2 h-5 w-5 transition-transform ${
+                        servicesOpen ? "rotate-180" : ""
                       }`}
-                      onClick={() => {
-                        setServicesOpen(false);
-                        setMobileMenuOpen(false);
-                      }}
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
                     >
-                      {service.title}
-                    </Link>
-                  ))}
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </button>
+
+                  {/* Sub-menu items */}
+                  {servicesOpen && (
+                    <div className="p-6 pb-0 space-y-6 font-black text-[#1F3C15]">
+                      {services.map((service, index) => (
+                        <Link
+                          key={index}
+                          to={service.link}
+                          className="block uppercase tracking-wider opacity-90 transition-opacity hover:opacity-100"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          {service.title}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
                 </div>
-              )}
+
+                <Link
+                  to="/contact"
+                  className="block uppercase tracking-wider"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  CONTACT US
+                </Link>
+              </div>
             </div>
-            <Link
-              to="/contact"
-              className={`block transition-colors ${
-                isActiveLink("/contact") ? "font-bold text-[#1F3C15]" : ""
-              }`}
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              CONTACT US
-            </Link>
           </div>
         </div>
       )}

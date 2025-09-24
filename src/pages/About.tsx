@@ -8,7 +8,7 @@ const About = () => {
   return (
     <main className="relative mx-auto overflow-hidden">
       <Navbar />
-      <Hero text="Who We Are" image={Image} color="#1F3C15" />
+      <Hero text="Who We Are" tape="about-us" image={Image} color="#1F3C15" />
       <Body />
 
       <Grow />

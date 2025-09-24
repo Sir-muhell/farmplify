@@ -15,6 +15,7 @@ import { PageTransitionWrapper, ScrollTop } from "./components/ScrollToTop";
 import Team from "./pages/Team";
 import Services from "./pages/Services";
 import Faq from "./pages/Faq";
+import Careers from "./pages/Careers";
 
 function App() {
   return (
@@ -32,6 +33,8 @@ function App() {
               <Route path="/investment-advisory" element={<Investment />} />
               <Route path="/asset-management" element={<AssetManagement />} />
               <Route path="/faq" element={<Faq />} />
+              <Route path="/careers" element={<Careers />} />
+
               <Route
                 path="/real-asset-investment"
                 element={<AssetInvestment />}

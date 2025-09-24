@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import Logo from "../assets/logo.webp";
+import Logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
 import Instagram from "../assets/icons/instagram.svg";
 import Twitter from "../assets/icons/twitter.svg";
@@ -83,6 +83,8 @@ const Footer = () => {
               { to: "/about", text: "About" },
               { to: "/careers", text: "Career" },
               { to: "/contact", text: "Contact us" },
+              { to: "/services", text: "Services" },
+              { to: "/faq", text: "FAQs" },
             ].map((link, index) => (
               <motion.li
                 key={index}
@@ -112,31 +114,7 @@ const Footer = () => {
                 to: "/commodity-and-value-chain-investment",
                 text: "Commodity & Value Chain",
               },
-            ].map((link, index) => (
-              <motion.li
-                key={index}
-                variants={itemFromBottom}
-                whileHover={{ x: 5 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <Link
-                  to={link.to}
-                  className="hover:text-[#1F3C15] transition-colors"
-                >
-                  {link.text}
-                </Link>
-              </motion.li>
-            ))}
-          </ul>
-        </motion.div>
-
-        <motion.div
-          variants={itemFromBottom}
-          className="text-base lg:mt-6 mt-0"
-        >
-          <ul className="font-medium text-[#667185] mt-6 space-y-4">
-            {[
-              { to: "/financial-services", text: "Financial Services" },
+              { to: "/agrifinance-services", text: "Financial Services" },
               {
                 to: "/esg-and-impact-investing",
                 text: "ESG & Impact Investing",
