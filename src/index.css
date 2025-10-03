@@ -10,7 +10,7 @@ body {
   font-size: 14px;
   line-height: 100%;
   letter-spacing: 0.4em; /* 40% = 0.4em */
-  background: linear-gradient(90deg, #82f4b1 0%, #30c67c 100%);
+  background: #1f3c15;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -19,7 +19,7 @@ body {
   font-size: 14px;
   line-height: 120%;
   letter-spacing: 0.4em; /* 40% = 0.4em */
-  background: linear-gradient(90deg, #82f4b1 0%, #30c67c 100%);
+  background-color: #1f3c15;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -28,7 +28,7 @@ body {
   font-weight: 600;
   font-size: 14px;
   line-height: 100%;
-  letter-spacing: 0.4em; /* 40% = 0.4em */
+  letter-spacing: 0.4em;
   color: white;
 }
 @media (max-width: 640px) {
@@ -57,6 +57,11 @@ body {
     rgba(48, 198, 124, 0) -36.99%,
     rgba(48, 198, 124, 0.9) 93.84%
   );
+}
+
+.spaced {
+  line-height: 130%;
+  letter-spacing: 0.3em;
 }
 
 @keyframes slide-in-from-left {

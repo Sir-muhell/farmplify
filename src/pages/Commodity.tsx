@@ -20,7 +20,7 @@ const Commodity = () => {
             backgroundImage: `url(${Bg})`,
             backgroundRepeat: "no-repeat",
             // backgroundSize: "cover",
-            backgroundPosition: "top",
+            backgroundPosition: "center",
           }}
         >
           <div className="lg:mt-[143px] mt-14 lg:mb-[111px] mb-20 text-white text-left lg:grid grid-cols-2 gap-40">

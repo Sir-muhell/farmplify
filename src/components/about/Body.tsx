@@ -28,9 +28,11 @@ const Body = () => {
           </p>
         </div>
 
-        <div className="flex flex-col lg:grid lg:grid-cols-2 items-center lg:mt-20 lg:mb-0 mb-20">
-          <div className="lg:ml-[150px] lg:pr-20 order-2 lg:order-1 lg:px-0 px-5 text-center lg:text-left mt-10 lg:mt-0">
-            <Tape text="our vision" />
+        <div className="flex flex-col lg:grid lg:grid-cols-2 items-center lg:mt-20 ">
+          <div className="lg:ml-[150px] lg:pr-20 lg:px-0 px-5 text-center lg:text-left mt-10 lg:mt-0">
+            <div className="lg:flex hidden">
+              <Tape text="our vision" />
+            </div>
             <p className="mt-5 font-semibold lg:text-[40px] text-[28px] text-[#1A1613] leading-[110%] ">
               To be Africa’s leading catalyst for agricultural transformation,
               unlocking food security, rural prosperity, and sustainable growth
@@ -41,7 +43,7 @@ const Body = () => {
           <img
             src={Image}
             alt="impact-image"
-            className="lg:rounded-tl-[16px] lg:rounded-bl-[16px] order-1 lg:order-2 mt-[55px] lg:mt-0"
+            className="lg:rounded-tl-[16px] lg:rounded-bl-[16px]  mt-[55px] lg:mt-0"
           />
         </div>
       </section>

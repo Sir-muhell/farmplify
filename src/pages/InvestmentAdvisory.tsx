@@ -35,7 +35,7 @@ const Investment = () => {
             <img
               src={Image}
               alt="Asset-Image"
-              className=" lg:rounded-tl-[16px] lg:rounded-bl-[16px]"
+              className=" lg:rounded-tl-[16px] lg:rounded-bl-[16px] h-full w-full object-cover"
             />
           </div>
 
@@ -167,7 +167,7 @@ const Investment = () => {
           </section>
         </div>
       </section>
-      <img src={Image} alt="asset" className="lg:hidden flex mb-10" />
+      <img src={Image} alt="asset" className="lg:hidden flex" />
 
       <Grow />
     </main>

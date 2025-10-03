@@ -15,16 +15,16 @@ interface Slide {
 }
 
 const BorderOverlay = () => (
-  <div className="absolute inset-0 z-40 pointer-events-none p-[64px]  lg:block hidden">
+  <div className="absolute inset-0 z-40 pointer-events-none p-[64px] lg:block hidden">
     <svg
-      width="1790"
-      height="819"
       viewBox="0 0 1790 819"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      preserveAspectRatio="none"
+      style={{ width: "100%", height: "100%" }}
     >
       <path
-        d="M1758 0C1775.67 0 1790 14.3269 1790 32V518H1786V32C1786 16.536 1773.46 4 1758 4H32C16.536 4 4 16.536 4 32V787C4 802.464 16.536 815 32 815H859.542V819H32C14.3269 819 0 804.673 0 787V32C0 14.3269 14.3269 0 32 0H1758Z"
+        d="M1758 0C1775.67 0 1790 14.3269 1790 32V505H1786V32C1786 16.536 1773.46 4 1758 4H32C16.536 4 4 16.536 4 32V787C4 802.464 16.536 815 32 815H648.542V819H32C14.3269 819 0 804.673 0 787V32C0 14.3269 14.3269 0 32 0H1758Z"
         fill="white"
         fill-opacity="0.16"
       />
@@ -203,71 +203,45 @@ const HeroCarousel = () => {
           />
 
           {/* Text Content */}
-          <div className="absolute lg:bottom-[41px] bottom-14 lg:right-[70px] lg:max-w-[40%] flex justify-self-center z-40">
-            <div className="container mx-auto px-5 text-white">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={`title-${currentIndex}`}
-                  variants={textVariants}
-                  initial="enter"
-                  animate="center"
-                  exit="exit"
-                  transition={{ delay: 0.2 }}
-                  className="mb-4"
-                >
-                  <h1
-                    className="lg:text-[120px] text-[52px] font-semibold mb-2 drop-shadow-lg tracking[-0.01em] leading-[93%] lg:text-left text-center"
-                    dangerouslySetInnerHTML={{
-                      __html: slides[currentIndex].title,
-                    }}
-                  />
-                </motion.div>
-              </AnimatePresence>
-
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={`subtitle-${currentIndex}`}
-                  variants={textVariants}
-                  initial="enter"
-                  animate="center"
-                  exit="exit"
-                  transition={{ delay: 0.3 }}
-                  className=""
-                >
-                  <p className="md:text-xl text-sm font-medium md:text-2xl max-w-2xl lg:text-left text-center">
-                    {slides[currentIndex].subtitle}
-                  </p>
-                </motion.div>
-              </AnimatePresence>
-
-              {/* <AnimatePresence mode="wait">
-                <motion.div
-                  key={`cta-${currentIndex}`}
-                  variants={textVariants}
-                  initial="enter"
-                  animate="center"
-                  exit="exit"
-                  transition={{ delay: 0.3 }}
-                  className="lg:flex-row flex flex-col items-center  lg:space-x-3 lg:space-y-0 space-y-4 mt-4"
-                >
-                  <a
-                    href={slides[currentIndex].cta1Link}
-                    className=" bg-white text-[#1F3C15] font-semibold text-sm tracking-[0.2em] font-semibold px-6 py-3 rounded-full shadow-md hover:scale-105 transition uppercase w-full lg:w-fit text-center"
+          <div className="absolute lg:bottom-[41px] bottom-14 lg:right-[70px] lg:max-w-[55%] flex justify-self-center z-40">
+            <div className="container flex justify-end px-5 text-white">
+              <div className="">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={`title-${currentIndex}`}
+                    variants={textVariants}
+                    initial="enter"
+                    animate="center"
+                    exit="exit"
+                    transition={{ delay: 0.2 }}
+                    className="mb-4"
                   >
-                    {slides[currentIndex].cta1}
-                  </a>
-                  <a
-                    href={slides[currentIndex].cta2Link}
-                    className=" bg-transparent text-white border border-white font-semibold text-sm tracking-[0.2em] font-semibold px-6 py-3 rounded-full shadow-md hover:scale-105 transition uppercase w-full lg:w-fit text-center"
+                    <h1
+                      className="lg:text-[82px] text-[52px] font-semibold mb-2 drop-shadow-lg tracking-[-0.01em] leading-[93%] text-left"
+                      dangerouslySetInnerHTML={{
+                        __html: slides[currentIndex].title,
+                      }}
+                    />
+                  </motion.div>
+                </AnimatePresence>
+
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={`subtitle-${currentIndex}`}
+                    variants={textVariants}
+                    initial="enter"
+                    animate="center"
+                    exit="exit"
+                    transition={{ delay: 0.3 }}
                   >
-                    {slides[currentIndex].cta2}
-                  </a>
-                </motion.div>
-              </AnimatePresence> */}
+                    <p className="text-sm font-medium md:text-[20px] text-left">
+                      {slides[currentIndex].subtitle}
+                    </p>
+                  </motion.div>
+                </AnimatePresence>
+              </div>
             </div>
           </div>
-
-          <div className="absolute inset-0 bg-[linear-gradient(371.47deg,#30C67C_12.5%,rgba(48,198,124,0)_50.29%)]"></div>
         </motion.div>
       </AnimatePresence>
 

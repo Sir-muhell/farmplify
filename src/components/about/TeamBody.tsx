@@ -17,13 +17,13 @@ const TeamBody = () => {
             opportunities across farmland, tree crops, grains, and livestock.
           </p>
         </div>
-        <div className="mt-20 grid lg:grid-cols-4 grid-cols-1 gap-12">
+        <div className="mt-20 grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-12">
           {boardMembers.map((member, index) => (
             <div key={index} className="text-center">
               <img
                 src={member.image}
                 alt={member.name}
-                className="m-auto   w-full h-auto  object-cover "
+                className="m-auto   w-full h-[355px]  object-cover "
               />
               <p className="mt-5 font-semibold lg:text-[40px] text-[28px] text-[#1F3C15] leading-[93%]">
                 {member.name}
@@ -49,13 +49,13 @@ const TeamBody = () => {
             profitable investment class for Africa and the world.
           </p>
         </div>
-        <div className="mt-20 grid lg:grid-cols-4 grid-cols-1 gap-12">
+        <div className="mt-20 grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-12">
           {managementTeam.map((member, index) => (
             <div key={index} className="text-center">
               <img
                 src={member.image}
                 alt={member.name}
-                className="m-auto   w-full h-auto  "
+                className="m-auto   w-full h-[355px] object-cover  "
               />
               <p className="mt-5 font-semibold lg:text-[40px] text-[28px] text-[#1F3C15] leading-[93%]">
                 {member.name}

@@ -1,8 +1,10 @@
+import React from "react";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Grow from "../components/Grow";
 import Image from "../assets/services/finance.webp";
 import ServiceCard from "../components/ServiceCard";
+import Image2 from "../assets/object.svg";
 
 const data = [
   {
@@ -106,6 +108,7 @@ const data = [
     ],
   },
 ];
+const isMobile = window.innerWidth < 1024;
 
 const FinancialServices = () => {
   return (
@@ -117,27 +120,39 @@ const FinancialServices = () => {
         subHead="The Financial Services division provides comprehensive capital solutions and advisory for agricultural investments, encompassing debt, equity, and blended finance. This unit is responsible for structuring and syndicating project finance, while delivering expert tax, insurance, and legal advisory to institutional and private investors, ensuring optimal returns and compliance across the agribusiness sector."
       />
       <section className="h-fit">
-        <div className="lg:px-20 px-5 lg:pt-[117px] lg:pb-[128px] pt-5 pb-[84px] bg-[#1A1613] flex flex-col">
+        <div
+          className="lg:px-20 px-5 lg:pt-[117px] lg:pb-[128px] pt-5 pb-[84px] bg-[#1A1613] flex flex-col"
+          style={{
+            backgroundImage: `url(${Image2})`,
+            backgroundRepeat: "no-repeat",
+            backgroundSize: isMobile ? "200%" : "100%",
+            backgroundPosition: "top",
+          }}
+        >
           <img
             src={Image}
             alt=""
             className="h-[139px] object-cover object-[5%_25%]  rounded-[16px] lg:hidden flex "
           />{" "}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-12 lg:mt-0 mt-[34px]">
-            {data.map((service) => (
-              <ServiceCard
-                key={service.number}
-                number={service.number}
-                title={service.title}
-                items={service.items}
-              />
-            ))}
+            {data.map((service, index) => (
+              <React.Fragment key={service.number}>
+                <ServiceCard
+                  number={service.number}
+                  title={service.title}
+                  items={service.items}
+                />
 
-            <img
-              src={Image}
-              alt="Agribusiness imagery"
-              className="h-80 w-full object-cover object-[5%_5%] rounded-[16px] lg:col-span-2 md:col-span-1 lg:flex hidden"
-            />
+                {/* Insert image after the first card */}
+                {index === 0 && (
+                  <img
+                    src={Image}
+                    alt="Agribusiness imagery"
+                    className="h-80 w-full object-cover object-[5%_5%] rounded-[16px] lg:col-span-2 md:col-span-1 lg:flex hidden"
+                  />
+                )}
+              </React.Fragment>
+            ))}
           </div>
         </div>
       </section>

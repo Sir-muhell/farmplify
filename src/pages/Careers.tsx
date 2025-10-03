@@ -3,7 +3,7 @@ import Hero from "../components/about/Hero";
 import Image from "../assets/object.svg";
 import Grow from "../components/Grow";
 import Image2 from "../assets/career.webp";
-import Button from "../components/Button";
+
 import { Link } from "react-router-dom";
 
 const Careers = () => {

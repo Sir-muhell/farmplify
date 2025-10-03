@@ -3,6 +3,7 @@ import Hero from "../components/Hero";
 import Grow from "../components/Grow";
 import Image from "../assets/services/esg.webp";
 import ServiceCard from "../components/ServiceCard";
+import Image2 from "../assets/object.svg";
 
 const servicesData = [
   {
@@ -87,6 +88,8 @@ const servicesData = [
     ],
   },
 ];
+const isMobile = window.innerWidth < 1024;
+
 const ImpactInvesting = () => {
   return (
     <main className="relative mx-auto overflow-hidden">
@@ -97,14 +100,22 @@ const ImpactInvesting = () => {
         subHead="The ESG & Impact Investing unit structures and manages carbon credit-linked investments, develops inclusive agricultural models empowering women and youth, and delivers comprehensive environmental and social impact reporting, ensuring that every investment generates measurable financial returns alongside positive societal and environmental outcomes."
       />
       <section className="h-fit">
-        <div className=" flex flex-col lg:px-20 px-5 py-28  relative bg-[#1A1613]">
+        <div
+          className=" flex flex-col lg:px-20 px-5 lg:py-28 py-5  relative bg-[#1A1613]"
+          style={{
+            backgroundImage: `url(${Image2})`,
+            backgroundRepeat: "no-repeat",
+            backgroundSize: isMobile ? "200%" : "100%",
+            backgroundPosition: "top",
+          }}
+        >
           <img
             src={Image}
             alt=""
-            className="h-80 object-cover object-[5%_25%]  rounded-[16px]"
+            className="lg:h-[312px] h-[139px] object-cover object-[5%_25%]  rounded-[16px]"
           />{" "}
           {/* Responsive Grid Container */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-12 mt-[97px]">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-12 lg:mt-[97px] mt-[34px]">
             {servicesData.map((service) => (
               <ServiceCard
                 key={service.number}

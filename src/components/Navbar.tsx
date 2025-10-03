@@ -71,7 +71,7 @@ const Navbar = () => {
   }, [mobileMenuOpen]);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-900">
+    <nav className="absolute top-0 left-0 right-0 z-50 transition-all duration-900">
       <div
         className={`mx-0 lg:mx-40 px-5 sm:px-6 lg:px-8 py-[13px] md:py-0 rounded-full transition-all duration-900
     ${

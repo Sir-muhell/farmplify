@@ -49,10 +49,10 @@ const AssetInvestment = () => {
                   <span className="mr-3 font-semibold">•</span>
                   <p>
                     <span className="font-semibold text-black">
-                      Farmland Leasing Models – S
+                      Farmland Leasing Models –
                     </span>{" "}
-                    tructuring short-term and long-term leasing arrangements for
-                    investors and operators.
+                    Structuring short-term and long-term leasing arrangements
+                    for investors and operators.
                   </p>
                 </li>
                 <li className="flex items-start">
@@ -113,7 +113,7 @@ const AssetInvestment = () => {
       <img
         src={Image}
         alt=""
-        className="lg:hidden h-[262px] object-cover w-full mb-10"
+        className="lg:hidden h-[262px] object-cover w-full"
       />
       <Grow />
     </main>

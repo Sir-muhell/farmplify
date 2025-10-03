@@ -12,14 +12,14 @@ const Home = () => {
       <div className="py-10 lg:px-20 px-5 lg:grid grid-cols-2 lg:text-left text-center">
         <div>
           <Tape text="who we are" />
-          <p className="mt-8 font-semibold lg:text-[40px] text-[32px] text-[#1A1613] leading-[110%] lg:pr-10">
+          <p className="mt-8 font-semibold lg:text-[40px] text-[32px] text-[#1A1613] leading-[110%] lg:pr-10 tracking-[-0.4px]">
             We are deeply passionate about transforming agriculture into a
             structured, secure, and highly profitable investment class for
             Africa and the world.
           </p>
           <Button text="Learn More" link="/about" />
         </div>
-        <p className="text-[#616161] font-medium text-xl leading-[130%] lg:pl-10 mt-[65px] lg:text-left text-center ">
+        <p className="text-[#616161] font-medium text-xl leading-[130%] tracking-[0.6px] lg:pl-10 mt-[65px] lg:text-left text-center ">
           In the dynamic landscape of African agriculture, Farmplify emerges as
           a pioneering force, redefining how capital flows into the continent’s
           most essential sector. Built on the vision to unlock Africa’s
