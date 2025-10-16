@@ -1,7 +1,7 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Grow from "../components/Grow";
-import Bg from "../assets/object.svg";
+
 import Image from "../assets/services/value.webp";
 
 const Commodity = () => {
@@ -10,22 +10,14 @@ const Commodity = () => {
       <Navbar />
       <Hero
         text="Commodity & Value Chain Investment"
-        head="Commodity & Value Chain"
-        subHead="Capture value at every stage of the agricultural supply chain. Our commodity and value chain investment services help you build integrated operations that generate multiple revenue streams while reducing market risks."
+        head="Commodity <br/> & Value Chain"
+        headNum={558}
       />
       <section>
-        <div
-          className=" flex flex-col lg:px-20 px-5 relative bg-[#1A1613]"
-          style={{
-            backgroundImage: `url(${Bg})`,
-            backgroundRepeat: "no-repeat",
-            // backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        >
-          <div className="lg:mt-[143px] mt-14 lg:mb-[111px] mb-20 text-white text-left lg:grid grid-cols-2 gap-40">
-            <div>
-              <p className="text-[#D3D3D3] font-medium lg:text-[20px] text-[16px] leading-[130%]">
+        <div className=" flex flex-col lg:px-20 px-5 relative bg-[#1A1613]">
+          <div className="lg:mt-[143px] mt-14 lg:mb-[111px] mb-20 text-white text-left lg:grid grid-cols-8 gap-5">
+            <div className="col-span-4">
+              <p className="text-[#D3D3D3] font-medium text-[16px] leading-[130%] tracking-[0.6px]">
                 The Commodity & Value Chain Investment management unit designs
                 and manages structured trading programs for grains and
                 high-demand cash crops while building resilient, end-to-end
@@ -41,12 +33,12 @@ const Commodity = () => {
               <img
                 src={Image}
                 alt=""
-                className="mt-10 lg:mt-20 h-[290px] w-full object-cover object-center rounded-tl-[16px] rounded-bl-[16px] hidden lg:block"
+                className="mt-10 lg:mt-20 h-[290px] w-full object-cover object-center rounded-tl-[16px] rounded-[8px] hidden lg:block"
               />
             </div>
-
-            <div className="lg:w-[70%] lg:mt-0 mt-14">
-              <ul className="space-y-0 lg:text-[24px] text-[16px] text-[#D3D3D3] font-medium leading-[130%] lg:mt-6 mt-4">
+            <div className="col-span-1"></div>
+            <div className="max-w-[401px] col-span-3 lg:mt-0 mt-14">
+              <ul className="space-y-8 text-[16px] text-[#D3D3D3] font-medium leading-[130%] lg:mt-0 mt-4">
                 <li className="flex items-start">
                   <span className="mr-3 font-semibold">•</span>
                   <p>

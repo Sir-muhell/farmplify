@@ -72,3 +72,11 @@ body {
     transform: translateX(0);
   }
 }
+
+.tape-small {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0.4em;
+  color: #1f3c15;
+}

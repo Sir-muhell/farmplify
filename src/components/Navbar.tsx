@@ -10,11 +10,11 @@ const Navbar = () => {
   const [servicesOpen, setServicesOpen] = useState(false);
   const location = useLocation();
   const isHomePage = location.pathname === "/";
-  const isAbout =
+  const isDarkHero =
     location.pathname === "/about" ||
-    location.pathname === "/team" ||
     location.pathname === "/careers" ||
     location.pathname === "/submit";
+
   const [scrolled, setScrolled] = useState(false);
   const [isAboutUsOpen, setIsAboutUsOpen] = useState(false);
   // const isAboutUsOpen =
@@ -31,6 +31,8 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [scrolled]);
+
+  const isMobile = window.innerWidth < 600;
 
   const services = [
     { title: "INVESTMENT ADVISORY", link: "/investment-advisory" },
@@ -78,19 +80,22 @@ const Navbar = () => {
       isHomePage
         ? scrolled
           ? "bg-[#EBFAF2] text-[#1F3C15B2] shadow-md mt-5 md:mt-0 lg:mt-[48px] mx-4 lg:mx-0 shadow-lg"
-          : "lg:bg-[#EBFAF2] g-transparent text-[#1F3C15B2] md:text-white lg:mt-[35px]"
+          : "lg:bg-[#EBFAF2] bg-transparent text-[#1F3C15B2] md:text-white lg:mt-[35px]"
         : scrolled
         ? "bg-[#EBFAF2] mt-5 md:mt-0 lg:mt-[48px] mx-4 md:mx-0 shadow-lg"
         : "bg-transparent md:bg-[#EBFAF2] text-[#1F3C15B2] lg:mt-[48px]"
-    }
-  `}
+    }`}
       >
         <div className="flex justify-between md:flex-row flex-row-reverse lg:px-10 lg:px-5 px-0 items-center">
           <div className="md:hidden flex w-[18px]"></div>
 
           {/* Logo - Left side */}
           <div className="flex-shrink-0 flex items-center">
-            <img src={Logo} alt="" className="h-10" />
+            {(isHomePage || isDarkHero) && isMobile ? (
+              <img src={LogoWhite} alt="" className="h-10" />
+            ) : (
+              <img src={Logo} alt="" className="h-10" />
+            )}
           </div>
 
           {/* Desktop Navigation - Right side */}
@@ -201,7 +206,7 @@ const Navbar = () => {
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="inline-flex items-center justify-center h-[18px] w-[18px] rounded-md hover:text-green-600 focus:outline-none"
             >
-              {isAbout && !scrolled ? (
+              {(isHomePage || isDarkHero) && !scrolled ? (
                 <img src={BarsWhite} alt="Nav" className="w-full" />
               ) : (
                 <img src={Bars} alt="Nav" className="w-full" />

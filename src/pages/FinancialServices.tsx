@@ -117,6 +117,8 @@ const FinancialServices = () => {
       <Hero
         text="AGRIFINANCE SERVICE"
         head="AgriFinance Services"
+        number={645}
+        headNum={602}
         subHead="The Financial Services division provides comprehensive capital solutions and advisory for agricultural investments, encompassing debt, equity, and blended finance. This unit is responsible for structuring and syndicating project finance, while delivering expert tax, insurance, and legal advisory to institutional and private investors, ensuring optimal returns and compliance across the agribusiness sector."
       />
       <section className="h-fit">
@@ -134,7 +136,7 @@ const FinancialServices = () => {
             alt=""
             className="h-[139px] object-cover object-[5%_25%]  rounded-[16px] lg:hidden flex "
           />{" "}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-12 lg:mt-0 mt-[34px]">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-x-28 lg:gap-y-20  lg:mt-0 mt-[34px]">
             {data.map((service, index) => (
               <React.Fragment key={service.number}>
                 <ServiceCard

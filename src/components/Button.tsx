@@ -7,7 +7,7 @@ interface ButtonProps {
 const Button = ({ text, link }: ButtonProps) => {
   return (
     <Link to={link}>
-      <button className="bg-[#E5CFC2] text-[#5C7D34] font-semibold uppercase text-xl py-6 px-16 rounded-full tracking-[0.23em] hover:scale-105 transition mt-12 cursor-pointer">
+      <button className="bg-[#1F3C15] text-white font-semibold uppercase text-xl py-[18px] px-16 rounded-full tracking-[0.23em] hover:scale-105 transition mt-12 cursor-pointer">
         {text}
       </button>
     </Link>

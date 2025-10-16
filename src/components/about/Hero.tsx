@@ -44,15 +44,14 @@ const Hero = ({ text, image, color, tape }: HeroProps) => {
         variants={container}
       >
         <motion.div variants={item}>
-          <Tape text={tape} />
+          <Tape text={tape} textColor="#ffffff" bgColor="#FFFFFF33" />
         </motion.div>
 
         <motion.p
-          className="lg:text-[120px] lg:mt-8 mt-10 text-[64px] leading-[93%] font-semibold text-white"
+          className="lg:text-[96px] lg:mt-8 mt-10 text-[64px] leading-[93%] font-semibold text-white"
           variants={item}
-        >
-          {text}
-        </motion.p>
+          dangerouslySetInnerHTML={{ __html: text }}
+        />
       </motion.div>
     </motion.section>
   );

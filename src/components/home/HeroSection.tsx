@@ -202,6 +202,16 @@ const HeroCarousel = () => {
             className="w-full h-full object-cover object-[75%_30%] pointer-events-none"
           />
 
+          <div
+            className="absolute inset-0 z-20 pointer-events-none"
+            style={{
+              background: `
+          linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+          linear-gradient(153.45deg, rgba(0, 0, 0, 0) 54.69%, rgba(0, 0, 0, 0.7) 89.24%)
+        `,
+            }}
+          />
+
           {/* Text Content */}
           <div className="absolute lg:bottom-[41px] bottom-14 lg:right-[70px] lg:max-w-[55%] flex justify-self-center z-40">
             <div className="container flex justify-end px-5 text-white">

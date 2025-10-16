@@ -55,19 +55,19 @@ const Submit = () => {
     <main className="relative mx-auto overflow-hidden">
       <Navbar />
       <Hero
-        text="Resume Submission"
+        text="Value Is Everything"
         tape="careers"
         color="#1A1613"
         image={Image}
       />
-      <div className="lg:grid grid-cols-2  mx-auto lg:mb-0 mb-[82px]">
+      <div className="lg:grid grid-cols-2 gap-10  mx-auto lg:mb-0 mb-[82px] lg:px-20 px-4">
         <img
           src={Image2}
           alt="contact us"
-          className="w-full h-auto hidden lg:block "
+          className="w-full h-full hidden lg:block  max-w-[557px]"
         />
-        <div className="lg:px-[104px] px-4 flex flex-col justify-center">
-          <p className="lg:mt-6 mt-8 lg:text-[27px] text-[16px] text-[#616161] font-[500px]">
+        <div className=" flex flex-col justify-center lg:mt-20">
+          <p className="lg:mt-0 mt-8 lg:text-[20px] text-[16px] text-[#616161] font-medium leading-[130%] tracking-[0.6px] text-center lg:text-left">
             We know that agriculture isn’t just about the farms and investments,
             it’s also about people. That’s why Farmplify organizes regular field
             tours, investor forums, and community engagements where our team,
@@ -234,8 +234,7 @@ const Submit = () => {
               {}
             </div>
 
-            {/* Submit */}
-            <button className="bg-[#E5CFC2] text-[#5C7D34] font-semibold uppercase lg:text-[20px] text-[16px]  w-full py-6 rounded-full tracking-[0.23em] hover:scale-105 transition mt-6 lg:mt-4 cursor-pointer ">
+            <button className="bg-[#1F3C15] text-white font-semibold uppercase text-xl py-[18px] w-full rounded-full tracking-[0.23em] hover:scale-105 transition mt-12 cursor-pointer">
               Send
             </button>
           </form>

@@ -31,16 +31,6 @@ export const boardMembers = [
     name: "Fatima Ahmed",
     position: "Board Member",
   },
-  {
-    image: Image,
-    name: "Oliver Tan",
-    position: "Board Member",
-  },
-  {
-    image: Image,
-    name: "Chioma Okeke",
-    position: "Board Member",
-  },
 ];
 
 // Management Team

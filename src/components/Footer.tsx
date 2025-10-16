@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import Logo from "../assets/logo.png";
+import Logo from "../assets/logo-white.png";
 import { Link } from "react-router-dom";
 import Instagram from "../assets/icons/instagram.svg";
 import Twitter from "../assets/icons/twitter.svg";
@@ -60,122 +60,128 @@ const Footer = () => {
       whileInView="show"
       viewport={{ once: true, margin: "-50px" }}
       variants={container}
-      className="py-10 lg:px-20 p-5 max-w-[1600px] mx-auto"
+      className=" bg-[#1F3C15]"
     >
-      <motion.a href="./" className="lg:hidden" variants={itemFromBottom}>
-        <img src={Logo} alt="Farmplify Logo" className="w-auto h-[64px]" />
-      </motion.a>
-
-      <motion.div
-        variants={container}
-        className="grid lg:grid-cols-3 grid-cols-2 gap--8 py-10"
-      >
-        <motion.div variants={itemFromBottom} className="text-base">
-          <p className="text-[#98A2B3] font-normal">Links</p>
-          <ul className="font-medium text-[#667185] mt-6 space-y-4">
-            {[
-              { to: "/", text: "Home" },
-              { to: "/about", text: "About" },
-              { to: "/contact", text: "Contact us" },
-              { to: "/services", text: "Services" },
-              { to: "/faq", text: "FAQs" },
-              { to: "/careers", text: "Career" },
-            ].map((link, index) => (
-              <motion.li
-                key={index}
-                variants={itemFromBottom}
-                whileHover={{ x: 5 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <Link
-                  to={link.to}
-                  className="hover:text-[#1F3C15] transition-colors"
-                >
-                  {link.text}
-                </Link>
-              </motion.li>
-            ))}
-          </ul>
-        </motion.div>
-
-        <motion.div variants={itemFromBottom} className="text-base">
-          <p className="text-[#98A2B3] font-normal">Services</p>
-          <ul className="font-medium text-[#667185] mt-6 space-y-4">
-            {[
-              { to: "/investment-advisory", text: "Investment Advisory" },
-              { to: "/asset-management", text: "Asset Management" },
-              { to: "/real-asset-investment", text: "Real Asset Investment" },
-              {
-                to: "/commodity-and-value-chain-investment",
-                text: "Commodity & Value Chain",
-              },
-              { to: "/agrifinance-services", text: "Financial Services" },
-              {
-                to: "/esg-and-impact-investing",
-                text: "ESG & Impact Investing",
-              },
-            ].map((link, index) => (
-              <motion.li
-                key={index}
-                variants={itemFromBottom}
-                whileHover={{ x: 5 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <Link
-                  to={link.to}
-                  className="hover:text-[#1F3C15] transition-colors"
-                >
-                  {link.text}
-                </Link>
-              </motion.li>
-            ))}
-          </ul>
-        </motion.div>
-      </motion.div>
-
-      <motion.div
-        variants={fadeIn}
-        className="h-px w-full bg-[#E4E7EC] hidden lg:block"
-      ></motion.div>
-
-      <motion.div
-        variants={container}
-        className="py-10 lg:flex justify-between -px-10"
-      >
-        <motion.div variants={itemFromBottom} className="hidden lg:block">
-          <a href="./">
-            <img src={Logo} alt="Farmplify Logo" className="w-auto h-[64px]" />
-          </a>
-          <p className="mt-4 text-[#1D2739] font-normal text-base">
-            © 2025 Farmplify. All rights reserved.
-          </p>
-        </motion.div>
+      <motion.div className="py-10 lg:px-20 p-5 max-w-[1600px] mx-auto text-white">
+        <motion.a href="./" className="lg:hidden" variants={itemFromBottom}>
+          <img src={Logo} alt="Farmplify Logo" className="w-auto h-[64px]" />
+        </motion.a>
 
         <motion.div
           variants={container}
-          className="text-[#667185] space-x-2 text-sm inline-flex"
+          className="grid lg:grid-cols-3 grid-cols-2 gap--8 py-10"
         >
-          {socials.map((social, index) => (
-            <motion.a
-              key={index}
-              variants={socialItem}
-              whileHover="hover"
-              href={social.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="h-10 w-10 p-2.5 bg-[#1F3C15] rounded-full justify-center hover:bg-[#2E4D2C] transition-colors"
-            >
-              <img src={social.icon} alt={social.name} />
-            </motion.a>
-          ))}
+          <motion.div variants={itemFromBottom} className="text-base">
+            <p className="text-[#98A2B3] font-normal">Links</p>
+            <ul className="font-medium mt-6 space-y-4">
+              {[
+                { to: "/", text: "Home" },
+                { to: "/about", text: "About" },
+                { to: "/contact", text: "Contact us" },
+                { to: "/services", text: "Services" },
+                { to: "/faq", text: "FAQs" },
+                { to: "/careers", text: "Career" },
+              ].map((link, index) => (
+                <motion.li
+                  key={index}
+                  variants={itemFromBottom}
+                  whileHover={{ x: 5 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <Link
+                    to={link.to}
+                    className="hover:text-[#1F3C15] transition-colors"
+                  >
+                    {link.text}
+                  </Link>
+                </motion.li>
+              ))}
+            </ul>
+          </motion.div>
+
+          <motion.div variants={itemFromBottom} className="text-base">
+            <p className="text-[#98A2B3] font-normal">Services</p>
+            <ul className="font-medium mt-6 space-y-4 ">
+              {[
+                { to: "/investment-advisory", text: "Investment Advisory" },
+                { to: "/asset-management", text: "Asset Management" },
+                { to: "/real-asset-investment", text: "Real Asset Investment" },
+                {
+                  to: "/commodity-and-value-chain-investment",
+                  text: "Commodity & Value Chain",
+                },
+                { to: "/agrifinance-services", text: "Financial Services" },
+                {
+                  to: "/esg-and-impact-investing",
+                  text: "ESG & Impact Investing",
+                },
+              ].map((link, index) => (
+                <motion.li
+                  key={index}
+                  variants={itemFromBottom}
+                  whileHover={{ x: 5 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <Link
+                    to={link.to}
+                    className="hover:text-[#1F3C15] transition-colors"
+                  >
+                    {link.text}
+                  </Link>
+                </motion.li>
+              ))}
+            </ul>
+          </motion.div>
         </motion.div>
 
-        <motion.p
-          variants={itemFromBottom}
-          className="mt-4 text-[#1D2739] font-normal text-base lg:hidden"
+        <motion.div
+          variants={fadeIn}
+          className="h-[1px] w-full bg-[#FFFFFF33] hidden lg:block"
+        ></motion.div>
+
+        <motion.div
+          variants={container}
+          className="py-10 lg:flex justify-between -px-10"
         >
-          © 2025 Farmplify. All rights reserved.
-        </motion.p>
+          <motion.div variants={itemFromBottom} className="hidden lg:block">
+            <a href="./">
+              <img
+                src={Logo}
+                alt="Farmplify Logo"
+                className="w-auto h-[64px]"
+              />
+            </a>
+            <p className="mt-4 text-white font-normal text-base">
+              © 2025 Farmplify. All rights reserved.
+            </p>
+          </motion.div>
+
+          <motion.div
+            variants={container}
+            className="text-white space-x-2 text-sm inline-flex"
+          >
+            {socials.map((social, index) => (
+              <motion.a
+                key={index}
+                variants={socialItem}
+                whileHover="hover"
+                href={social.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="h-10 w-10 p-2.5 rounded-full justify-center hover:bg-[#2E4D2C] transition-colors"
+              >
+                <img src={social.icon} alt={social.name} />
+              </motion.a>
+            ))}
+          </motion.div>
+
+          <motion.p
+            variants={itemFromBottom}
+            className="mt-4 text-white font-normal text-base lg:hidden"
+          >
+            © 2025 Farmplify. All rights reserved.
+          </motion.p>
+        </motion.div>
       </motion.div>
     </motion.footer>
   );

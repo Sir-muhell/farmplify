@@ -29,7 +29,7 @@ const Grow = () => {
       <motion.div
         className="lg:rounded-full grow h-[511px] text-center flex flex-col justify-center items-center lg:p-0 p-8"
         style={{
-          backgroundImage: `linear-gradient(180deg, rgba(229, 207, 194, 0) -0.05%, rgba(229, 207, 194, 0.9) 83.32%), url(${Bg})`,
+          backgroundImage: `linear-gradient(180deg, rgba(48, 198, 124, 0) -36.99%, rgba(48, 198, 124, 0.9) 93.84%), url(${Bg})`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           backgroundPosition: "center",
