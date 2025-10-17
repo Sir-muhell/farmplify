@@ -9,6 +9,7 @@ import Image5 from "../assets/services/Image5.webp";
 import Image6 from "../assets/services/Image6.webp";
 import Grow from "../components/Grow";
 import { Link } from "react-router-dom";
+import ServiceCard from "../components/ServicesCard";
 
 const services = [
   {
@@ -79,39 +80,7 @@ const Services = () => {
       <section className="lg:px-20 px-5 py-10 relative z-10">
         <div className="mt-20 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-x-10 gap-y-10 w-[355px] md:w-[750px] lg:w-[1145px] mx-auto">
           {services.map((service, index) => (
-            <Link
-              to={service.link}
-              key={index}
-              className="relative h-[355px] rounded-[8px] overflow-hidden flex flex-col justify-end group cursor-pointer"
-            >
-              <div
-                className="absolute inset-0 w-full h-full transform transition-all duration-1000 ease-in-out  group-hover:-translate-y-12"
-                style={{
-                  backgroundImage: `url(${service.image})`,
-                  height: "100%",
-                  objectFit: "cover",
-                  backgroundPosition: "center",
-                }}
-              >
-                {/* Dark Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/100 to-black/0 transition-opacity duration-1000 ease-in-out group-hover:opacity-0"></div>
-              </div>
-
-              <p className="font-semibold lg:text-[32px] text-[24px] text-white leading-[93%] px-5 h-[64px] mb-5 relative z-20 transition-opacity duration-1500 ease-in-out group-hover:opacity-0">
-                {service.title}
-              </p>
-
-              <div className="absolute bottom-0 left-0 right-0 z-30 transform translate-y-full opacity-0 transition-all duration-700 ease-in-out group-hover:translate-y-0 group-hover:opacity-100">
-                <div className="bg-white h-fit py-6 px-5 rounded-b-[7px]">
-                  <p className="text-[#1F3C15] leading-[100%] text-[18px] font-semibold mb-2">
-                    {service.title}
-                  </p>
-                  <p className="text-[14px] text-[#616161] leading-[130%] font-medium tracking-[0.6px] text-left">
-                    {service.description}
-                  </p>
-                </div>
-              </div>
-            </Link>
+            <ServiceCard key={index} service={service} />
           ))}
         </div>
       </section>

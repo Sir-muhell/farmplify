@@ -24,5 +24,9 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addVariant }) {
+      addVariant("group-active", "&.is-active");
+    },
+  ],
 };
