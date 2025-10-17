@@ -1,22 +1,25 @@
 import "./App.css";
+import { lazy, Suspense } from "react"; // 1. Import React, lazy, and Suspense
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
+
 import Footer from "./components/Footer";
-import Investment from "./pages/InvestmentAdvisory";
-import FinancialServices from "./pages/FinancialServices";
-import ImpactInvesting from "./pages/ImpactInvesting";
-import TechEnabled from "./pages/TechEnabled";
-import AssetInvestment from "./pages/AssestInvestment";
-import Commodity from "./pages/Commodity";
-import AssetManagement from "./pages/AssetManagement";
 import { PageTransitionWrapper, ScrollTop } from "./components/ScrollToTop";
-import Team from "./pages/Team";
-import Services from "./pages/Services";
-import Faq from "./pages/Faq";
-import Careers from "./pages/Careers";
-import Submit from "./pages/Submit";
+
+const Home = lazy(() => import("./pages/Home"));
+const About = lazy(() => import("./pages/About"));
+const Contact = lazy(() => import("./pages/Contact"));
+const Team = lazy(() => import("./pages/Team"));
+const Services = lazy(() => import("./pages/Services"));
+const Investment = lazy(() => import("./pages/InvestmentAdvisory"));
+const FinancialServices = lazy(() => import("./pages/FinancialServices"));
+const ImpactInvesting = lazy(() => import("./pages/ImpactInvesting"));
+const TechEnabled = lazy(() => import("./pages/TechEnabled"));
+const AssetInvestment = lazy(() => import("./pages/AssestInvestment"));
+const Commodity = lazy(() => import("./pages/Commodity"));
+const AssetManagement = lazy(() => import("./pages/AssetManagement"));
+const Faq = lazy(() => import("./pages/Faq"));
+const Careers = lazy(() => import("./pages/Careers"));
+const Submit = lazy(() => import("./pages/Submit"));
 
 function App() {
   return (
@@ -25,39 +28,41 @@ function App() {
         <Router>
           <ScrollTop />
           <PageTransitionWrapper>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/team" element={<Team />} />
-              <Route path="/services" element={<Services />} />
-              <Route path="/investment-advisory" element={<Investment />} />
-              <Route path="/asset-management" element={<AssetManagement />} />
-              <Route path="/faq" element={<Faq />} />
-              <Route path="/careers" element={<Careers />} />
-              <Route path="/submit" element={<Submit />} />
+            <Suspense fallback={<div>Loading...</div>}>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/team" element={<Team />} />
+                <Route path="/services" element={<Services />} />
+                <Route path="/investment-advisory" element={<Investment />} />
+                <Route path="/asset-management" element={<AssetManagement />} />
+                <Route path="/faq" element={<Faq />} />
+                <Route path="/careers" element={<Careers />} />
+                <Route path="/submit" element={<Submit />} />
 
-              <Route
-                path="/real-asset-investment"
-                element={<AssetInvestment />}
-              />
-              <Route
-                path="/commodity-and-value-chain-investment"
-                element={<Commodity />}
-              />
-              <Route
-                path="/tech-enabled-agriculture"
-                element={<TechEnabled />}
-              />
-              <Route
-                path="/agrifinance-services"
-                element={<FinancialServices />}
-              />
-              <Route
-                path="/esg-and-impact-investing"
-                element={<ImpactInvesting />}
-              />
-            </Routes>
+                <Route
+                  path="/real-asset-investment"
+                  element={<AssetInvestment />}
+                />
+                <Route
+                  path="/commodity-and-value-chain-investment"
+                  element={<Commodity />}
+                />
+                <Route
+                  path="/tech-enabled-agriculture"
+                  element={<TechEnabled />}
+                />
+                <Route
+                  path="/agrifinance-services"
+                  element={<FinancialServices />}
+                />
+                <Route
+                  path="/esg-and-impact-investing"
+                  element={<ImpactInvesting />}
+                />
+              </Routes>
+            </Suspense>
             <Footer />
           </PageTransitionWrapper>
         </Router>

@@ -77,24 +77,45 @@ const Services = () => {
         <img src={Image} alt="" className="absolute lg:-top-[500px]" />
       </section>
       <section className="lg:px-20 px-5 py-10 relative z-10">
-        <div className="mt-20 grid lg:grid-cols-4 mg:grid-cols-2 grid-cols-1 gap-x-12 gap-y-18">
+        <div className="mt-20 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-x-10 gap-y-10 w-[355px] md:w-[750px] lg:w-[1145px] mx-auto">
           {services.map((service, index) => (
-            <Link to={service.link} key={index} className="text-center">
-              <img
-                src={service.image}
-                alt={service.title}
-                className="m-auto   w-full h-auto  object-cover "
-              />
-              <p className="mt-[50px] mt-5 font-semibold lg:text-[32px] text-[24px] text-[#1F3C15] leading-[93%]">
+            <Link
+              to={service.link}
+              key={index}
+              className="relative h-[355px] rounded-[8px] overflow-hidden flex flex-col justify-end group cursor-pointer"
+            >
+              <div
+                className="absolute inset-0 w-full h-full transform transition-all duration-1000 ease-in-out  group-hover:-translate-y-12"
+                style={{
+                  backgroundImage: `url(${service.image})`,
+                  height: "100%",
+                  objectFit: "cover",
+                  backgroundPosition: "center",
+                }}
+              >
+                {/* Dark Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/100 to-black/0 transition-opacity duration-1000 ease-in-out group-hover:opacity-0"></div>
+              </div>
+
+              <p className="font-semibold lg:text-[32px] text-[24px] text-white leading-[93%] px-5 h-[64px] mb-5 relative z-20 transition-opacity duration-1500 ease-in-out group-hover:opacity-0">
                 {service.title}
               </p>
-              <p className="text-[#616161] font-medium lg:text-[18px] text-[18px] leading-[130%] tracking-[0.03em] lg:mt-4 mt-2">
-                {service.description}
-              </p>
+
+              <div className="absolute bottom-0 left-0 right-0 z-30 transform translate-y-full opacity-0 transition-all duration-700 ease-in-out group-hover:translate-y-0 group-hover:opacity-100">
+                <div className="bg-white h-fit py-6 px-5 rounded-b-[7px]">
+                  <p className="text-[#1F3C15] leading-[100%] text-[18px] font-semibold mb-2">
+                    {service.title}
+                  </p>
+                  <p className="text-[14px] text-[#616161] leading-[130%] font-medium tracking-[0.6px] text-left">
+                    {service.description}
+                  </p>
+                </div>
+              </div>
             </Link>
           ))}
         </div>
       </section>
+
       <Grow />
     </main>
   );
