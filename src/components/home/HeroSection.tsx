@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import Image2 from "../../assets/hero2.webp";
-import Image3 from "../../assets/hero1.webp";
+import Image2 from "../../assets/home/hero2.webp";
+import Image3 from "../../assets/home/hero1.webp";
 import Navbar from "../Navbar";
 
 interface Slide {
@@ -72,7 +72,7 @@ const HeroCarousel = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       handleNext();
-    }, 5000);
+    }, 10000);
     return () => clearInterval(interval);
   }, [currentIndex]);
 

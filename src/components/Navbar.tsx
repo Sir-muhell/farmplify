@@ -72,53 +72,62 @@ const Navbar = () => {
     }
   }, [mobileMenuOpen]);
 
+  const baseTextColor = isDarkHero ? "text-[#FFFFFFB2]" : "text-[#1F3C15B2]";
+  const activeTextColor = isDarkHero ? "text-white" : "text-[#1F3C15]";
+
+  const currentLogo = isDarkHero
+    ? LogoWhite
+    : isHomePage && isMobile
+    ? LogoWhite
+    : Logo;
+
   return (
     <nav className="absolute top-0 left-0 right-0 z-50 transition-all duration-900">
       <div
-        className={`mx-0 lg:mx-40 px-5 sm:px-6 lg:px-8 py-[13px] md:py-0 rounded-full transition-all duration-900
+        className={`mx-0 lg:max-w-[70%] mx-auto px-5 sm:px-6 lg:px-8 py-[13px] md:py-0 rounded-full transition-all duration-900
     ${
       isHomePage
-        ? scrolled
-          ? "bg-[#EBFAF2] text-[#1F3C15B2] shadow-md mt-5 md:mt-0 lg:mt-[48px] mx-4 lg:mx-0 shadow-lg"
-          : "lg:bg-[#EBFAF2] bg-transparent text-[#1F3C15B2] md:text-white lg:mt-[35px]"
-        : scrolled
-        ? "bg-[#EBFAF2] mt-5 md:mt-0 lg:mt-[48px] mx-4 md:mx-0 shadow-lg"
+        ? "lg:bg-[#EBFAF2] bg-transparent text-[#1F3C15B2] md:text-white lg:mt-[35px]"
+        : isDarkHero
+        ? "bg-[#FFFFFF33] text-white lg:mt-[48px]"
         : "bg-transparent md:bg-[#EBFAF2] text-[#1F3C15B2] lg:mt-[48px]"
     }`}
       >
         <div className="flex justify-between md:flex-row flex-row-reverse lg:px-10 lg:px-5 px-0 items-center">
           <div className="md:hidden flex w-[18px]"></div>
 
-          {/* Logo - Left side */}
+          {/* Logo - Left side (Now simplified using the currentLogo variable) */}
           <div className="flex-shrink-0 flex items-center">
-            {(isHomePage || isDarkHero) && isMobile ? (
-              <img src={LogoWhite} alt="" className="h-10" />
-            ) : (
-              <img src={Logo} alt="" className="h-10" />
-            )}
+            <img src={currentLogo} alt="Logo" className="h-10" />
           </div>
 
           {/* Desktop Navigation - Right side */}
-          <div className="hidden md:flex items-center justify-center space-x-10 py-5 font-semibold text-[14px] text-[#1F3C15B2] text-[#1F3C15B2]">
+          <div
+            className={`hidden md:flex items-center justify-center space-x-10 py-5 font-semibold text-[14px] ${baseTextColor}`}
+          >
+            {/* HOME Link */}
             <Link
               to="/"
-              className={`hover:text-[#1F3C15] uppercase tracking-wider transition-colors ${
-                isActiveLink("/") ? "text-[#1F3C15] scale-105" : ""
-              }`}
+              className={`hover:text-current uppercase tracking-wider transition-colors ${
+                isActiveLink("/") ? activeTextColor + " scale-105" : ""
+              } ${isDarkHero ? "hover:text-white" : "hover:text-[#1F3C15]"}`}
             >
               HOME
             </Link>
+
+            {/* ABOUT US Dropdown */}
             <div className="relative">
               <button
                 onClick={() => {
                   setIsAboutUsOpen(!isAboutUsOpen);
                   setServicesOpen(false);
                 }}
-                className={`flex items-center hover:text-[#1F3C15] uppercase tracking-wider transition-colors cursor-pointer ${
-                  isAboutActive ? "text-[#1F3C15] scale-105" : ""
-                }`}
+                className={`flex items-center hover:text-current uppercase tracking-wider transition-colors cursor-pointer ${
+                  isAboutActive ? activeTextColor + " scale-105" : ""
+                } ${isDarkHero ? "hover:text-white" : "hover:text-[#1F3C15]"}`}
               >
                 ABOUT US
+                {/* SVG color relies on currentColor, which inherits from the button text */}
                 <svg
                   className={`ml-2 h-4 w-4 transition-transform ${
                     isAboutUsOpen ? "rotate-180" : ""
@@ -136,6 +145,7 @@ const Navbar = () => {
                 </svg>
               </button>
 
+              {/* Dropdown Menu (No color change needed inside, as it uses a fixed background) */}
               <div
                 className={` mt-10 absolute rounded-[10px] shadow-lg z-50 overflow-hidden p-4 bg-[#EBFAF2] w-32 transition-all duration-300 ease-in-out hidden lg:flex lg:flex-col gap-3 ${
                   isAboutUsOpen
@@ -168,9 +178,9 @@ const Navbar = () => {
                 onClick={() => {
                   setServicesOpen(!servicesOpen), setIsAboutUsOpen(false);
                 }}
-                className={`flex items-center hover:text-[#1F3C15] text-sm uppercase tracking-wider transition-colors cursor-pointer ${
-                  isServicesActive ? "text-[#1F3C15] scale-105" : ""
-                }`}
+                className={`flex items-center hover:text-current text-sm uppercase tracking-wider transition-colors cursor-pointer ${
+                  isServicesActive ? activeTextColor + " scale-105" : ""
+                } ${isDarkHero ? "hover:text-white" : "hover:text-[#1F3C15]"}`}
               >
                 CORE SERVICES
                 <svg
@@ -190,17 +200,29 @@ const Navbar = () => {
                 </svg>
               </button>
             </div>
+
+            {/* FAQs Link */}
+            <Link
+              to="/faq"
+              className={`hover:text-current uppercase tracking-wider transition-colors ${
+                isActiveLink("/faq") ? activeTextColor + " scale-105" : ""
+              } ${isDarkHero ? "hover:text-white" : "hover:text-[#1F3C15]"}`}
+            >
+              FAQs
+            </Link>
+
+            {/* CONTACT US Link */}
             <Link
               to="/contact"
-              className={`hover:text-[#1F3C15] uppercase tracking-wider transition-colors ${
-                isActiveLink("/contact") ? "text-[#1F3C15] scale-105" : ""
-              }`}
+              className={`hover:text-current uppercase tracking-wider transition-colors ${
+                isActiveLink("/contact") ? activeTextColor + " scale-105" : ""
+              } ${isDarkHero ? "hover:text-white" : "hover:text-[#1F3C15]"}`}
             >
               CONTACT US
             </Link>
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile menu button (Only logo source changed here) */}
           <div className="lg:hidden flex items-center">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -334,7 +356,13 @@ const Navbar = () => {
                     </div>
                   )}
                 </div>
-
+                <Link
+                  to="/faq"
+                  className="block uppercase tracking-wider"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  FAQs
+                </Link>
                 <Link
                   to="/contact"
                   className="block uppercase tracking-wider"

@@ -8,7 +8,6 @@ import Image4 from "../assets/services/Image4.webp";
 import Image5 from "../assets/services/Image5.webp";
 import Image6 from "../assets/services/Image6.webp";
 import Grow from "../components/Grow";
-import { Link } from "react-router-dom";
 import ServiceCard from "../components/ServicesCard";
 
 const services = [

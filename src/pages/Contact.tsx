@@ -145,7 +145,7 @@ const Contact = () => {
         />
         <div className="lg:px-[104px] px-4 flex flex-col justify-center">
           <p className="font-semibold lg:text-[50px] text-[35px] text-[#1F3C15] leading-[90%]">
-            Let’s level up your brand, together
+            Let’s build your Agriculture Investment Portfolio, together.
           </p>
           <p className="mt-6 lg:text-[20px] text-[16px] text-[#616161] font-medium">
             You can reach us anytime via{" "}
@@ -244,8 +244,8 @@ const Contact = () => {
             </div>
 
             {/* Submit */}
-            <button className="bg-[#E5CFC2] text-[#5C7D34] font-semibold uppercase lg:text-[20px] text-[16px]  w-full py-6 rounded-full tracking-[0.23em] hover:scale-105 transition mt-12 cursor-pointer ">
-              send
+            <button className="bg-[#1F3C15] text-white font-semibold uppercase text-xl py-[18px] w-full rounded-full tracking-[0.23em] hover:scale-105 transition mt-12 cursor-pointer">
+              Send
             </button>
           </form>
         </div>

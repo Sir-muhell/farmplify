@@ -43,7 +43,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
       className={`relative h-[355px] rounded-[8px] overflow-hidden flex flex-col justify-end group cursor-pointer transition-all duration-1500 ease-in-out ${cardClass}`}
     >
       <div
-        className="absolute inset-0 w-full h-full transform transition-all duration-1000 ease-in-out  group-hover:-translate-y-12 group-active:-translate-y-12"
+        className="absolute inset-0 w-full h-full transform transition-all duration-1000 ease-in-out  group-hover:-translate-y-16 group-active:-translate-y-16"
         style={{
           backgroundImage: `url(${service.image})`,
           backgroundSize: "cover",
@@ -59,7 +59,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
 
       {/*White Panel Slides In from Bottom */}
       <div
-        className="absolute bottom-0 left-0 right-0 z-30 transform translate-y-full opacity-0 transition-all duration-1500 ease-in-out group-hover:translate-y-0 group-hover:opacity-100 group-active:translate-y-0 group-active:opacity-100" // Targets mobile tap
+        className="absolute bottom-0 left-0 right-0 z-30 transform translate-y-full transition-all duration-1500 ease-in-out translate-y-50 group-hover:translate-y-0 translate-y-100 group-hover:opacity-100 group-active:translate-y-0 group-active:opacity-100" // Targets mobile tap
       >
         <div className="bg-white h-fit py-6 px-5 rounded-b-[7px]">
           <p className="text-[#1F3C15] leading-[100%] text-[18px] font-semibold mb-2">
