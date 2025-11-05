@@ -2,7 +2,7 @@ import { boardMembers } from "./TeamList";
 import Tape from "../Tape";
 const TeamBody = () => {
   return (
-    <div className="lg:px-20 px-5 pb-[100px] mx-auto relative">
+    <div className="lg:px-20 px-5 lg:pb-[132px] pb-[59px] mx-auto relative">
       <div className="lg:mt-20 mt-10 text-center">
         <Tape text="Who We Are" textColor="#1F3C15" />
         <div className="mt-10 max-w-[1011px] m-auto">

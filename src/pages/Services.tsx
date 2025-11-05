@@ -83,8 +83,6 @@ const Services = () => {
           ))}
         </div>
       </section>
-
-      <Grow />
     </main>
   );
 };

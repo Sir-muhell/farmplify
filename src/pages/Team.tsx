@@ -80,7 +80,6 @@ const Team = () => {
       </motion.section>
 
       <TeamBody />
-      <Grow />
     </main>
   );
 };

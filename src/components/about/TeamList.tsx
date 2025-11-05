@@ -1,5 +1,5 @@
 // Board Members
-import Image from "../../assets/home.webp";
+import Image from "../../assets/about-3.webp";
 export const boardMembers = [
   {
     image: Image,
