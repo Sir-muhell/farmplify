@@ -2,13 +2,16 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Grow from "../components/Grow";
-import Image from "../assets/services/finance.webp";
-import ServiceCard from "../components/ServiceCard";
-import Image2 from "../assets/object.svg";
+import Image from "../assets/services/esg.webp";
+import ImageSm from "../assets/services/asset-2.webp";
+import ServiceCard, { type Tab } from "../components/ServiceCard";
+import leftIcon from "../assets/icons/brown-left.png";
+import rightIcon from "../assets/icons/brown-right.png";
 
-const data = [
+const data: Tab[] = [
   {
-    number: "1",
+    id: 1,
+    label: "ONE",
     title: "Capital Raising & Structuring",
     items: [
       "Debt financing (commercial loans, credit facilities, green bonds).",
@@ -18,7 +21,8 @@ const data = [
     ],
   },
   {
-    number: "2",
+    id: 2,
+    label: "TWO",
     title: "Project Finance & Syndication",
     items: [
       "End-to-end project finance structuring for large-scale agribusiness ventures.",
@@ -28,7 +32,8 @@ const data = [
     ],
   },
   {
-    number: "3",
+    id: 3,
+    label: "THREE",
     title: "Risk Management & Insurance Solutions",
     items: [
       "Crop insurance (climate, pest, disease coverage).",
@@ -38,7 +43,8 @@ const data = [
     ],
   },
   {
-    number: "4",
+    id: 4,
+    label: "FOUR",
     title: "Tax & Legal Advisory",
     items: [
       "Agribusiness tax planning and optimization.",
@@ -48,7 +54,8 @@ const data = [
     ],
   },
   {
-    number: "5",
+    id: 5,
+    label: "FIVE",
     title: "Investment Advisory & Portfolio Management",
     items: [
       "Customized investment strategies for farmland, plantations, and agribusinesses.",
@@ -58,7 +65,8 @@ const data = [
     ],
   },
   {
-    number: "6",
+    id: 6,
+    label: "SIX",
     title: "Blended & Development Finance Solutions",
     items: [
       "Accessing concessional finance from DFIs, multilaterals, and donor agencies.",
@@ -68,7 +76,8 @@ const data = [
     ],
   },
   {
-    number: "7",
+    id: 7,
+    label: "SEVEN",
     title: "Trade & Export Finance",
     items: [
       "Pre- and post-shipment financing.",
@@ -78,7 +87,8 @@ const data = [
     ],
   },
   {
-    number: "8",
+    id: 8,
+    label: "EIGHT",
     title: "Leasing & Asset Financing",
     items: [
       "Farm equipment leasing and financing solutions.",
@@ -88,7 +98,8 @@ const data = [
     ],
   },
   {
-    number: "9",
+    id: 9,
+    label: "NINE",
     title: "Carbon & Green Finance Solutions",
     items: [
       "Carbon credit-linked financing models.",
@@ -98,7 +109,8 @@ const data = [
     ],
   },
   {
-    number: "10",
+    id: 10,
+    label: "TEN",
     title: "Advisory & Transaction Services",
     items: [
       "Mergers & acquisitions (M&A) in agribusiness.",
@@ -122,43 +134,31 @@ const FinancialServices = () => {
         subHead="The Financial Services division provides comprehensive capital solutions and advisory for agricultural investments, encompassing debt, equity, and blended finance. This unit is responsible for structuring and syndicating project finance, while delivering expert tax, insurance, and legal advisory to institutional and private investors, ensuring optimal returns and compliance across the agribusiness sector."
       />
       <section className="h-fit">
-        <div
-          className="lg:px-20 px-5 lg:pt-[117px] lg:pb-[128px] pt-5 pb-[84px] bg-[#1A1613] flex flex-col"
-          style={{
-            backgroundImage: `url(${Image2})`,
-            backgroundRepeat: "no-repeat",
-            backgroundSize: isMobile ? "200%" : "100%",
-            backgroundPosition: "top",
-          }}
-        >
+        <div className=" flex flex-col lg:px-20 px-5 lg:py-28 py-5 relative bg-[#59260B]">
           <img
             src={Image}
-            alt=""
-            className="h-[139px] object-cover object-[5%_25%]  rounded-[16px] lg:hidden flex "
-          />{" "}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-x-28 lg:gap-y-20  lg:mt-0 mt-[34px]">
-            {data.map((service, index) => (
-              <React.Fragment key={service.number}>
-                <ServiceCard
-                  number={service.number}
-                  title={service.title}
-                  items={service.items}
-                />
-
-                {/* Insert image after the first card */}
-                {index === 0 && (
-                  <img
-                    src={Image}
-                    alt="Agribusiness imagery"
-                    className="h-80 w-full object-cover object-[5%_5%] rounded-[16px] lg:col-span-2 md:col-span-1 lg:flex hidden"
-                  />
-                )}
-              </React.Fragment>
-            ))}
+            alt="page-image"
+            className="h-[520px] object-cover object-[5%_25%]  rounded-[16px] md:block hidden"
+          />
+          <img
+            src={Image}
+            alt="page-image"
+            className="h-[139px] object-cover object-[5%_25%]  rounded-[16px] md:hidden"
+          />
+          <div className=" lg:mt-[64px] mt-[34px] lg:grid grid-cols-8">
+            <div className="col-span-1"></div>
+            <ServiceCard
+              tabs={data}
+              textColor="#DFDFDF"
+              titleColor="#FFFFFF"
+              className="col-span-6"
+              leftIcon={leftIcon}
+              rightIcon={rightIcon}
+            />
+            <div className="col-span-1"></div>
           </div>
         </div>
       </section>
-      <Grow />
     </main>
   );
 };

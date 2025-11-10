@@ -13,7 +13,6 @@ const Services = lazy(() => import("./pages/Services"));
 const Investment = lazy(() => import("./pages/InvestmentAdvisory"));
 const FinancialServices = lazy(() => import("./pages/FinancialServices"));
 const ImpactInvesting = lazy(() => import("./pages/ImpactInvesting"));
-const TechEnabled = lazy(() => import("./pages/TechEnabled"));
 const AssetInvestment = lazy(() => import("./pages/AssestInvestment"));
 const Commodity = lazy(() => import("./pages/Commodity"));
 const AssetManagement = lazy(() => import("./pages/AssetManagement"));
@@ -49,10 +48,10 @@ function App() {
                   path="/commodity-and-value-chain-investment"
                   element={<Commodity />}
                 />
-                <Route
+                {/* <Route
                   path="/tech-enabled-agriculture"
                   element={<TechEnabled />}
-                />
+                /> */}
                 <Route
                   path="/agrifinance-services"
                   element={<FinancialServices />}

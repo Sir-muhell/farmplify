@@ -137,7 +137,7 @@ const Contact = () => {
           ))}
         </motion.div>
       </motion.div>
-      <div className="lg:grid grid-cols-2 max-w-[1600px] mx-auto">
+      <div className="lg:grid grid-cols-2 max-w-[1600px] mx-auto lg:mb-0 mb-10">
         <img
           src={Image}
           alt="contact us"

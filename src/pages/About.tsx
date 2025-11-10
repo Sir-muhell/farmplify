@@ -1,6 +1,6 @@
 import Body from "../components/about/Body";
 import Hero from "../components/about/Hero";
-import Image from "../assets/bg-white.svg";
+import Image from "../assets/object.svg";
 import Navbar from "../components/Navbar";
 import Tape from "../components/Tape";
 import Field from "../assets/about-3.webp";

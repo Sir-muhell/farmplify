@@ -89,7 +89,7 @@ const Navbar = () => {
       isHomePage
         ? "lg:bg-[#EBFAF2] bg-transparent text-[#1F3C15B2] md:text-white lg:mt-[35px]"
         : isDarkHero
-        ? "bg-[#FFFFFF33] text-white lg:mt-[48px]"
+        ? "lg:bg-[#FFFFFF33] text-white lg:mt-[48px]"
         : "bg-transparent md:bg-[#EBFAF2] text-[#1F3C15B2] lg:mt-[48px]"
     }`}
       >

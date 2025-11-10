@@ -13,12 +13,12 @@ const Careers = () => {
       <Hero
         text="Value Is Everything"
         tape="careers"
-        color="#1A1613"
+        color="#59260B"
         image={Image}
       />
       <div className="mt-[56px] mt-[59px] lg:grid grid-cols-8 lg:text-left text-center px-5 lg:px-20">
         <div className=" justify-center flex flex-col mb-[63px] lg:mb-0 col-span-3">
-          <p className="text-[#1A1613] text-[32px] font-medium leading-[110%] tracking-[0.6px] ">
+          <p className="text-[#1A1613] lg:text-[32px] text-[40px] font-semibold lg:font-medium leading-[110%] tracking-[0.6px] ">
             Value and culture defines our identity. We foster a disciplined
             mindset that rewards initiative, embraces innovation, and values
             inclusivity. Our people and partners thrive in an environment where
@@ -48,8 +48,6 @@ const Careers = () => {
           />
         </div>
       </div>
-
-      <Grow />
     </main>
   );
 };

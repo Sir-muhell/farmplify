@@ -1,13 +1,15 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
-import Grow from "../components/Grow";
 import Image from "../assets/services/esg.webp";
-import ServiceCard from "../components/ServiceCard";
-import Image2 from "../assets/object.svg";
+import ImageSm from "../assets/services/asset-2.webp";
+import ServiceCard, { type Tab } from "../components/ServiceCard";
+import leftIcon from "../assets/icons/yellow-left.png";
+import rightIcon from "../assets/icons/yellow-right.png";
 
-const servicesData = [
+const servicesData: Tab[] = [
   {
-    number: "1",
+    id: 1,
+    label: "ONE",
     title: "Carbon Credit-Linked Investments",
     items: [
       "Structuring and managing carbon offset projects through tree plantations, agroforestry, and regenerative agriculture.",
@@ -16,7 +18,8 @@ const servicesData = [
     ],
   },
   {
-    number: "2",
+    id: 2,
+    label: "TWO",
     title: "Sustainable Agriculture & Climate-Smart Practices",
     items: [
       "Deployment of climate-resilient farming methods (conservation tillage, precision irrigation, organic inputs).",
@@ -25,7 +28,8 @@ const servicesData = [
     ],
   },
   {
-    number: "3",
+    id: 3,
+    label: "THREE",
     title: "Inclusive Investment Models",
     items: [
       "Designing agri-investment structures that empower women, youth, and underserved communities.",
@@ -34,7 +38,8 @@ const servicesData = [
     ],
   },
   {
-    number: "4",
+    id: 4,
+    label: "FOUR",
     title: "Impact Measurement & Reporting",
     items: [
       "Comprehensive ESG reporting frameworks aligned with international standards (IFC Performance Standards, SASB, GRI).",
@@ -43,7 +48,8 @@ const servicesData = [
     ],
   },
   {
-    number: "5",
+    id: 5,
+    label: "FIVE",
     title: "Green Finance & Blended Capital Structuring",
     items: [
       "Leveraging grants, concessional loans, and impact funds to de-risk private investment.",
@@ -52,7 +58,8 @@ const servicesData = [
     ],
   },
   {
-    number: "6",
+    id: 6,
+    label: "SIX",
     title: "Renewable Energy Integration",
     items: [
       "Deploying solar, biogas, and other renewable energy systems in farm operations.",
@@ -61,7 +68,8 @@ const servicesData = [
     ],
   },
   {
-    number: "7",
+    id: 7,
+    label: "SEVEN",
     title: "Community Development & Shared Prosperity",
     items: [
       "Designing agricultural projects that create jobs, improve rural incomes, and reduce poverty.",
@@ -70,7 +78,8 @@ const servicesData = [
     ],
   },
   {
-    number: "8",
+    id: 8,
+    label: "EIGHT",
     title: "Sustainability Certifications & Standards",
     items: [
       "Supporting farms and agribusinesses to obtain international sustainability certifications (Fairtrade, Rainforest Alliance, Organic).",
@@ -79,7 +88,8 @@ const servicesData = [
     ],
   },
   {
-    number: "9",
+    id: 9,
+    label: "NINE",
     title: "Policy, Advocacy & Partnerships",
     items: [
       "Working with governments, NGOs, and DFIs to align agriculture investments with SDGs and national climate goals.",
@@ -100,34 +110,31 @@ const ImpactInvesting = () => {
         headNum={602}
       />
       <section className="h-fit">
-        <div
-          className=" flex flex-col lg:px-20 px-5 lg:py-28 py-5  relative bg-[#1A1613]"
-          style={{
-            backgroundImage: `url(${Image2})`,
-            backgroundRepeat: "no-repeat",
-            backgroundSize: isMobile ? "200%" : "100%",
-            backgroundPosition: "top",
-          }}
-        >
+        <div className=" flex flex-col lg:px-20 px-5 lg:py-28 py-5  relative bg-[#F2BF4A]">
           <img
             src={Image}
-            alt=""
-            className="lg:h-[312px] h-[139px] object-cover object-[5%_25%]  rounded-[16px]"
-          />{" "}
-          {/* Responsive Grid Container */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-28 lg:mt-[97px] mt-[34px]">
-            {servicesData.map((service) => (
-              <ServiceCard
-                key={service.number}
-                number={service.number}
-                title={service.title}
-                items={service.items}
-              />
-            ))}
+            alt="page-image"
+            className="h-[520px] object-cover object-[5%_25%]  rounded-[16px] md:block hidden"
+          />
+          <img
+            src={Image}
+            alt="page-image"
+            className="h-[139px] object-cover object-[5%_25%]  rounded-[16px] md:hidden"
+          />
+          <div className=" mt-[34px] lg:grid grid-cols-8">
+            <div className="col-span-1"></div>
+            <ServiceCard
+              tabs={servicesData}
+              textColor="#000000"
+              titleColor="#1F3C15"
+              className="col-span-6"
+              leftIcon={leftIcon}
+              rightIcon={rightIcon}
+            />
+            <div className="col-span-1"></div>
           </div>
         </div>
       </section>
-      <Grow />
     </main>
   );
 };

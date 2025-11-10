@@ -35,7 +35,7 @@ const Hero = ({ text, image, color, tape }: HeroProps) => {
         backgroundColor: color,
         backgroundImage: `url(${image})`,
         backgroundRepeat: "no-repeat",
-        backgroundSize: isMobile ? "300%" : "100%",
+        backgroundSize: isMobile ? "300%" : "150%",
         backgroundPosition: "center",
       }}
     >

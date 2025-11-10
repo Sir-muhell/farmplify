@@ -57,7 +57,7 @@ const Submit = () => {
       <Hero
         text="Value Is Everything"
         tape="careers"
-        color="#1A1613"
+        color="#59260B"
         image={Image}
       />
       <div className="lg:grid grid-cols-2 gap-10  mx-auto lg:mb-0 mb-[82px] lg:px-20 px-4">
@@ -240,7 +240,6 @@ const Submit = () => {
           </form>
         </div>
       </div>
-      <Grow />
     </main>
   );
 };
