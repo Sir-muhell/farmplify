@@ -24,7 +24,7 @@ const Submit = lazy(() => import("./pages/Submit"));
 function App() {
   return (
     <>
-      <div className="App overflow-x-hidden">
+      <div className="App overflow-hidden">
         <Router>
           <ScrollTop />
           <PageTransitionWrapper>

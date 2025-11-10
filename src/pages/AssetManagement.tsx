@@ -5,6 +5,9 @@ import Image from "../assets/about.webp";
 import Image1 from "../assets/services/asset-1.webp";
 import Image2 from "../assets/services/asset-2.webp";
 import Image3 from "../assets/services/asset-3.webp";
+import Image4 from "../assets/services/asset-4.webp";
+import Bg from "../assets/services/bg-brown.svg";
+import Tree from "../assets/tree-brown.svg";
 import Tape from "../components/Tape";
 import Button from "../components/Button";
 
@@ -22,7 +25,7 @@ const AssetManagement = () => {
       <section
         className="flex flex-col lg:pt-[297px] lg:pb-[76px] text-white lg:grid grid-cols-8 lg:px-20 px-5"
         style={{
-          background: `linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(177.94deg, rgba(26, 22, 19, 0) 11.99%, #1A1613 89.3%),url(${Image}`,
+          background: `linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),linear-gradient(180.68deg, rgba(48, 198, 124, 0) 1.61%, #1F3C15 90.71%),url(${Image}`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
@@ -55,10 +58,10 @@ const AssetManagement = () => {
       </section>
       <section
         style={{
-          background: `linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(0deg, rgba(26, 22, 19, 0) 11.99%, #1A1613 89.3%)`,
+          background: `linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(0deg, rgba(48, 198, 124, 0) 1.61%, #1F3C15 90.71%)`,
         }}
       >
-        <div className="bg-white lg:px-20 px-5 lg:pt-[148px] lg:pb-14 py-10 lg:rounded-t-[186px] rounded-t-[50px]">
+        <div className="bg-white lg:px-20 px-5 lg:pt-[148px] lg:pb-[29px] pt-10 lg:rounded-t-[186px] rounded-t-[50px]">
           <div className="mt-5 lg:mt-0 lg:text-left text-center lg:grid lg:grid-cols-8 gap-5">
             <p className="font-medium lg:text-[40px] text-[28px] text-[#1A1613] leading-[110%] tracking-[0.6px] col-span-3 lg:w-[475px]">
               Manage Agricultural Investments with Expert Asset Management
@@ -81,9 +84,45 @@ const AssetManagement = () => {
             />
           </div>
         </div>
+        <div className="lg:grid grid-cols-2 gap-10 lg:px-20 px-5 bg-white pt-14 lg:pb-[29px]">
+          <div className="col-span-1 flex gap-10">
+            <img src={Tree} alt="tree-image" className="h-[118px] w-auto" />
+            <p className="text-[#1A1613] text-[56px] font-semibold tracking-[-0.5px] leading-[110%]">
+              Farmplify’s Asset Management
+            </p>
+          </div>
+          <div className="col-span-1  max-w-[520px]">
+            <img
+              src={Image1}
+              alt="Asset-Image"
+              className="rounded-[8px] hidden lg:block h-[272px] w-full object-cover object-top"
+            />
+            <p className="font-semibold lg:text-[28px] text-[28px] text-[#0C8E36] leading-[110%] tracking-[0.6px] mt-8 max-w-[461px] ">
+              Access structured agribusiness asset management
+            </p>
+            <p className="text-[16px] text-[#4E4E4E] font-medium leading-[130%] lg:mt-4 mt-4 tracking-[0.6px] w-full">
+              The assurance of expertly managed agricultural investments,
+              delivered through comprehensive oversight of agribusiness
+              enterprises. With dedicated technical teams and operational
+              specialists on the ground, We ensure that every asset under
+              management performs at its optimum, balancing productivity,
+              sustainability, and long-term value creation
+            </p>
+            <img
+              src={Image4}
+              alt="Asset-Image"
+              className="rounded-[8px] hidden lg:block h-[100px] w-full object-cover object-[30%_30%] mt-[100px]"
+            />
+          </div>
+          <img
+            src={Bg}
+            alt="background-tree"
+            className="absolute bottom-[29px] left-0"
+          />
+        </div>
       </section>
 
-      <section className="lg:px-20 px-5 lg:pt-[89px] lg:pb-20 py-10 lg:text-left text-center bg-[#E5CFC2]">
+      {/* <section className="lg:px-20 px-5 lg:pt-[89px] lg:pb-20 py-10 lg:text-left text-center bg-[#E5CFC2] relative">
         <div className="flex flex-col lg:grid grid-cols-2 lg:gap-20 gap-10 justify-center items-center h-fit">
           <div className="w-full h-full">
             <img
@@ -154,7 +193,7 @@ const AssetManagement = () => {
         </div>
       </section>
       <img src={Image3} alt="Asset-Image" className=" lg:hidden mb-10" />
-      <Grow />
+      <Grow /> */}
     </main>
   );
 };

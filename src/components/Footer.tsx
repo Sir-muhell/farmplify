@@ -62,7 +62,7 @@ const Footer = () => {
       whileInView="show"
       viewport={{ once: true, margin: "-50px" }}
       variants={container}
-      className=" bg-[#EBFAF2] lg:p-5 max-w-[2600px]  mx-auto"
+      className=" bg-[#EBFAF2] lg:p-5 max-w-[2600px]  mx-auto relative"
     >
       <motion.div
         variants={fadeIn}
@@ -86,10 +86,10 @@ const Footer = () => {
         </motion.div>
       </motion.div>
 
-      <motion.div className="lg:pt-24 lg:px-[62px] px-[28px] pt-[30px]  text-white bg-[#1F3C15] lg:rounded-[56px] rounded-b-[16px] relative lg:overflow-hidden h-fit mx-4">
+      <motion.div className="lg:pt-24 lg:px-[62px] px-[28px] pt-[30px]  text-white bg-[#1F3C15] lg:rounded-[56px] rounded-b-[16px] relative  mx-4 lg:h-[488px] h-[410px]">
         <motion.div
           variants={container}
-          className="grid lg:grid-cols-3 grid-cols-2 gap-8 relative lg:mb-40 pb-20"
+          className="grid lg:grid-cols-3 grid-cols-2 gap-8 relative lg:pb-10 pb-[34px]"
         >
           <motion.div
             variants={itemFromBottom}
@@ -173,14 +173,17 @@ const Footer = () => {
         </motion.div>
         <motion.div
           variants={itemFromBottom}
-          className="lg:-bottom-16 -bottom-5 absolute inset-x-0 flex items-center justify-center leading-none"
+          className=" inset-x-0 flex items-center justify-center leading-none"
         >
-          <motion.p className="lg:text-[282px] text-[71px] text-[#EBFAF2] font-bold tracking-[-3.6px] lg:tracking-[-14.1px]">
+          <motion.p className="text-[19vw] text-[#EBFAF2] font-bold tracking-[-3.6px] lg:tracking-[-14.1px]">
             FARMPLIFY
           </motion.p>
         </motion.div>
       </motion.div>
-      <motion.div variants={container} className="lg:py-4 pt-2 pb-4">
+      <motion.div
+        variants={container}
+        className="lg:py-4 pt-2 pb-4 relative z-10"
+      >
         <motion.p
           variants={itemFromBottom}
           className="text-[#1F3C15] font-normal text-base text-center"

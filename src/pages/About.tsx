@@ -1,6 +1,5 @@
 import Body from "../components/about/Body";
 import Hero from "../components/about/Hero";
-import Grow from "../components/Grow";
 import Image from "../assets/bg-white.svg";
 import Navbar from "../components/Navbar";
 import Tape from "../components/Tape";

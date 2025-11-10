@@ -1,6 +1,5 @@
 import Navbar from "../components/Navbar";
 import { motion } from "framer-motion";
-import Grow from "../components/Grow";
 import Image from "../assets/bg-green.svg";
 import Image2 from "../assets/team.webp";
 import TeamBody from "../components/about/TeamBody";
