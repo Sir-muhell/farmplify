@@ -23,7 +23,7 @@ const AssetManagement = () => {
       />
 
       <section
-        className="flex flex-col lg:pt-[297px] lg:pb-[76px] text-white lg:grid grid-cols-8 lg:px-20 px-5"
+        className="flex flex-col lg:pt-[297px] pt-[259px] lg:pb-[76px] text-white lg:grid grid-cols-8 lg:px-20 px-5 mx-4 lg:mx-0 rounded-[16px] lg:rounded-none"
         style={{
           background: `linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),linear-gradient(180.68deg, rgba(48, 198, 124, 0) 1.61%, #1F3C15 90.71%),url(${Image}`,
           backgroundSize: "cover",
@@ -56,13 +56,9 @@ const AssetManagement = () => {
           </p>
         </div>
       </section>
-      <section
-        style={{
-          background: `linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(0deg, rgba(48, 198, 124, 0) 1.61%, #1F3C15 90.71%)`,
-        }}
-      >
-        <div className="bg-white lg:px-20 px-5 lg:pt-[148px] lg:pb-[29px] pt-10 lg:rounded-t-[186px] rounded-t-[50px]">
-          <div className="mt-5 lg:mt-0 lg:text-left text-center lg:grid lg:grid-cols-8 gap-5">
+      <section className="lg:bg-[linear-gradient(0deg,rgba(0,0,0,0.2),rgba(0,0,0,0.2)),linear-gradient(0deg,rgba(48,198,124,0)_1.61%,#1F3C15_90.71%)] bg-none">
+        <div className="bg-white lg:px-20 px-5 lg:pt-[148px] lg:pb-[29px] pt-10 lg:rounded-t-[186px] rounded-t-[50px] flex flex-col">
+          <div className="mt-5 lg:mt-0 lg:text-left text-center lg:grid lg:grid-cols-8 gap-5 lg:order-1 order-2">
             <p className="font-medium lg:text-[40px] text-[28px] text-[#1A1613] leading-[110%] tracking-[0.6px] col-span-3 lg:w-[475px]">
               Manage Agricultural Investments with Expert Asset Management
             </p>
@@ -76,18 +72,22 @@ const AssetManagement = () => {
               and profitable outcomes
             </p>
           </div>
-          <div className=" mt-10 w-full">
+          <div className=" mt-10 w-full lg:order-2 order-1">
             <img
               src={Image2}
               alt="Asset-Image"
-              className="rounded-[8px] h-[190px] w-full object-cover object-[30%_40%]"
+              className="rounded-[8px] lg:h-[190px] h-[124px] w-full object-cover object-[30%_40%]"
             />
           </div>
         </div>
-        <div className="lg:grid grid-cols-2 gap-10 lg:px-20 px-5 bg-white pt-14 lg:pb-[29px]">
-          <div className="col-span-1 flex gap-10">
-            <img src={Tree} alt="tree-image" className="h-[118px] w-auto" />
-            <p className="text-[#1A1613] text-[56px] font-semibold tracking-[-0.5px] leading-[110%]">
+        <div className="lg:grid grid-cols-2 gap-10 lg:px-20 px-5 bg-white pt-14 lg:pb-[29px] pb-[57px]">
+          <div className="col-span-1 flex lg:gap-10 gap-3 lg:flex-row flex-col">
+            <img
+              src={Tree}
+              alt="tree-image"
+              className="lg:h-[118px] h-[55px] w-auto"
+            />
+            <p className="text-[#1A1613] lg:text-[56px] text-[28px] lg:text-left text-center font-semibold tracking-[-0.5px] leading-[110%]">
               Farmplify’s Asset Management
             </p>
           </div>
@@ -95,12 +95,12 @@ const AssetManagement = () => {
             <img
               src={Image1}
               alt="Asset-Image"
-              className="rounded-[8px] hidden lg:block h-[272px] w-full object-cover object-top"
+              className="rounded-[8px] lg:h-[272px] h-[124px] lg:mt-0 mt-10 w-full object-cover object-top"
             />
-            <p className="font-semibold lg:text-[28px] text-[28px] text-[#0C8E36] leading-[110%] tracking-[0.6px] mt-8 max-w-[461px] ">
+            <p className="font-semibold lg:text-[28px] lg:text-[28px] text-[24px] text-[#0C8E36] leading-[110%] tracking-[0.6px] mt-8 lg:max-w-[461px] lg:text-left text-center w-full">
               Access structured agribusiness asset management
             </p>
-            <p className="text-[16px] text-[#4E4E4E] font-medium leading-[130%] lg:mt-4 mt-4 tracking-[0.6px] w-full">
+            <p className="text-[16px] text-[#4E4E4E] font-medium leading-[130%] lg:mt-4 mt-4 tracking-[0.6px] w-full lg:text-left text-center">
               The assurance of expertly managed agricultural investments,
               delivered through comprehensive oversight of agribusiness
               enterprises. With dedicated technical teams and operational
@@ -121,79 +121,6 @@ const AssetManagement = () => {
           />
         </div>
       </section>
-
-      {/* <section className="lg:px-20 px-5 lg:pt-[89px] lg:pb-20 py-10 lg:text-left text-center bg-[#E5CFC2] relative">
-        <div className="flex flex-col lg:grid grid-cols-2 lg:gap-20 gap-10 justify-center items-center h-fit">
-          <div className="w-full h-full">
-            <img
-              src={Image1}
-              alt="Asset-Image"
-              className="rounded-[8px] hidden lg:block max-w-[542px] h-full object-cover"
-            />
-          </div>
-
-          <div className="lg:mt-[33px] mt-0">
-            <p className="font-medium lg:text-[32px] text-[28px] text-[#1A1613] leading-[110%] tracking-[0.6px] w-[461px] ">
-              Access structured agribusiness asset management
-            </p>
-            <p className="text-[16px] text-[#4E4E4E] font-medium leading-[130%] lg:mt-8 mt-4 tracking-[0.6px] w-[571px]">
-              The assurance of expertly managed agricultural investments,
-              delivered through comprehensive oversight of agribusiness
-              enterprises. With dedicated technical teams and operational
-              specialists on the ground, We ensure that every asset under
-              management performs at its optimum, balancing productivity,
-              sustainability, and long-term value creation
-            </p>
-            <p className="font-medium lg:text-[32px] text-[28px] text-[#1A1613] leading-[110%] tracking-[0.6px] mt-8">
-              Investment Management
-            </p>
-            <p className="text-[16px] text-[#4E4E4E] font-medium leading-[130%] lg:mt-8 mt-4 tracking-[0.6px] w-[571px]">
-              Our goal is to identify and harness investment management
-              opportunities across the African agricultural horizon — to create,
-              structure, secure and efficiently transfer tangible agrarian
-              assets for both institutional and individual investors. We build
-              disciplined, asset-backed investment vehicles that deliver
-              measurable returns while protecting capital through rigorous due
-              diligence, clear legal structures and transparent reporting.
-            </p>
-          </div>
-        </div>
-      </section>
-      <img src={Image1} alt="Asset-Image" className=" lg:hidden" />
-      <section className="lg:px-20 px-5 lg:pt-[89px] lg:pb-20 py-10 lg:text-left text-center">
-        <div className="lg:grid grid-cols-2 gap-20 justify-center items-center">
-          <div>
-            <img
-              src={Image3}
-              alt="Asset-Image"
-              className="rounded-[8px] hidden lg:block max-w-[542px] h-full object-cover"
-            />
-          </div>
-          <div className="lg:mt-0 mt-5">
-            <p className="font-medium lg:text-[32px] text-[28px] text-[#1A1613] leading-[110%] tracking-[0.6px] w-[461px]">
-              Asset-backed Security
-            </p>
-            <p className="text-[16px] text-[#4E4E4E] font-medium leading-[130%] lg:mt-8 mt-4 tracking-[0.6px] w-[571px]">
-              A major challenge in agricultural investing is the fragmentation
-              of operations and the overreliance on informal, single-point
-              solutions that expose investors to production, market and title
-              risk. We address that gap by delivering institution-grade,
-              asset-backed investment management that embeds safety,
-              traceability and commercial rigor across every stage of the value
-              chain.
-            </p>
-            <p className="text-[16px] text-[#4E4E4E] font-medium leading-[130%] lg:mt-8 mt-4 tracking-[0.6px] w-[571px]">
-              We go beyond basic service provision. Farmplify delivers
-              research-led, technology-enabled agricultural asset management
-              designed to preserve capital, optimize yield and realise reliable
-              returns.
-            </p>
-            <Button text="get started" link="" />
-          </div>
-        </div>
-      </section>
-      <img src={Image3} alt="Asset-Image" className=" lg:hidden mb-10" />
-      <Grow /> */}
     </main>
   );
 };

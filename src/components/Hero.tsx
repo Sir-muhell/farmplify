@@ -47,7 +47,7 @@ const Hero = ({
       style={{
         backgroundImage: `url(${Image})`,
         backgroundRepeat: "no-repeat",
-        backgroundSize: isMobile ? "100%" : "150%",
+        backgroundSize: isMobile ? "300%" : "150%",
         backgroundPosition: "center",
       }}
     >
