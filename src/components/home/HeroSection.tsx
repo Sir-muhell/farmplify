@@ -36,7 +36,7 @@ const slides: Slide[] = [
   {
     image: Image3,
     title:
-      "Empowering Investors.<br/> Managing Agribusiness.<br/> Building Africa’s Food Future.",
+      "Managing Agribusiness.<br/> Empowering Investors.<br/> Building Africa’s Food Future.",
     subtitle: "",
     cta1: "Request a Demo",
     cta2: "Sign Up",
@@ -56,8 +56,7 @@ const slides: Slide[] = [
     image: Image2,
     title:
       "building africa's food future through structured agribusiness investments and management. ",
-    subtitle:
-      "Farmplify, manages agribusiness portfolios that deliver measurable value, driving profitability while promoting food security, environmental sustainability, and social inclusion across Africa.",
+    subtitle: "",
     cta1: "Request a Demo",
     cta2: "Sign Up",
     cta1Link: "#",

@@ -41,7 +41,16 @@ const About = () => {
               <div className="col-span-3">
                 <p className="font-medium lg:text-[40px] text-[32px] text-[#1A1613] leading-[110%] ">
                   Transforming agriculture into structured, secure, and
-                  profitable investments across Nigeria and Africa at large
+                  profitable investments in Africa.
+                </p>
+                <p className="text-[#616161] font-medium text-xl leading-[130%] lg:text-left text-center lg:block hidden mt-5">
+                  We are stewards of agricultural value. We bring together
+                  investors, agripreneurs, agribusinesses, innovators, academia
+                  and rural communities to turn Africa’s agricultural challenges
+                  into thriving, stable, and investable systems. We are
+                  dedicated to professionalizing and strengthening agribusiness
+                  management in Africa; ensuring every investment is carefully
+                  planned, transparently executed, and built to endure.
                 </p>
                 <div className="mt-4 mb-10 lg:mb-0">
                   <Button text="Contact Us" link="/contact" />
@@ -49,14 +58,25 @@ const About = () => {
               </div>
             </div>
             <div className="lg:max-w-[553px]">
+              <p className="text-[#616161] font-medium text-xl leading-[130%] lg:text-left text-center lg:hidden ">
+                We are stewards of agricultural value. We bring together
+                investors, agripreneurs, agribusinesses, innovators, academia
+                and rural communities to turn Africa’s agricultural challenges
+                into thriving, stable, and investable systems. We are dedicated
+                to professionalizing and strengthening agribusiness management
+                in Africa; ensuring every investment is carefully planned,
+                transparently executed, and built to endure.
+              </p>
               <p className="text-[#616161] font-medium text-xl leading-[130%] lg:text-left text-center  ">
-                In the dynamic landscape of African agriculture, Farmplify
-                emerges as a pioneering force, redefining how capital flows into
-                the continent’s most essential sector. Built on the vision to
-                unlock Africa’s trillion-dollar agribusiness potential,
-                Farmplify operates as a specialized agriculture investment
-                management company, dedicated to structuring secure, scalable,
-                and asset-backed opportunities for investor
+                Our work is anchored in operational excellence, disciplined
+                oversight, and a commitment to making agriculture productive,
+                secure, and sustainable for all it touches. <br /> <br /> Our
+                purpose goes beyond returns. Success, for us, is stronger food
+                systems, empowered communities, and agribusinesses that feeds
+                generations. Every project we manage reduces risk, builds
+                resilience, and unlocks shared prosperity. We tackle today’s
+                agricultural gaps while shaping a secure and abundant food
+                future for Africa.
               </p>
               <img
                 src={Field}

@@ -183,7 +183,7 @@ const Body = () => {
             <Tape text="our client commitment" textColor="#1F3C15" />
             <p className="mt-5 font-medium lg:text-[32px] text-[28px] text-[#1A1613] leading-[110%] tracking-[0.6px]">
               We are committed to safeguarding our clients’ capital and building
-              long-term prosperity through structured, transparent, and
+              lasting prosperity through structured management, and
               impact-driven agricultural investments.
             </p>
             <p className="text-[#5A5A5A] font-medium text-[16px] leading-[130%] mt-[32px] lg:text-left text-center ">

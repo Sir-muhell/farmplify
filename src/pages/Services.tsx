@@ -13,7 +13,7 @@ const services = [
   {
     title: "Asset Management",
     description:
-      "The asset management business has been established to provide end-to-end oversight and management of farmland and agricultural enterprises for institutional investors, high-net-worth individuals, and forward-looking corporations.",
+      "The asset management business was created to provide end-to-end oversight and management of agricultural enterprises for institutional investors, private individuals, agribusinesses, agripreneurs, and forward-looking corporations.",
     image: Image1,
     link: "/asset-management",
   },

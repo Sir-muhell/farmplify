@@ -68,8 +68,8 @@ const AssetManagement = () => {
       <Hero
         text="Asset Management"
         head="Asset Management"
-        number={859}
-        subHead="The asset management business has been established to provide end-to-end oversight and management of farmland and agricultural enterprises for institutional investors, high-net-worth individuals, and forward-looking corporations. Our services encompass livestock, aquaculture, horticulture, and plantation operations, supported by dedicated technical and operational teams on the ground to ensure efficiency, scalability, and consistent returns"
+        number={899}
+        subHead="The asset management business was created to provide end-to-end oversight and management of agricultural enterprises for institutional investors, private individuals, agribusinesses, agripreneurs, and forward-looking corporations. We combine deep sector expertise across the broad value chain with dedicated on-the-ground technical and operational teams. This approach ensures that every project is efficiently managed, scalable, and designed to deliver reliable, consistent returns while unlocking the full potential of agricultural assets."
       />
 
       <section

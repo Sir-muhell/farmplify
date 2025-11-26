@@ -30,9 +30,8 @@ const Home = () => {
             who we are
           </p>
           <p className="text-[24px] lg:text-[32px] font-semibold lg:leading-[110%] tracking-[0.6px] leading-[120%] mt-6 max-w-[417px]">
-            We are deeply passionate about transforming agriculture into a
-            structured, secure, and highly profitable investment class for
-            Africa and the world.
+            We are the management force committed to transforming African
+            agriculture into a structured, secured and high return asset class.
           </p>
           <Link to="/about">
             <button className="bg-white text-[#1F3C15] font-semibold uppercase text-xl lg:py-[18px] py-[14px] px-[63px] rounded-full tracking-[0.23em] hover:scale-105 transition mt-12 cursor-pointer relative z-10">
@@ -50,11 +49,10 @@ const Home = () => {
             our approach to sustainability
           </p>
           <p className="text-[24px] lg:text-[32px] font-semibold lg:leading-[110%] tracking-[0.6px] leading-[120%] mt-6 max-w-[417px]">
-            We are deeply passionate about transforming agriculture into a
-            structured, secure, and highly profitable investment class for
-            Africa and the world.
+            Delivering Structured, Impact-Driven, and Climate-Smart Agriculture
+            Investments
           </p>
-          <Link to="/services">
+          <Link to="/esg-and-impact-investing">
             <button className="bg-white text-[#1F3C15] font-semibold uppercase text-xl lg:py-[18px] py-[14px] px-[63px] rounded-full tracking-[0.23em] hover:scale-105 transition mt-12 cursor-pointer relative z-10">
               learn more
             </button>
@@ -73,9 +71,9 @@ const Home = () => {
             what we do
           </p>
           <p className="text-[32px] text-[#1A1613] lg:text-[56px] font-medium lg:leading-[110%] tracking-[0.6px] leading-[120%] mt-6 max-w-[992px] relative z-10">
-            We are deeply passionate about transforming agriculture into a
-            structured, secure, and highly profitable investment class for
-            Africa and the world.
+            Turning African agribusinesses into professionally managed,
+            profitable, and impactful opportunities for investors and
+            communities alike.
           </p>
           <Link to="/services">
             <button className="text-white bg-[#1F3C15] font-semibold uppercase text-xl lg:py-[18px] py-[14px] px-[63px] rounded-full tracking-[0.23em] hover:scale-105 transition mt-12 cursor-pointer relative z-10">
