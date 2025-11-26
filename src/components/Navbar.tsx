@@ -210,6 +210,15 @@ const Navbar = () => {
             >
               FAQs
             </Link>
+            {/* CONTACT US Link */}
+            <Link
+              to="/contact"
+              className={`hover:text-current uppercase tracking-wider transition-colors ${
+                isActiveLink("/careers") ? activeTextColor + " scale-105" : ""
+              } ${isDarkHero ? "hover:text-white" : "hover:text-[#1F3C15]"}`}
+            >
+              CAREERS
+            </Link>
 
             {/* CONTACT US Link */}
             <Link
@@ -362,6 +371,13 @@ const Navbar = () => {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   FAQs
+                </Link>
+                <Link
+                  to="/careers"
+                  className="block uppercase tracking-wider"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  CAREERS
                 </Link>
                 <Link
                   to="/contact"

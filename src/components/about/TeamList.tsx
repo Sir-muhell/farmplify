@@ -1,36 +1,29 @@
 // Board Members
-import Image from "../../assets/about-3.webp";
+import Person1 from "../../assets/person-1.webp";
+import Person2 from "../../assets/person-2.webp";
+import Person3 from "../../assets/person-3.webp";
+// import Person4 from "../../assets/about-3.webp";
 export const boardMembers = [
   {
-    image: Image,
-    name: "John Smith",
-    position: "Chairman",
+    pix: Person1,
+    name: "Joshua Bamidele",
+    position: "Founder and CEO",
   },
   {
-    image: Image,
-    name: "Susan Lee",
-    position: "Vice Chair",
+    pix: Person3,
+    name: "Isaac  Adetunji",
+    position: "Director, Finance & Investment",
   },
   {
-    image: Image,
-    name: "David Khan",
-    position: "Independent Director",
+    pix: Person2,
+    name: "Abisola Olowe",
+    position: "Head, Legal Strategy & Compliance",
   },
-  {
-    image: Image,
-    name: "Maria Garcia",
-    position: "Non-Executive Director",
-  },
-  {
-    image: Image,
-    name: "James Wilson",
-    position: "Board Member",
-  },
-  {
-    image: Image,
-    name: "Fatima Ahmed",
-    position: "Board Member",
-  },
+  // {
+  //   pix: Person1,
+  //   name: "Maria Garcia",
+  //   position: "Non-Executive Director",
+  // },
 ];
 
 // Management Team

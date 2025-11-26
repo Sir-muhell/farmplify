@@ -50,11 +50,11 @@ const Contact = () => {
       text: "Questions or queries? Get in touch!",
       mail: "sales@farmplify.com",
     },
-    {
-      head: "Phone",
-      text: "Mon-Fri from 8am to 5pm.",
-      mail: "+234 980 373 2222",
-    },
+    // {
+    //   head: "Phone",
+    //   text: "Mon-Fri from 8am to 5pm.",
+    //   mail: "+234 980 373 2222",
+    // },
   ];
 
   const handleChange = (

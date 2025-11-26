@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Logo from "./assets/logo.webp";
 import Footer from "./components/Footer";
 import { PageTransitionWrapper, ScrollTop } from "./components/ScrollToTop";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
@@ -70,6 +71,7 @@ function App() {
                   path="/esg-and-impact-investing"
                   element={<ImpactInvesting />}
                 />
+                <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               </Routes>
               <Footer />
             </Suspense>

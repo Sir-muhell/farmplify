@@ -80,3 +80,7 @@ body {
   letter-spacing: 0.4em;
   color: #1f3c15;
 }
+
+.b-override b {
+  font-weight: 600 !important;
+}

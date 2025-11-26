@@ -150,6 +150,7 @@ const Footer = () => {
                 // { to: "/services", text: "Services" },
                 { to: "/faq", text: "FAQs" },
                 { to: "/careers", text: "Career" },
+                { to: "/privacy-policy", text: "Privacy Policy" },
               ].map((link, index) => (
                 <motion.li
                   key={index}

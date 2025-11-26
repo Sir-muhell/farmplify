@@ -23,9 +23,9 @@ const TeamBody = () => {
               {boardMembers.map((member, index) => (
                 <div key={index} className="text-center">
                   <img
-                    src={member.image}
+                    src={member.pix}
                     alt={member.name}
-                    className="m-auto w-[355px] h-[355px] object-cover rounded-[8px]"
+                    className="m-auto w-[355px] h-[355px] object-cover rounded-[8px] object-top"
                   />
                   <p className="mt-5 font-semibold lg:text-[40px] text-[28px] text-[#1F3C15] leading-[93%]">
                     {member.name}
