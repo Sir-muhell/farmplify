@@ -1,7 +1,7 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/about/Hero";
 import Image from "../assets/object.svg";
-import Grow from "../components/Grow";
+
 import Image2 from "../assets/career.webp";
 
 import { Link } from "react-router-dom";

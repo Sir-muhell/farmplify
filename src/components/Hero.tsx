@@ -59,20 +59,20 @@ const Hero = ({
           <Tape text={text} textColor="#1F3C15" />
         </motion.div>
 
-        <motion.p
+        <motion.h1
           className="lg:text-7xl text-[50px] pt-10 leading-[93%] font-semibold text-[#1F3C15] m-auto"
           variants={item}
           style={{ maxWidth: headNum }}
           dangerouslySetInnerHTML={{ __html: head }}
         />
 
-        <motion.p
+        <motion.h2
           className="mt-6 text-[#616161] font-medium lg:text-[16px] text-base  m-auto leading-[130%] tracking-[0.6px]"
           style={{ maxWidth: number }}
           variants={item}
         >
           {subHead}
-        </motion.p>
+        </motion.h2>
         <motion.p
           className="mt-8 text-[#616161] font-medium text-[16px] max-w-[851px] m-auto leading-[130%] tracking-[0.6px]"
           variants={item}

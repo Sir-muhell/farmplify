@@ -1,9 +1,63 @@
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
-import Grow from "../components/Grow";
 import Image from "../assets/services/advisory.webp";
+import Image2 from "../assets/services/advisory-1.webp";
+import Image3 from "../assets/services/advisory-2.webp";
+
+const CardReveal = ({ children }: { children: React.ReactNode }) => {
+  const controls = useAnimation();
+  const { ref, inView } = useInView({
+    threshold: 0.4, // how much must be visible to trigger
+  });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start({
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.5, ease: "easeOut" },
+      });
+    } else {
+      controls.start({
+        opacity: 0,
+        y: 40,
+        transition: { duration: 0.4, ease: "easeIn" },
+      });
+    }
+  }, [inView, controls]);
+
+  return (
+    <motion.div ref={ref} animate={controls} initial={{ opacity: 0, y: 40 }}>
+      {children}
+    </motion.div>
+  );
+};
 
 const Investment = () => {
+  const controls = useAnimation();
+  const { inView } = useInView({
+    threshold: 0.4,
+  });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start({
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.5, ease: "easeOut" },
+      });
+    } else {
+      controls.start({
+        opacity: 0,
+        y: 40,
+        transition: { duration: 0.4, ease: "easeIn" },
+      });
+    }
+  }, [inView, controls]);
+
   return (
     <main className="relative mx-auto overflow-hidden">
       <Navbar />
@@ -15,23 +69,20 @@ const Investment = () => {
         subTwo="We are deeply passionate about transforming emerging agribusinesses into institutional-grade enterprises through best-in-class Investment Advisory. Our advisory practice combines sector expertise, rigorous analysis, and practical execution to unlock value for investors and operators across the value chain"
       />
 
-      <section className="bg-[#E5CFC2] lg:px-20 px-5 lg:pt-[89px] lg:pb-20 py-10">
-        <div className="lg:grid grid-cols-2 gap-20 ">
-          <div className="lg:pr-20 hidden lg:block">
-            <img
-              src={Image}
-              alt="Asset-Image"
-              className=" lg:rounded-[8px] lg:rounded-bl-[16px] h-full w-full object-cover "
-            />
-          </div>
-
-          <section className="lg:mt-6 lg:mb-6">
-            <div className="mt-10 lg:mt-0">
-              <p className="medium lg:text-[32px] text-[28px] text-[#262626] leading-[110%] tracking-[0.6px]">
+      <section className="lg:px-20 px-5 lg:pt-[89px] lg:pb-20 pb-10 mx-auto flex justify-center">
+        <div className="lg:mt-6 lg:mb-6 lg:h-[600px] h-[800px] max-w-[955px] overflow-y-scroll no-scrollbar space-y-10">
+          <CardReveal>
+            <div
+              className="lg:px-[162px] px-4 py-4 lg:py-10  rounded-[24px] "
+              style={{
+                background:
+                  " linear-gradient(185.68deg, rgba(48, 198, 124, 0) 39.51%, rgba(48, 198, 124, 0.9) 260.58%)",
+              }}
+            >
+              <p className="medium lg:text-[32px] text-[28px] text-[#30C67C] leading-[110%] tracking-[0.6px]">
                 Pre-Investment Advisory
               </p>
-
-              <ul className="space-y-0 lg:text-xl text-lg text-[#616161] font-medium leading-[130%] lg:mt-6 mt-4">
+              <ul className="space-y-5 lg:text-xl text-lg text-[#616161] font-medium leading-[130%] lg:mt-6 mt-4">
                 <li className="flex items-start">
                   <span className="mx-3 font-semibold text-[#262626]">•</span>
                   <p>
@@ -63,13 +114,26 @@ const Investment = () => {
                   </p>
                 </li>
               </ul>
+              <img
+                src={Image}
+                alt="image"
+                className="rounded-[8px] object-cover lg:h-[186px] h-[124px] w-full mt-10"
+              />
             </div>
-            <div className="mt-10 lg:mt-16">
-              <p className="medium lg:text-[32px] text-[28px] text-[#262626] leading-[110%] tracking-[0.6px]">
+          </CardReveal>
+          <CardReveal>
+            <div
+              className="lg:px-[162px] px-4 py-4 lg:py-10  rounded-[24px] "
+              style={{
+                background:
+                  " linear-gradient(185.68deg, rgba(48, 198, 124, 0) 39.51%, rgba(48, 198, 124, 0.9) 260.58%)",
+              }}
+            >
+              <p className="medium lg:text-[32px] text-[28px] text-[#30C67C] leading-[110%] tracking-[0.6px]">
                 Transaction Support Advisory
               </p>
 
-              <ul className="space-y-0 lg:text-xl text-lg text-[#4E4E4E] font-medium leading-[130%] lg:mt-6 mt-4">
+              <ul className="space-y-5 lg:text-xl text-lg text-[#4E4E4E] font-medium leading-[130%] lg:mt-6 mt-4">
                 <li className="flex items-start">
                   <span className="mx-3 font-semibold text-[#262626]">•</span>
                   <p>
@@ -101,13 +165,26 @@ const Investment = () => {
                   </p>
                 </li>
               </ul>
+              <img
+                src={Image2}
+                alt="image"
+                className="rounded-[8px] object-cover lg:h-[186px] h-[124px] w-full mt-10"
+              />
             </div>
-            <div className="mt-10 lg:mt-16">
-              <p className="medium lg:text-[32px] text-[28px] text-[#262626] leading-[110%] tracking-[0.6px]">
+          </CardReveal>
+          <CardReveal>
+            <div
+              className="lg:px-[162px] px-4 py-4 lg:py-10  rounded-[24px] "
+              style={{
+                background:
+                  " linear-gradient(185.68deg, rgba(48, 198, 124, 0) 39.51%, rgba(48, 198, 124, 0.9) 260.58%)",
+              }}
+            >
+              <p className="medium lg:text-[32px] text-[28px] text-[#30C67C] leading-[110%] tracking-[0.6px]">
                 Post-Investment & Strategic Advisory
               </p>
 
-              <ul className="space-y-0 lg:text-xl text-lg text-[#616161] font-medium leading-[130%] lg:mt-6 mt-4">
+              <ul className="space-y-5 lg:text-xl text-lg text-[#616161] font-medium leading-[130%] lg:mt-6 mt-4">
                 <li className="flex items-start">
                   <span className="mx-3 font-semibold text-[#262626]">•</span>
                   <p>
@@ -149,13 +226,15 @@ const Investment = () => {
                   </p>
                 </li>
               </ul>
+              <img
+                src={Image3}
+                alt="image"
+                className="rounded-[8px] object-cover lg:h-[186px] h-[124px] w-full mt-10"
+              />
             </div>
-          </section>
+          </CardReveal>
         </div>
       </section>
-      <img src={Image} alt="asset" className="lg:hidden flex" />
-
-      <Grow />
     </main>
   );
 };

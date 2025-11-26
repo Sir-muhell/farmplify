@@ -5,7 +5,6 @@ import Hero from "../components/about/Hero";
 import Image from "../assets/object.svg";
 import { useState } from "react";
 import Image2 from "../assets/contact.jpg";
-import Grow from "../components/Grow";
 
 interface FormData {
   firstName: string;

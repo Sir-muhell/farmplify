@@ -1,7 +1,7 @@
 import "./App.css";
 import { lazy, Suspense } from "react"; // 1. Import React, lazy, and Suspense
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
+import Logo from "./assets/logo.webp";
 import Footer from "./components/Footer";
 import { PageTransitionWrapper, ScrollTop } from "./components/ScrollToTop";
 
@@ -27,7 +27,17 @@ function App() {
         <Router>
           <ScrollTop />
           <PageTransitionWrapper>
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense
+              fallback={
+                <div className="h-full items-center">
+                  <img
+                    src={Logo}
+                    alt="Logo"
+                    className="m-auto flex justify-center items-center"
+                  />
+                </div>
+              }
+            >
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
@@ -61,8 +71,8 @@ function App() {
                   element={<ImpactInvesting />}
                 />
               </Routes>
+              <Footer />
             </Suspense>
-            <Footer />
           </PageTransitionWrapper>
         </Router>
       </div>

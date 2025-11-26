@@ -1,12 +1,13 @@
-import React from "react";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
-import Grow from "../components/Grow";
+
 import Image from "../assets/services/esg.webp";
 import ImageSm from "../assets/services/asset-2.webp";
 import ServiceCard, { type Tab } from "../components/ServiceCard";
 import leftIcon from "../assets/icons/brown-left.png";
 import rightIcon from "../assets/icons/brown-right.png";
+import smTree from "../assets/icons/brown-tree-sm.svg";
+import bgTree from "../assets/icons/brown-tree.svg";
 
 const data: Tab[] = [
   {
@@ -120,7 +121,6 @@ const data: Tab[] = [
     ],
   },
 ];
-const isMobile = window.innerWidth < 1024;
 
 const FinancialServices = () => {
   return (
@@ -141,7 +141,7 @@ const FinancialServices = () => {
             className="h-[520px] object-cover object-[5%_25%]  rounded-[16px] md:block hidden"
           />
           <img
-            src={Image}
+            src={ImageSm}
             alt="page-image"
             className="h-[139px] object-cover object-[5%_25%]  rounded-[16px] md:hidden"
           />
@@ -157,6 +157,16 @@ const FinancialServices = () => {
             />
             <div className="col-span-1"></div>
           </div>
+          <img
+            src={smTree}
+            alt="tree-image"
+            className="absolute bottom-0 left-0 hidden md:block opacity-20"
+          />
+          <img
+            src={bgTree}
+            alt="tree-image"
+            className="absolute bottom-0 right-0 hidden md:block opacity-20"
+          />
         </div>
       </section>
     </main>

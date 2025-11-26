@@ -35,9 +35,9 @@ const BorderOverlay = () => (
 const slides: Slide[] = [
   {
     image: Image3,
-    title: "Prepare for the future Today",
-    subtitle:
-      "Explore the Magnificent of Farmplify. Our suite of services,  from investment management to global impact, is tailored to deliver security, growth, and sustainability for your agribusiness and investment success",
+    title:
+      "Empowering Investors.<br/> Managing Agribusiness.<br/> Building Africa’s Food Future.",
+    subtitle: "",
     cta1: "Request a Demo",
     cta2: "Sign Up",
     cta1Link: "#",
@@ -54,9 +54,10 @@ const slides: Slide[] = [
   // },
   {
     image: Image2,
-    title: "Investing with Purpose and Impact",
+    title:
+      "building africa's food future through structured agribusiness investments and management. ",
     subtitle:
-      "At Farmplify, we go beyond managing agricultural investments and assets, we embed Environmental, Social, and Governance (ESG) principles into every portfolio we design and every agribusiness we manage. Our ESG framework ensures that investor capital not only delivers strong financial returns but also creates measurable impact for people, communities, and the planet.  Our commitment is built on three pillars of purpose-driven investment:",
+      "Farmplify, manages agribusiness portfolios that deliver measurable value, driving profitability while promoting food security, environmental sustainability, and social inclusion across Africa.",
     cta1: "Request a Demo",
     cta2: "Sign Up",
     cta1Link: "#",
@@ -227,7 +228,7 @@ const HeroCarousel = () => {
                     className="mb-4"
                   >
                     <h1
-                      className="lg:text-[82px] text-[52px] font-semibold mb-2 drop-shadow-lg tracking-[-0.01em] leading-[93%] text-left"
+                      className="lg:text-[60px] text-[30px] font-semibold mb-2 drop-shadow-lg tracking-[-0.01em] leading-[93%] text-left capitalize"
                       dangerouslySetInnerHTML={{
                         __html: slides[currentIndex].title,
                       }}

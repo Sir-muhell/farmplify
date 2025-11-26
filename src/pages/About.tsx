@@ -27,8 +27,13 @@ const About = () => {
             color="#59260B"
           />
         </div>
-        <section className="bg-white lg:rounded-t-[186px]  rounded-t-[50px] lg:pt-[112px] pt-[50px]">
-          <div className="py-10 lg:px-20 px-5 lg:grid grid-cols-2 gap-5 lg:text-left text-center">
+        <section className="bg-white lg:rounded-t-[186px]  lg:pt-[112px] ">
+          <div className="lg:py-10 py-6 lg:px-20 px-5 lg:grid grid-cols-2 gap-5 lg:text-left text-center">
+            <img
+              src={Field}
+              alt=""
+              className="w-full rounded-[8px] h-[142px]  mb-8 object-cover lg:hidden"
+            />
             <div className="col-span-2 mb-6">
               <Tape text="who we are" textColor="#1F3C15" />
             </div>
@@ -38,7 +43,7 @@ const About = () => {
                   Transforming agriculture into structured, secure, and
                   profitable investments across Nigeria and Africa at large
                 </p>
-                <div className="mt-4">
+                <div className="mt-4 mb-10 lg:mb-0">
                   <Button text="Contact Us" link="/contact" />
                 </div>
               </div>

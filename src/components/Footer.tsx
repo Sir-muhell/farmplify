@@ -136,10 +136,7 @@ const Footer = () => {
                   whileHover={{ x: 5 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <Link
-                    to={link.to}
-                    className="hover:text-[#1F3C15] transition-colors"
-                  >
+                  <Link to={link.to} className=" transition-colors">
                     {link.text}
                   </Link>
                 </motion.li>
@@ -160,10 +157,7 @@ const Footer = () => {
                   whileHover={{ x: 5 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <Link
-                    to={link.to}
-                    className="hover:text-[#1F3C15] transition-colors"
-                  >
+                  <Link to={link.to} className=" transition-colors">
                     {link.text}
                   </Link>
                 </motion.li>

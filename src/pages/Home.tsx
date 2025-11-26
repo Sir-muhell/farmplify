@@ -4,6 +4,7 @@ import Image from "../assets/home/home.webp";
 import GreenTree from "../assets/home/tree1.svg";
 import WhiteTree from "../assets/home/tree2.svg";
 import BrownTree from "../assets/home/tree3.svg";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -33,9 +34,11 @@ const Home = () => {
             structured, secure, and highly profitable investment class for
             Africa and the world.
           </p>
-          <button className="bg-white text-[#1F3C15] font-semibold uppercase text-xl lg:py-[18px] py-[14px] px-[63px] rounded-full tracking-[0.23em] hover:scale-105 transition mt-12 cursor-pointer relative z-10">
-            learn more
-          </button>
+          <Link to="/about">
+            <button className="bg-white text-[#1F3C15] font-semibold uppercase text-xl lg:py-[18px] py-[14px] px-[63px] rounded-full tracking-[0.23em] hover:scale-105 transition mt-12 cursor-pointer relative z-10">
+              learn more
+            </button>
+          </Link>
           <img
             src={GreenTree}
             alt="tree-imgage"
@@ -51,9 +54,12 @@ const Home = () => {
             structured, secure, and highly profitable investment class for
             Africa and the world.
           </p>
-          <button className="bg-white text-[#1F3C15] font-semibold uppercase text-xl lg:py-[18px] py-[14px] px-[63px] rounded-full tracking-[0.23em] hover:scale-105 transition mt-12 cursor-pointer relative z-10">
-            learn more
-          </button>
+          <Link to="/services">
+            <button className="bg-white text-[#1F3C15] font-semibold uppercase text-xl lg:py-[18px] py-[14px] px-[63px] rounded-full tracking-[0.23em] hover:scale-105 transition mt-12 cursor-pointer relative z-10">
+              learn more
+            </button>
+          </Link>
+
           <img
             src={WhiteTree}
             alt="tree-imgage"
@@ -71,9 +77,12 @@ const Home = () => {
             structured, secure, and highly profitable investment class for
             Africa and the world.
           </p>
-          <button className="text-white bg-[#1F3C15] font-semibold uppercase text-xl lg:py-[18px] py-[14px] px-[63px] rounded-full tracking-[0.23em] hover:scale-105 transition mt-12 cursor-pointer relative z-10">
-            learn more
-          </button>
+          <Link to="/services">
+            <button className="text-white bg-[#1F3C15] font-semibold uppercase text-xl lg:py-[18px] py-[14px] px-[63px] rounded-full tracking-[0.23em] hover:scale-105 transition mt-12 cursor-pointer relative z-10">
+              learn more
+            </button>
+          </Link>
+
           <img
             src={BrownTree}
             alt="tree-imgage"

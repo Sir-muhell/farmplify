@@ -45,7 +45,7 @@ const ServiceCard: React.FC<TabbedSectionProps> = ({
           <button
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
-            className={`uppercase font-semibold tracking-[0.2em] text-[14px] relative py-2 px-4 transition-colors duration-200
+            className={`uppercase font-semibold tracking-[0.2em] text-[14px] relative py-2 px-4 transition-colors duration-200 cursor-pointer
               ${activeTab === tab.id ? "bg-[#FFFFFF33]" : ""}
               ${activeTab === tab.id ? "opacity-100" : "opacity-30"} 
               ${textColor === "#DFDFDF" ? "text-[#FFFFFF]" : textColor} 

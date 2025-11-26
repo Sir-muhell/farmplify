@@ -5,6 +5,8 @@ import ImageSm from "../assets/services/asset-2.webp";
 import ServiceCard, { type Tab } from "../components/ServiceCard";
 import leftIcon from "../assets/icons/yellow-left.png";
 import rightIcon from "../assets/icons/yellow-right.png";
+import smTree from "../assets/icons/white-tree-sm.svg";
+import bgTree from "../assets/icons/white-tree.svg";
 
 const servicesData: Tab[] = [
   {
@@ -98,7 +100,6 @@ const servicesData: Tab[] = [
     ],
   },
 ];
-const isMobile = window.innerWidth < 1024;
 
 const ImpactInvesting = () => {
   return (
@@ -117,7 +118,7 @@ const ImpactInvesting = () => {
             className="h-[520px] object-cover object-[5%_25%]  rounded-[16px] md:block hidden"
           />
           <img
-            src={Image}
+            src={ImageSm}
             alt="page-image"
             className="h-[139px] object-cover object-[5%_25%]  rounded-[16px] md:hidden"
           />
@@ -133,6 +134,16 @@ const ImpactInvesting = () => {
             />
             <div className="col-span-1"></div>
           </div>
+          <img
+            src={smTree}
+            alt="tree-image"
+            className="absolute bottom-0 left-0 hidden md:block"
+          />
+          <img
+            src={bgTree}
+            alt="tree-image"
+            className="absolute bottom-0 right-0 hidden md:block"
+          />
         </div>
       </section>
     </main>

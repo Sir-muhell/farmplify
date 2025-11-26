@@ -1,6 +1,5 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
-import Grow from "../components/Grow";
 import Image from "../assets/services/invest.webp";
 
 const services = [
