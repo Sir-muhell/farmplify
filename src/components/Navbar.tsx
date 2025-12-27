@@ -84,7 +84,7 @@ const Navbar = () => {
   return (
     <nav className="absolute top-0 left-0 right-0 z-50 transition-all duration-900">
       <div
-        className={`mx-0 lg:max-w-[70%] mx-auto px-5 sm:px-6 lg:px-8 py-[13px] md:py-0 rounded-full transition-all duration-900
+        className={`mx-0 lg:max-w-[80%] mx-auto px-5 sm:px-6 lg:px-8 py-[13px] md:py-0 rounded-full transition-all duration-900
     ${
       isHomePage
         ? "lg:bg-[#EBFAF2] bg-transparent text-[#1F3C15B2] md:text-white lg:mt-[35px]"
@@ -98,7 +98,8 @@ const Navbar = () => {
 
           {/* Logo - Left side (Now simplified using the currentLogo variable) */}
           <div className="flex-shrink-0 flex items-center">
-            <img src={currentLogo} alt="Logo" className="h-10" />
+            {/* <img src={currentLogo} alt="Logo" className="h-10" /> */}
+            <img src={currentLogo} alt="Logo" className="h-10 mb-7 mt-3" />
           </div>
 
           {/* Desktop Navigation - Right side */}
@@ -182,7 +183,7 @@ const Navbar = () => {
                   isServicesActive ? activeTextColor + " scale-105" : ""
                 } ${isDarkHero ? "hover:text-white" : "hover:text-[#1F3C15]"}`}
               >
-                CORE SERVICES
+                SERVICES
                 <svg
                   className={`ml-2 h-4 w-4 transition-transform ${
                     servicesOpen ? "rotate-180" : ""
@@ -212,7 +213,7 @@ const Navbar = () => {
             </Link>
             {/* CONTACT US Link */}
             <Link
-              to="/contact"
+              to="/careers"
               className={`hover:text-current uppercase tracking-wider transition-colors ${
                 isActiveLink("/careers") ? activeTextColor + " scale-105" : ""
               } ${isDarkHero ? "hover:text-white" : "hover:text-[#1F3C15]"}`}
@@ -331,7 +332,7 @@ const Navbar = () => {
                     onClick={() => setServicesOpen(!servicesOpen)}
                     className="flex w-full items-center justify-between uppercase tracking-wider"
                   >
-                    CORE SERVICES
+                    SERVICES
                     <svg
                       className={`ml-2 h-5 w-5 transition-transform ${
                         servicesOpen ? "rotate-180" : ""

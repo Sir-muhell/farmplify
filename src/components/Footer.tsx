@@ -128,7 +128,7 @@ const Footer = () => {
               {[
                 { to: "/", text: "Home" },
                 { to: "/about", text: "About" },
-                { to: "/services", text: "Core Services" },
+                { to: "/services", text: "Services" },
               ].map((link, index) => (
                 <motion.li
                   key={index}

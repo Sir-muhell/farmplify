@@ -73,7 +73,11 @@ const Services = () => {
             Our Services
           </p>
         </div>
-        <img src={Image} alt="" className="absolute lg:-top-[500px]" />
+        <img
+          src={Image}
+          alt="section-pic"
+          className="absolute lg:-top-[500px]"
+        />
       </section>
       <section className="lg:px-20 px-5 py-10 relative z-10">
         <div className="mt-20 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-x-10 gap-y-10 w-[355px] md:w-[750px] lg:w-[1145px] mx-auto">

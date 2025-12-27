@@ -31,7 +31,7 @@ const About = () => {
           <div className="lg:py-10 py-6 lg:px-20 px-5 lg:grid grid-cols-2 gap-5 lg:text-left text-center">
             <img
               src={Field}
-              alt=""
+              alt="field-image"
               className="w-full rounded-[8px] h-[142px]  mb-8 object-cover lg:hidden"
             />
             <div className="col-span-2 mb-6">
@@ -80,7 +80,7 @@ const About = () => {
               </p>
               <img
                 src={Field}
-                alt=""
+                alt="field-image"
                 className="w-full rounded-[8px] h-[190px] lg:block hidden mt-[45px] object-cover"
               />
             </div>

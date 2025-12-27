@@ -9,7 +9,6 @@ interface FormData {
   firstName: string;
   lastName: string;
   email: string;
-  country: string;
   phone: string;
   message: string;
 }
@@ -19,7 +18,6 @@ const Contact = () => {
     firstName: "",
     lastName: "",
     email: "",
-    country: "US",
     phone: "",
     message: "",
   });
@@ -66,9 +64,44 @@ const Contact = () => {
     setForm({ ...form, [name]: value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", form);
+    const formDataToSend = new FormData();
+    formDataToSend.append("firstName", form.firstName);
+    formDataToSend.append("lastName", form.lastName);
+    formDataToSend.append("email", form.email);
+    formDataToSend.append("phone", form.phone);
+
+    // Add the uploaded file (Formspree supports this)
+    // if (uploadedFiles.length > 0) {
+    //   formDataToSend.append("resume", uploadedFiles[0]);
+    // }
+
+    try {
+      const response = await fetch("https://formspree.io/f/mzznagpa", {
+        method: "POST",
+        body: formDataToSend,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        alert("Submitted successfully!");
+        setForm({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          message: "",
+        });
+      } else {
+        alert("Submission failed. Try again.");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Something went wrong!");
+    }
   };
 
   const inputBase =

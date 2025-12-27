@@ -61,7 +61,7 @@ const AssetInvestment = () => {
       <section className="lg:px-20 px-5 lg:py-[50px] pb-[107px] relative flex flex-col">
         <img
           src={Image}
-          alt=""
+          alt="section-pic"
           className="lg:h-[448px] h-[124px] w-full object-cover object-center lg:object-[0%_35%] lg:rounded-[24px] rounded-[8px] order-1 lg:order-2 lg:mt-5"
         />
         <div className="grid lg:grid-cols-4 grid-cols-1 gap-4 lg:gap-5 pt-5 order-2 lg:order-1">

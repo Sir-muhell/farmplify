@@ -16,8 +16,136 @@ interface FaqItem {
 
 // Define the structure for the complete, sectioned FAQ data
 const sectionedFaqData: Record<string, FaqItem[]> = {
+  "Farmplify Overview": [
+    {
+      id: "G1",
+      question: "Is Farmplify a farming company?",
+      answer:
+        "No. Farmplify is <span style='font-weight: 600'>not</span> a primary farming company. We <span style='font-weight: 600'>do not farm for ourselves</span>, and we do not operate as a commercial producer. We are an <span style='font-weight: 600'>agricultural asset and operations management company</span>, we manage, structure, and oversee farmland and agribusiness projects on behalf of investors, agribusinesses, and agripreneurs.",
+    },
+    {
+      id: "G2",
+      question: "Is Farmplify a crowdfunding or investment platform?",
+      answer:
+        "No. We do not run <span style='font-weight: 600'>crowdfunding, pooled funds, or public investment schemes</span>. We provide <span style='font-weight: 600'>private, structured, one-on-one agricultural investment management</span> for individuals, institutions, and agribusiness operators who already own or want to own agricultural assets.",
+    },
+    {
+      id: "G3",
+      question: "What exactly does Farmplify manage?",
+      answer:
+        "We manage <span style='font-weight: 600'>farmland, agricultural projects, agribusiness ventures, and full-value-chain operations</span> from planning to execution, monitoring, reporting, and performance optimization. Our work turns agriculture into a <span style='font-weight: 600'>secure, transparent, and profitable asset class</span> for our clients.",
+    },
+    {
+      id: "G4",
+      question: "Does Farmplify operate like a farm consultant?",
+      answer:
+        "Not exactly. While we offer strategic guidance, Farmplify goes far beyond consulting. We provide <span style='font-weight: 600'>hands-on, end-to-end operational management</span>, including technical teams, field oversight, risk controls, and structured reporting.",
+    },
+    {
+      id: "G5",
+      question: "Is Farmplify a farm management contractor?",
+      answer:
+        "Not at the basic level. Typical farm managers only run daily operations; Farmplify delivers a <span style='font-weight: 600'>full asset management framework</span>, including operational governance, financial accountability, performance monitoring, and sustainability systems.",
+    },
+    {
+      id: "G6",
+      question: "Who uses Farmplify’s services?",
+      answer: [
+        {
+          title: "Our clients include:",
+          subItems: [
+            "<span style='font-weight: 600'>Investors</span> seeking professionally managed farmland or agribusiness assets",
+            "<span style='font-weight: 600'>Agribusiness owners</span> looking to strengthen operations and reduce losses",
+            "<span style='font-weight: 600'>Agripreneurs</span> who need technical and operational expertise to scale",
+            "<span style='font-weight: 600'>Organizations and development actors</span> seeking structured agricultural project delivery",
+          ],
+        },
+      ],
+    },
+    {
+      id: "G7",
+      question: "Does Farmplify acquire land for clients?",
+      answer:
+        "Not by default. But we help clients <span style='font-weight: 600'>assess, verify, structure, and secure farmland assets</span>—ensuring due diligence, risk assessment, and operational suitability.",
+    },
+    {
+      id: "G8",
+      question: "Is Farmplify responsible for financial gains or losses?",
+      answer:
+        "What we provide is <span style='font-weight: 600'>professional management, transparency, operational accuracy, and risk mitigation</span> to maximize your investment outcomes.",
+    },
+    {
+      id: "G9",
+      question:
+        "Does Farmplify offer short-term farming schemes or quick profit agriculture?",
+      answer:
+        "Never. We only build <span style='font-weight: 600'>long-term, sustainable, commercially viable agricultural assets and operations</span>. We are not involved in speculative farming, seasonal schemes, or “quick-money” agricultural investments.",
+    },
+    {
+      id: "G10",
+      question:
+        "What makes Farmplify different from traditional agribusiness managers?",
+      answer: [
+        {
+          title:
+            "We apply a <span style='font-weight: 600'>corporate, data-driven, and systems-led approach</span> to agriculture:",
+          subItems: [
+            "Structured planning",
+            "Operational governance",
+            "Professional teams",
+            "Transparent reporting",
+            "Risk and compliance systems",
+            "Long-term asset value optimization",
+            "This is <span style='font-weight: 600'>agriculture handled with the precision of institutional asset management</span>.",
+          ],
+        },
+      ],
+    },
+    {
+      id: "G11",
+      question: "Does Farmplify train farmers?",
+      answer:
+        "Training is not our primary service, but we <span style='font-weight: 600'>build capacity within the operations we manage</span>, ensuring farmers and field teams adopt best practices and maintain quality.",
+    },
+    {
+      id: "G12",
+      question: "Can Farmplify help me start a new agribusiness?",
+      answer:
+        "Yes, through our <span style='font-weight: 600'>startup planning, technical design, operational setup, and ongoing management</span>. We make agricultural ventures <span style='font-weight: 600'>structured, compliant, and investor-ready</span> from day one.",
+    },
+    {
+      id: "G13",
+      question: "Does Farmplify guarantee farmland security?",
+      answer:
+        "We provide <span style='font-weight: 600'>due diligence, verification, documentation, community engagement, and ongoing oversight</span> to reduce land-related risks significantly. However, we do not act as a legal land guarantor.",
+    },
+    {
+      id: "G14",
+      question: "Is Farmplify a government or donor-funded initiative?",
+      answer:
+        "No. We are a <span style='font-weight: 600'>private agricultural asset management company</span>, though we collaborate with development organizations when aligned with our mission.",
+    },
+    {
+      id: "G15",
+      question: "What is Farmplify ultimately here to do?",
+      answer: [
+        {
+          title:
+            "Farmplify is here to <span style='font-weight: 600'>professionalize and de-risk agriculture</span>, turning it into:",
+          subItems: [
+            "A <span style='font-weight: 600'>stable asset class</span>",
+            "A <span style='font-weight: 600'>profitable business venture</span>",
+            "A <span style='font-weight: 600'>sustainable livelihood system</span>",
+            "A <span style='font-weight: 600'>transparent investment journey</span>",
+            "We manage agriculture with the discipline and clarity it deserves.",
+          ],
+        },
+      ],
+    },
+  ],
   // ----------------------------------------------------
-  // AGRICULTURE ASSET MANAGEMENT   // ----------------------------------------------------
+  // AGRICULTURE ASSET MANAGEMENT
+  // ----------------------------------------------------
   "Agriculture Asset Management": [
     {
       id: "1",

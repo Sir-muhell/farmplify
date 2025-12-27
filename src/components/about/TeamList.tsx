@@ -2,28 +2,31 @@
 import Person1 from "../../assets/person-1.webp";
 import Person2 from "../../assets/person-2.webp";
 import Person3 from "../../assets/person-3.webp";
-// import Person4 from "../../assets/about-3.webp";
+import Person4 from "../../assets/person-4.webp";
 export const boardMembers = [
   {
     pix: Person1,
     name: "Joshua Bamidele",
     position: "Founder and CEO",
+    mail: "joshuabamidele@farmplify.com",
   },
   {
     pix: Person3,
     name: "Isaac  Adetunji",
     position: "Director, Finance & Investment",
+    mail: "isaacadetunji@farmplify.com",
   },
   {
     pix: Person2,
     name: "Abisola Olowe",
     position: "Head, Legal Strategy & Compliance",
+    mail: "abisola@farmplify.com",
   },
-  // {
-  //   pix: Person1,
-  //   name: "Maria Garcia",
-  //   position: "Non-Executive Director",
-  // },
+  {
+    pix: Person4,
+    name: "Samuel Aholu",
+    position: "Head, Data Systems and Technology",
+  },
 ];
 
 // Management Team
