@@ -13,6 +13,8 @@ interface FormData {
   message: string;
 }
 
+const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:3000/api";
+
 const Contact = () => {
   const [form, setForm] = useState<FormData>({
     firstName: "",
@@ -21,6 +23,9 @@ const Contact = () => {
     phone: "",
     message: "",
   });
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string>("");
+  const [success, setSuccess] = useState(false);
 
   const container = {
     hidden: { opacity: 0 },
@@ -66,41 +71,65 @@ const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const formDataToSend = new FormData();
-    formDataToSend.append("firstName", form.firstName);
-    formDataToSend.append("lastName", form.lastName);
-    formDataToSend.append("email", form.email);
-    formDataToSend.append("phone", form.phone);
+    setError("");
+    setSuccess(false);
 
-    // Add the uploaded file (Formspree supports this)
-    // if (uploadedFiles.length > 0) {
-    //   formDataToSend.append("resume", uploadedFiles[0]);
-    // }
+    // Validate form
+    if (!form.firstName || !form.lastName || !form.email || !form.phone || !form.message) {
+      setError("Please fill in all required fields");
+      return;
+    }
+
+    setLoading(true);
 
     try {
-      const response = await fetch("https://formspree.io/f/mzznagpa", {
+      const response = await fetch(`${API_BASE_URL}/contact`, {
         method: "POST",
-        body: formDataToSend,
         headers: {
-          Accept: "application/json",
+          "Content-Type": "application/json",
         },
+        body: JSON.stringify({
+          firstName: form.firstName,
+          lastName: form.lastName,
+          email: form.email,
+          phoneNumber: form.phone,
+          message: form.message,
+        }),
       });
 
-      if (response.ok) {
-        alert("Submitted successfully!");
-        setForm({
-          firstName: "",
-          lastName: "",
-          email: "",
-          phone: "",
-          message: "",
-        });
-      } else {
-        alert("Submission failed. Try again.");
+      const data = await response.json();
+
+      if (!response.ok) {
+        // Handle validation errors
+        if (data.errors && Array.isArray(data.errors)) {
+          const errorMessages = data.errors
+            .map((err: { msg?: string; message?: string }) => err.msg || err.message)
+            .join(", ");
+          setError(errorMessages || data.message || "Submission failed. Please try again.");
+        } else {
+          setError(data.message || "Submission failed. Please try again.");
+        }
+        setLoading(false);
+        return;
       }
-    } catch (error) {
-      console.error(error);
-      alert("Something went wrong!");
+
+      // Success
+      setSuccess(true);
+      setForm({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        message: "",
+      });
+      setLoading(false);
+
+      // Reset success message after 5 seconds
+      setTimeout(() => setSuccess(false), 5000);
+    } catch (err) {
+      console.error("Submission error:", err);
+      setError("Network error. Please check your connection and try again.");
+      setLoading(false);
     }
   };
 
@@ -204,6 +233,7 @@ const Contact = () => {
                   placeholder="First name"
                   value={form.firstName}
                   onChange={handleChange}
+                  required
                   className={inputBase}
                 />
               </div>
@@ -222,6 +252,7 @@ const Contact = () => {
                   placeholder="Last name"
                   value={form.lastName}
                   onChange={handleChange}
+                  required
                   className={inputBase}
                 />
               </div>
@@ -239,26 +270,26 @@ const Contact = () => {
                 placeholder="you@company.com"
                 value={form.email}
                 onChange={handleChange}
+                required
                 className={inputBase}
               />
             </div>
 
-            {/* Phone number (country + phone) */}
+            {/* Phone number */}
             <div className="space-y-1">
               <label htmlFor="phone" className="block text-sm text-[#757575]">
                 Phone number
               </label>
-              <div className="flex gap-2">
-                <input
-                  id="phone"
-                  name="phone"
-                  type="tel"
-                  placeholder="+234-000-0000-000"
-                  value={form.phone}
-                  onChange={handleChange}
-                  className={inputBase}
-                />
-              </div>
+              <input
+                id="phone"
+                name="phone"
+                type="tel"
+                placeholder="+234-000-0000-000"
+                value={form.phone}
+                onChange={handleChange}
+                required
+                className={inputBase}
+              />
             </div>
 
             {/* Message */}
@@ -272,13 +303,32 @@ const Contact = () => {
                 placeholder="Leave us a message..."
                 value={form.message}
                 onChange={handleChange}
+                required
                 className={`${inputBase} h-28 resize-none no-scrollbar`}
               />
             </div>
 
+            {/* Error Message */}
+            {error && (
+              <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg text-sm">
+                {error}
+              </div>
+            )}
+
+            {/* Success Message */}
+            {success && (
+              <div className="bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-lg text-sm">
+                Message sent successfully! We'll get back to you soon.
+              </div>
+            )}
+
             {/* Submit */}
-            <button className="bg-[#1F3C15] text-white font-semibold uppercase text-xl py-[18px] w-full rounded-full tracking-[0.23em] hover:scale-105 transition mt-12 cursor-pointer">
-              Send
+            <button
+              type="submit"
+              disabled={loading}
+              className="bg-[#1F3C15] text-white font-semibold uppercase text-xl py-[18px] w-full rounded-full tracking-[0.23em] hover:scale-105 transition mt-12 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+            >
+              {loading ? "Sending..." : "Send"}
             </button>
           </form>
         </div>

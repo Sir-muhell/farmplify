@@ -14,7 +14,6 @@ interface FaqItem {
   answer: string | (string | AnswerListItem)[];
 }
 
-// Define the structure for the complete, sectioned FAQ data
 const sectionedFaqData: Record<string, FaqItem[]> = {
   "Farmplify Overview": [
     {
