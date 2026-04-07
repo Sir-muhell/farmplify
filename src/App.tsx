@@ -1,6 +1,11 @@
 import "./App.css";
 import { lazy, Suspense } from "react"; // 1. Import React, lazy, and Suspense
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import Logo from "./assets/logo.webp";
 import Footer from "./components/Footer";
 import { PageTransitionWrapper, ScrollTop } from "./components/ScrollToTop";
@@ -20,6 +25,7 @@ const AssetManagement = lazy(() => import("./pages/AssetManagement"));
 const Faq = lazy(() => import("./pages/Faq"));
 const Careers = lazy(() => import("./pages/Careers"));
 const Submit = lazy(() => import("./pages/Submit"));
+// const Blog = lazy(() => import("./pages/Blog"));
 
 function App() {
   return (
@@ -48,6 +54,7 @@ function App() {
                 <Route path="/investment-advisory" element={<Investment />} />
                 <Route path="/asset-management" element={<AssetManagement />} />
                 <Route path="/faq" element={<Faq />} />
+                {/* <Route path="/blog" element={<Blog />} /> */}
                 <Route path="/careers" element={<Careers />} />
                 <Route path="/submit" element={<Submit />} />
 
@@ -72,6 +79,7 @@ function App() {
                   element={<ImpactInvesting />}
                 />
                 <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                <Route path="*" element={<Navigate to="/" replace />} />
               </Routes>
               <Footer />
             </Suspense>

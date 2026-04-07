@@ -74,7 +74,7 @@ const Footer = () => {
           </p>
           <p className="mt-4 text-[#5A5A5A] text-[20px] font-medium px-4">
             Unlock secure, high end opportunities in African agriculture. You
-            growth starts from here
+            growth starts from here
           </p>
           <div className="mb-52 ">
             <Button text="request a demo" link="./" />
