@@ -14,7 +14,7 @@ const socials = [
     icon: Facebook,
     link: "https://facebook.com/farmplifyng/",
   },
-  { name: "Twitter", icon: Twitter, link: "https://x.com/Farmplifyng" },
+  { name: "X", icon: Twitter, link: "https://x.com/Farmplifyng" },
   {
     name: "Instagram",
     icon: Instagram,
@@ -86,15 +86,12 @@ const Footer = () => {
         </motion.div>
       </motion.div>
 
-      <motion.div className="lg:pt-24 lg:px-[62px] px-[28px] pt-[30px]  text-white bg-[#1F3C15] lg:rounded-[56px] rounded-b-[16px] relative  mx-4 lg:h-[488px] h-[410px]">
+      <motion.div className="lg:pt-24 lg:px-[62px] px-[28px] pt-[30px] pb-6 lg:pb-10 text-white bg-[#1F3C15] lg:rounded-[56px] rounded-b-[16px] relative mx-4">
         <motion.div
           variants={container}
-          className="grid lg:grid-cols-3 grid-cols-2 gap-8 relative lg:pb-10 pb-[34px]"
+          className="grid lg:grid-cols-4 grid-cols-1 gap-x-8 gap-y-10 relative lg:pb-10 pb-[34px]"
         >
-          <motion.div
-            variants={itemFromBottom}
-            className="text-base lg:col-span-1 col-span-2"
-          >
+          <motion.div variants={itemFromBottom} className="text-base">
             <a href="./">
               <img
                 src={Logo}
@@ -123,12 +120,13 @@ const Footer = () => {
             </motion.div>
           </motion.div>
           <motion.div variants={itemFromBottom} className="text-base">
-            <p className="text-[#98A2B3] font-normal">Links</p>
+            <p className="text-[#98A2B3] font-normal">Company</p>
             <ul className="font-medium mt-6 space-y-4">
               {[
-                { to: "/", text: "Home" },
-                { to: "/about", text: "About" },
-                { to: "/services", text: "Services" },
+                { to: "/about", text: "About Us" },
+                { to: "/team", text: "Team" },
+                { to: "/careers", text: "Careers" },
+                { to: "/contact", text: "Contact Us" },
               ].map((link, index) => (
                 <motion.li
                   key={index}
@@ -144,13 +142,42 @@ const Footer = () => {
             </ul>
           </motion.div>
           <motion.div variants={itemFromBottom} className="text-base">
-            <p className="text-[#98A2B3] font-normal">Other</p>
+            <p className="text-[#98A2B3] font-normal">Services</p>
+            <ul className="font-medium mt-6 space-y-4">
+              {[
+                { to: "/investment-advisory", text: "Investment Advisory" },
+                { to: "/asset-management", text: "Asset Management" },
+                { to: "/real-asset-investment", text: "Real Asset Investment" },
+                {
+                  to: "/commodity-and-value-chain-investment",
+                  text: "Commodity & Value Chain",
+                },
+                {
+                  to: "/esg-and-impact-investing",
+                  text: "ESG & Impact Investing",
+                },
+                { to: "/agrifinance-services", text: "AgriFinance Services" },
+              ].map((link, index) => (
+                <motion.li
+                  key={index}
+                  variants={itemFromBottom}
+                  whileHover={{ x: 5 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <Link to={link.to} className=" transition-colors">
+                    {link.text}
+                  </Link>
+                </motion.li>
+              ))}
+            </ul>
+          </motion.div>
+          <motion.div variants={itemFromBottom} className="text-base">
+            <p className="text-[#98A2B3] font-normal">Media</p>
             <ul className="font-medium mt-6 space-y-4 ">
               {[
-                // { to: "/services", text: "Services" },
+                { to: "/blog", text: "Blog" },
                 { to: "/faq", text: "FAQs" },
-                { to: "/careers", text: "Career" },
-                { to: "/privacy-policy", text: "Privacy Policy" },
+                { to: "/request-for-proposal", text: "Submit RFP" },
               ].map((link, index) => (
                 <motion.li
                   key={index}
@@ -166,9 +193,14 @@ const Footer = () => {
             </ul>
           </motion.div>
         </motion.div>
+        {/* Stays in normal flow (so it always sits below the tallest
+            column, whatever that column's height is) but a negative
+            bottom margin pulls the card's own bottom edge up early —
+            the text still paints at full size, so it visually bleeds
+            past the shortened rounded corner instead of being boxed in. */}
         <motion.div
           variants={itemFromBottom}
-          className=" inset-x-0 flex items-center justify-center leading-none"
+          className="flex items-center justify-center leading-none lg:-mb-[7vw] -mb-[11vw] pointer-events-none"
         >
           <motion.p className="text-[19vw] text-[#EBFAF2] font-bold tracking-[-3.6px] lg:tracking-[-14.1px]">
             FARMPLIFY
@@ -177,7 +209,7 @@ const Footer = () => {
       </motion.div>
       <motion.div
         variants={container}
-        className="lg:py-4 pt-2 pb-4 relative z-10"
+        className="mt-[1vw] lg:py-4 pb-4 relative z-10 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4"
       >
         <motion.p
           variants={itemFromBottom}
@@ -185,6 +217,20 @@ const Footer = () => {
         >
           © 2025 Farmplify. All rights reserved.
         </motion.p>
+        <motion.span
+          variants={itemFromBottom}
+          className="hidden sm:inline text-[#1F3C15]/40"
+        >
+          &bull;
+        </motion.span>
+        <motion.div variants={itemFromBottom}>
+          <Link
+            to="/privacy-policy"
+            className="text-[#1F3C15] font-normal text-base text-center hover:underline"
+          >
+            Privacy Policy
+          </Link>
+        </motion.div>
       </motion.div>
     </motion.footer>
   );

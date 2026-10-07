@@ -13,6 +13,7 @@ export interface BlogPostApiItem {
   content?: string;
   category?: string;
   category_name?: string;
+  tags?: string[];
   image?: string;
   featured_image?: string;
   thumbnail?: string;
@@ -70,13 +71,11 @@ function getPostsFromResponse(response: BlogApiResponse): BlogPostApiItem[] {
   return [];
 }
 
-const BLOG_API_URL = import.meta.env.VITE_BLOG_API_URL as string | undefined;
+const API_BASE_URL =
+  import.meta.env.VITE_API_URL || "http://localhost:3000/api";
 
 export async function fetchBlogPosts(): Promise<BlogPost[]> {
-  if (!BLOG_API_URL?.trim()) {
-    return [];
-  }
-  const res = await fetch(BLOG_API_URL, {
+  const res = await fetch(`${API_BASE_URL}/blog`, {
     headers: { Accept: "application/json" },
   });
   if (!res.ok) {
@@ -85,4 +84,26 @@ export async function fetchBlogPosts(): Promise<BlogPost[]> {
   const json: BlogApiResponse = await res.json();
   const items = getPostsFromResponse(json);
   return items.map(mapApiPostToBlogPost);
+}
+
+export interface BlogPostDetail extends BlogPost {
+  content: string;
+  tags: string[];
+}
+
+export async function fetchBlogPostBySlug(slug: string): Promise<BlogPostDetail | null> {
+  const res = await fetch(`${API_BASE_URL}/blog/${encodeURIComponent(slug)}`, {
+    headers: { Accept: "application/json" },
+  });
+  if (res.status === 404) return null;
+  if (!res.ok) {
+    throw new Error(`Blog API error: ${res.status} ${res.statusText}`);
+  }
+  const json: { success: boolean; data: BlogPostApiItem } = await res.json();
+  const mapped = mapApiPostToBlogPost(json.data);
+  return {
+    ...mapped,
+    content: (json.data.content as string) || "",
+    tags: Array.isArray(json.data.tags) ? json.data.tags : [],
+  };
 }

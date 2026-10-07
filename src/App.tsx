@@ -25,7 +25,9 @@ const AssetManagement = lazy(() => import("./pages/AssetManagement"));
 const Faq = lazy(() => import("./pages/Faq"));
 const Careers = lazy(() => import("./pages/Careers"));
 const Submit = lazy(() => import("./pages/Submit"));
-// const Blog = lazy(() => import("./pages/Blog"));
+const RequestForProposal = lazy(() => import("./pages/RequestForProposal"));
+const Blog = lazy(() => import("./pages/Blog"));
+const BlogPost = lazy(() => import("./pages/BlogPost"));
 
 function App() {
   return (
@@ -54,9 +56,14 @@ function App() {
                 <Route path="/investment-advisory" element={<Investment />} />
                 <Route path="/asset-management" element={<AssetManagement />} />
                 <Route path="/faq" element={<Faq />} />
-                {/* <Route path="/blog" element={<Blog />} /> */}
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/blog/:slug" element={<BlogPost />} />
                 <Route path="/careers" element={<Careers />} />
                 <Route path="/submit" element={<Submit />} />
+                <Route
+                  path="/request-for-proposal"
+                  element={<RequestForProposal />}
+                />
 
                 <Route
                   path="/real-asset-investment"

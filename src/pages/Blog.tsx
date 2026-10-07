@@ -1,101 +1,12 @@
 import { useEffect, useState } from "react";
 // import { Link } from "react-router-dom";
+import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
-import Tape from "../components/Tape";
+
 import BlogCard, { type BlogPost } from "../components/BlogCard";
 import BgGreen from "../assets/bg-green.svg";
 import ObjectSvg from "../assets/object.svg";
-import Image1 from "../assets/services/Image1.webp";
-import Image2 from "../assets/services/Image2.webp";
-import Image3 from "../assets/services/Image3.webp";
-import Image4 from "../assets/services/Image4.webp";
-import Image5 from "../assets/services/Image5.webp";
-import Image6 from "../assets/services/Image6.webp";
 import { fetchBlogPosts } from "../api/blog";
-
-const FALLBACK_POSTS: BlogPost[] = [
-  {
-    image: Image1,
-    category: "Design",
-    title: "UX review presentations",
-    description:
-      "How do you create compelling presentations that wow your colleagues and impress your managers?",
-    authorName: "Olivia Rhye",
-    date: "20 Jan 2022",
-  },
-  {
-    image: Image2,
-    category: "Product",
-    title: "Migrating to Linear 101",
-    description:
-      "Linear helps streamline software projects, sprints, tasks, and bug tracking. Here's how to get started.",
-    authorName: "Phoenix Baker",
-    date: "19 Jan 2022",
-  },
-  {
-    image: Image3,
-    category: "Software engineering",
-    title: "Building your API Stack",
-    description:
-      "The rise of RESTful APIs has been met by a rise in tools for designing, testing, and mocking them.",
-    authorName: "Lana Steiner",
-    date: "18 Jan 2022",
-  },
-  {
-    image: Image4,
-    category: "Management",
-    title: "Bill Walsh leadership lessons",
-    description:
-      "Live to know the secrets of transforming a 2-14 team into a 3x Super Bowl winning dynasty.",
-    authorName: "Alec Whitten",
-    date: "17 Jan 2022",
-  },
-  {
-    image: Image5,
-    category: "Product",
-    title: "PM mental models",
-    description:
-      "Mental models are simple expressions of complex processes. Here's how to use them for product decisions.",
-    authorName: "Demi Wilkinson",
-    date: "16 Jan 2022",
-  },
-  {
-    image: Image6,
-    category: "Design",
-    title: "What is Wireframing?",
-    description:
-      "Introduction to Wireframing and its Principles. Learn how to use wireframes in your design process.",
-    authorName: "Candice Wu",
-    date: "16 Jan 2022",
-  },
-  {
-    image: Image1,
-    category: "Design",
-    title: "How collaboration makes us better designers",
-    description:
-      "Collaboration can make our teams stronger and our individual designs better. Here's how.",
-    authorName: "Natali Craig",
-    date: "15 Jan 2022",
-  },
-  {
-    image: Image2,
-    category: "Product",
-    title: "Our top 10 Javascript frameworks to use",
-    description:
-      "JavaScript frameworks make development easy with extensive features and benefits. Here are the top 10.",
-    authorName: "Drew Cano",
-    date: "15 Jan 2022",
-  },
-  {
-    image: Image3,
-    category: "Customer Success",
-    title: "Podcast: Creating a better CX Community",
-    description:
-      "Starting a community doesn't need to be complicated. Tips for building a thriving customer community.",
-    authorName: "Orlando Diggs",
-    date: "14 Jan 2022",
-  },
-];
 
 const Blog = () => {
   const [posts, setPosts] = useState<BlogPost[]>([]);
@@ -110,12 +21,15 @@ const Blog = () => {
     fetchBlogPosts()
       .then((data) => {
         if (cancelled) return;
-        setPosts(data.length > 0 ? data : FALLBACK_POSTS);
+        setPosts(data);
       })
       .catch((err) => {
         if (cancelled) return;
-        setError(err instanceof Error ? err.message : "Failed to load posts");
-        setPosts(FALLBACK_POSTS);
+        setError(
+          err instanceof Error
+            ? err.message
+            : "Something went wrong loading blog posts.",
+        );
       })
       .finally(() => {
         if (!cancelled) setLoading(false);
@@ -151,29 +65,13 @@ const Blog = () => {
         >
           <img src={ObjectSvg} alt="" className="w-full h-auto" />
         </div>
-        <div className="relative z-10 flex flex-col items-center text-center max-w-[602px] lg:mt-[200px] mt-[105px] lg:mb-[72px] mb-12">
-          <Tape
-            text="OUR BLOG"
-            textColor="#1F3C15"
-            textStyle={{
-              fontSize: "16px",
-              letterSpacing: "6.4px",
-              fontWeight: 700,
-            }}
-          />
-          <h1
-            className="mt-8 text-[#1F3C15] font-medium text-[48px] sm:text-[64px] lg:text-[96px] leading-[93%] tracking-[-0.96px]"
-            style={{ fontFamily: "Neue Haas Grotesk Display Pro, sans-serif" }}
-          >
-            Resources and Insights
-          </h1>
-        </div>
+        <Hero text="Our Blog" head="Resources and Insights" headNum={602} />
       </section>
 
-      <section className="relative z-10 lg:px-20 px-5 py-12 lg:py-16">
+      <section className="relative z-10 lg:px-20 lg:pt-5 pt-5 px-5 py-12 lg:py-16">
         <div className="max-w-[1353px] mx-auto">
           {loading ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-[34px]">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8 lg:gap-x-[34px] lg:gap-y-[51px]">
               {[...Array(6)].map((_, i) => (
                 <div
                   key={i}
@@ -196,25 +94,20 @@ const Blog = () => {
                 </div>
               ))}
             </div>
+          ) : error ? (
+            <p className="text-[#475467] text-[17px] text-center py-16">
+              We couldn't load blog posts right now. Please try again later.
+            </p>
+          ) : posts.length === 0 ? (
+            <p className="text-[#475467] text-[17px] text-center py-16">
+              No blog posts yet. Check back soon.
+            </p>
           ) : (
-            <>
-              {error && (
-                <p className="text-[#475467] text-[17px] text-center mb-8">
-                  Showing cached content. {error}
-                </p>
-              )}
-              {posts.length === 0 ? (
-                <p className="text-[#475467] text-[17px] text-center py-16">
-                  No blog posts yet. Check back soon.
-                </p>
-              ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-[34px]">
-                  {posts.map((post, index) => (
-                    <BlogCard key={post.link ?? index} post={post} />
-                  ))}
-                </div>
-              )}
-            </>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8 lg:gap-x-[34px] lg:gap-y-[51px]">
+              {posts.map((post, index) => (
+                <BlogCard key={post.link ?? index} post={post} />
+              ))}
+            </div>
           )}
         </div>
       </section>

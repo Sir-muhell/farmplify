@@ -84,3 +84,11 @@ body {
 .b-override b {
   font-weight: 600 !important;
 }
+
+/* reCAPTCHA badge only on form pages (toggled by useRecaptcha) */
+.grecaptcha-badge {
+  visibility: hidden;
+}
+body.recaptcha-active .grecaptcha-badge {
+  visibility: visible;
+}

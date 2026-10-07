@@ -1,10 +1,11 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useDropzone } from "react-dropzone";
 import Navbar from "../components/Navbar";
 import { motion } from "framer-motion";
 import Tape from "../components/Tape";
 import Map from "../assets/map.png";
 import Image from "../assets/contact.jpg";
+import { getRecaptchaToken, useRecaptcha } from "../utils/recaptcha";
 
 interface FormData {
   firstName: string;
@@ -20,8 +21,11 @@ interface FormData {
 
 const API_BASE_URL =
   import.meta.env.VITE_API_URL || "http://localhost:3000/api";
+const REFERRAL_STORAGE_KEY = "farmplify_referral_code";
+const NUMERIC_REFERRAL_REGEX = /^[0-9]{6,12}$/;
 
 const Contact = () => {
+  useRecaptcha();
   const [form, setForm] = useState<FormData>({
     firstName: "",
     lastName: "",
@@ -37,6 +41,16 @@ const Contact = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string>("");
   const [success, setSuccess] = useState(false);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const ref = (params.get("ref") || "").trim();
+    if (ref && NUMERIC_REFERRAL_REGEX.test(ref)) {
+      window.localStorage.setItem(REFERRAL_STORAGE_KEY, ref);
+    } else if (ref) {
+      window.localStorage.removeItem(REFERRAL_STORAGE_KEY);
+    }
+  }, []);
 
   const container = {
     hidden: { opacity: 0 },
@@ -109,8 +123,22 @@ const Contact = () => {
 
     setLoading(true);
 
+    let recaptchaToken: string;
+    try {
+      recaptchaToken = await getRecaptchaToken("contact_submit");
+    } catch (err) {
+      setError(
+        err instanceof Error
+          ? err.message
+          : "Unable to verify you're human. Please try again.",
+      );
+      setLoading(false);
+      return;
+    }
+
     try {
       const formData = new FormData();
+      formData.append("recaptchaToken", recaptchaToken);
       formData.append("firstName", form.firstName);
       formData.append("lastName", form.lastName);
       formData.append("email", form.email);
@@ -126,6 +154,10 @@ const Contact = () => {
       }
       if (attachment) {
         formData.append("attachment", attachment);
+      }
+      const referralCode = window.localStorage.getItem(REFERRAL_STORAGE_KEY) || "";
+      if (NUMERIC_REFERRAL_REGEX.test(referralCode)) {
+        formData.append("referralCode", referralCode);
       }
 
       const response = await fetch(`${API_BASE_URL}/contact`, {

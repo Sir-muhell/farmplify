@@ -54,7 +54,7 @@ const Navbar = () => {
 
   // Check if services dropdown should be considered active
   const isServicesActive = services.some(
-    (service) => location.pathname === service.link
+    (service) => location.pathname === service.link,
   );
   const isAboutActive =
     location.pathname === "/about" || location.pathname === "/team";
@@ -78,8 +78,8 @@ const Navbar = () => {
   const currentLogo = isDarkHero
     ? LogoWhite
     : isHomePage && isMobile
-    ? LogoWhite
-    : Logo;
+      ? LogoWhite
+      : Logo;
 
   return (
     <nav className="absolute top-0 left-0 right-0 z-50 transition-all duration-900">
@@ -89,8 +89,8 @@ const Navbar = () => {
       isHomePage
         ? "lg:bg-[#EBFAF2] bg-transparent text-[#1F3C15B2] md:text-white lg:mt-[35px]"
         : isDarkHero
-        ? "lg:bg-[#FFFFFF33] text-white lg:mt-[48px]"
-        : "bg-transparent md:bg-[#EBFAF2] text-[#1F3C15B2] lg:mt-[48px]"
+          ? "lg:bg-[#FFFFFF33] text-white lg:mt-[48px]"
+          : "bg-transparent md:bg-[#EBFAF2] text-[#1F3C15B2] lg:mt-[48px]"
     }`}
       >
         <div className="flex justify-between md:flex-row flex-row-reverse lg:px-10 lg:px-5 px-0 items-center">
@@ -177,7 +177,8 @@ const Navbar = () => {
             <div className="relative">
               <button
                 onClick={() => {
-                  setServicesOpen(!servicesOpen), setIsAboutUsOpen(false);
+                  setServicesOpen(!servicesOpen);
+                  setIsAboutUsOpen(false);
                 }}
                 className={`flex items-center hover:text-current text-sm uppercase tracking-wider transition-colors cursor-pointer ${
                   isServicesActive ? activeTextColor + " scale-105" : ""
@@ -211,24 +212,16 @@ const Navbar = () => {
             >
               FAQs
             </Link>
-            {/* BLOG Link */}
-            <Link
-              to="/blog"
-              className={`hover:text-current uppercase tracking-wider transition-colors ${
-                isActiveLink("/blog") ? activeTextColor + " scale-105" : ""
-              } ${isDarkHero ? "hover:text-white" : "hover:text-[#1F3C15]"}`}
-            >
-              BLOG
-            </Link>
+
             {/* CONTACT US Link */}
-            <Link
+            {/* <Link
               to="/careers"
               className={`hover:text-current uppercase tracking-wider transition-colors ${
                 isActiveLink("/careers") ? activeTextColor + " scale-105" : ""
               } ${isDarkHero ? "hover:text-white" : "hover:text-[#1F3C15]"}`}
             >
               CAREERS
-            </Link>
+            </Link> */}
 
             {/* CONTACT US Link */}
             <Link
@@ -238,6 +231,27 @@ const Navbar = () => {
               } ${isDarkHero ? "hover:text-white" : "hover:text-[#1F3C15]"}`}
             >
               CONTACT US
+            </Link>
+
+            {/* Submit RFP Link */}
+            <Link
+              to="/request-for-proposal"
+              className={`hover:text-current uppercase tracking-wider transition-colors ${
+                isActiveLink("/request-for-proposal")
+                  ? activeTextColor + " scale-105"
+                  : ""
+              } ${isDarkHero ? "hover:text-white" : "hover:text-[#1F3C15]"}`}
+            >
+              Submit RFP
+            </Link>
+            {/* BLOG Link */}
+            <Link
+              to="/blog"
+              className={`hover:text-current uppercase tracking-wider transition-colors ${
+                isActiveLink("/blog") ? activeTextColor + " scale-105" : ""
+              } ${isDarkHero ? "hover:text-white" : "hover:text-[#1F3C15]"}`}
+            >
+              BLOG
             </Link>
           </div>
 
@@ -382,26 +396,34 @@ const Navbar = () => {
                 >
                   FAQs
                 </Link>
-                <Link
-                  to="/blog"
-                  className="block uppercase tracking-wider"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  BLOG
-                </Link>
-                <Link
+
+                {/* <Link
                   to="/careers"
                   className="block uppercase tracking-wider"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   CAREERS
-                </Link>
+                </Link> */}
                 <Link
                   to="/contact"
                   className="block uppercase tracking-wider"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   CONTACT US
+                </Link>
+                <Link
+                  to="/request-for-proposal"
+                  className="block uppercase tracking-wider"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Submit RFP
+                </Link>
+                <Link
+                  to="/blog"
+                  className="block uppercase tracking-wider"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  BLOG
                 </Link>
               </div>
             </div>

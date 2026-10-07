@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import Hero from "../components/about/Hero";
 import Image from "../assets/object.svg";
 import Image2 from "../assets/contact.jpg";
+import { getRecaptchaToken, useRecaptcha } from "../utils/recaptcha";
 
 interface FormData {
   firstName: string;
@@ -15,6 +16,7 @@ interface FormData {
 const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:3000/api";
 
 const Submit = () => {
+  useRecaptcha();
   const [form, setForm] = useState<FormData>({
     firstName: "",
     lastName: "",
@@ -52,8 +54,22 @@ const Submit = () => {
 
     setLoading(true);
 
+    let recaptchaToken: string;
+    try {
+      recaptchaToken = await getRecaptchaToken("career_submit");
+    } catch (err) {
+      setError(
+        err instanceof Error
+          ? err.message
+          : "Unable to verify you're human. Please try again."
+      );
+      setLoading(false);
+      return;
+    }
+
     try {
       const formData = new FormData();
+      formData.append("recaptchaToken", recaptchaToken);
       formData.append("firstName", form.firstName);
       formData.append("lastName", form.lastName);
       formData.append("email", form.email);
